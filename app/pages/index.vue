@@ -1,5 +1,6 @@
 <template lang="pug">
-  h2.class Hello
+  .container
+    h2.class Hello
 </template>
 
 <script lang="ts">
@@ -12,6 +13,6 @@ export default Vue.extend({})
 @test: green;
 
 .class {
-  color: @test;
+  grid-column: col-start 2 / span 2;
 }
 </style>
