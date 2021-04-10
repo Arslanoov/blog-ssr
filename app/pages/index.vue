@@ -8,5 +8,10 @@ import Vue from 'vue'
 export default Vue.extend({})
 </script>
 
-<style>
+<style lang="less">
+@test: green;
+
+.class {
+  color: @test;
+}
 </style>
