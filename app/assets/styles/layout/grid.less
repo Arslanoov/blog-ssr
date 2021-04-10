@@ -1,0 +1,11 @@
+@columns-count: 12;
+
+.container {
+  display: grid;
+
+  grid-template-columns:
+    [start] minmax(6rem, 1fr)
+    repeat(@columns-count, [col-start] 1fr [col-end])
+    [end] minmax(6rem, 1fr);
+  grid-auto-rows: auto;
+}
