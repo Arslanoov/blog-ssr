@@ -16,13 +16,13 @@ export default Vue.extend({})
 
 <style lang="less" scoped>
 .header {
-  padding: 3.2rem 4.2rem 1.8rem 4.2rem;
+  padding: 3.2rem 4.2rem 1.8rem;
 
   border: 2px solid red;
 
-  .respond(@sizes[mobile], {
-    background-color: green;
-  }, @with-screen);
+  .respond(@sizes[desktop-sm], {
+    padding: 2rem 2.4rem 1rem;
+  }, @without-screen);
 
   &__container {
     align-items: center;
@@ -34,10 +34,17 @@ export default Vue.extend({})
     grid-column: start / span 1;
 
     width: 100%;
+    min-width: 8rem;
     max-width: 14rem;
     object-fit: cover;
 
-    border: 2px solid orange;
+    .respond(@sizes[tablet], {
+      grid-column: start / col-start 3;
+    }, @without-screen);
+
+    .respond(@sizes[mobile], {
+      grid-column: start / col-start 4;
+    }, @without-screen);
   }
 
   &__nav {
@@ -46,14 +53,14 @@ export default Vue.extend({})
     display: flex;
     justify-content: center;
 
-    border: 2px solid orangered;
+    .respond(@sizes[tablet], {
+      grid-column: col-start 6 / col-start 7;
+    }, @without-screen);
   }
 
-  &__right-nav {
+  &__nav-right {
     grid-column: end / span 1;
-    align-self: end;
-
-    border: 2px solid black;
+    justify-self: end;
   }
 }
 </style>
