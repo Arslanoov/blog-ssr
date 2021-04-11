@@ -33,7 +33,7 @@ export default defineComponent({
 
   padding: 4.8rem 5.2rem;
 
-  background-color: #fff;
+  background-color: @main-card-background-color;
 
   &__category,
   &__header {
@@ -48,10 +48,10 @@ export default defineComponent({
     width: 6rem;
     height: 2.2rem;
 
-    font-size: 1.6rem;
+    font-size: @main-card-category-font-size;
 
-    background-color: #e68c8c;
-    color: #fff;
+    background-color: @main-card-category-background-color;
+    color: @main-card-category-color;
 
     .pointer-on-hover();
   }
@@ -68,9 +68,9 @@ export default defineComponent({
   &__date {
     text-decoration: underline;
 
-    font-size: 1.4rem;
+    font-size: @main-card-date-font-size;
 
-    color: rgba(#0b0f18, .8);
+    color: @main-card-date-color;
   }
 
   &__author {
@@ -80,40 +80,40 @@ export default defineComponent({
     }
 
     &-avatar {
-      width: 3.8rem;
-      height: 3.8rem;
+      width: @main-section-avatar-size;
+      height: @main-section-avatar-size;
     }
 
     &-name {
-      font-size: 1.3rem;
+      font-size: @main-card-author-name-font-size;
     }
   }
 
   &__title,
   &__short {
-    color: #0b0f18;
+    color: @main-card-title-short-color;
   }
 
   &__title {
     margin-bottom: 3rem;
 
-    font-family: Dosis, sans-serif;
-    font-size: 5.5rem;
-    font-weight: 700;
+    font-family: @main-card-title-font-family;
+    font-size: @main-card-title-font-size;
+    font-weight: @main-card-title-font-weight;
 
-    line-height: 6rem;
+    line-height: @main-card-title-line-height;
 
     .pointer-on-hover();
 
     .respond(@sizes[tablet], {
-      font-size: 3.5rem;
-      line-height: 4rem;
+      font-size: @main-card-title-mobile-font-size;
+      line-height: @main-card-title-mobile-line-height;
     }, @without-screen);
   }
 
   &__short {
-    font-size: 1.6rem;
-    line-height: 2.5rem;
+    font-size: @main-card-short-font-size;
+    line-height: @main-card-short-line-height;
   }
 }
 </style>

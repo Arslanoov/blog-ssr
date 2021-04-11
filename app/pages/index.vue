@@ -35,7 +35,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .home {
-  height: 85vh;
+  height: @main-section-height;
 
   align-content: center;
 
@@ -43,7 +43,7 @@ export default defineComponent({
 
   .respond(@sizes[desktop-sm], {
     height: auto;
-    min-height: 85vh;
+    min-height: @main-section-height;
 
     padding: 2rem 0;
   }, @without-screen);
