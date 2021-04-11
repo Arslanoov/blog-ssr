@@ -1,0 +1,6 @@
+.grid-columns(@padding) {
+  grid-template-columns:
+    [start] minmax(@padding, 1fr)
+    repeat(@columns-count, e(@column-start-name) 1fr e(@column-end-name))
+    [end] minmax(@padding, 1fr);
+}

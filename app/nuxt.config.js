@@ -23,7 +23,12 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
+    "@nuxtjs/style-resources",
   ],
+
+  styleResources: {
+    less: ["@/assets/styles/bootstrap.less"],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
