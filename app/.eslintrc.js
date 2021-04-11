@@ -8,6 +8,7 @@ module.exports = {
   plugins: [],
   rules: {
     quotes: ["error", "double"],
+    semi: ["error", "never"],
     "no-unused-vars": "warn",
     "vue/no-unused-vars": "warn",
   },
