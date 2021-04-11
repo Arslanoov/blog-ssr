@@ -1,11 +1,26 @@
-@columns-count: 12;
-
 .container {
   display: grid;
-
-  grid-template-columns:
-    [start] minmax(6rem, 1fr)
-    repeat(@columns-count, [col-start] 1fr [col-end])
-    [end] minmax(6rem, 1fr);
   grid-auto-rows: auto;
+
+  .grid-columns(15px);
+
+  .respond(350px, {
+    .grid-columns(35px);
+  });
+
+  .respond(575.98px, {
+    .grid-columns(calc(50vw - 270px));
+  });
+
+  .respond(575.98px, {
+    .grid-columns(calc(50vw - 360px));
+  });
+
+  .respond(991.98px, {
+    .grid-columns(calc(50vw - 480px));
+  });
+
+  .respond(1199.98px, {
+    .grid-columns(calc(50vw - 590px));
+  });
 }

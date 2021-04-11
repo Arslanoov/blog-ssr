@@ -1,0 +1,11 @@
+.respond(@width, @rules, @withScreen: false) when (@withScreen = false) {
+  @media (max-width: @width) {
+    @rules();
+  }
+}
+
+.respond(@width, @rules, @withScreen: false) when (@withScreen = true) {
+  @media screen and (max-width: @width) {
+    @rules();
+  }
+}
