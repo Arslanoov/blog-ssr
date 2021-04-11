@@ -24,6 +24,7 @@ export default {
     // https://go.nuxtjs.dev/typescript
     "@nuxt/typescript-build",
     "@nuxtjs/style-resources",
+    "@nuxtjs/composition-api",
   ],
 
   styleResources: {
