@@ -104,6 +104,11 @@ export default defineComponent({
     line-height: 6rem;
 
     .pointer-on-hover();
+
+    .respond(@sizes[tablet], {
+      font-size: 3.5rem;
+      line-height: 4rem;
+    }, @without-screen);
   }
 
   &__short {

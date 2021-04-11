@@ -40,9 +40,24 @@ export default defineComponent({
   align-content: center;
 
   background-color: #aeaeae;
+
+  .respond(@sizes[desktop-sm], {
+    height: auto;
+    min-height: 85vh;
+
+    padding: 2rem 0;
+  }, @without-screen);
 }
 
 .card {
   grid-column: col-start 1 / span 8;
+
+  .respond(@sizes[tablet-land], {
+    grid-column: col-start 1 / span 10;
+  }, @without-screen);
+
+  .respond(@sizes[tablet], {
+    grid-column: col-start 1 / col-end 12;
+  }, @without-screen);
 }
 </style>
