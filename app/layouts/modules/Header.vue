@@ -20,6 +20,10 @@ export default Vue.extend({})
 
   border: 2px solid red;
 
+  .respond(@sizes[mobile], {
+    background-color: green;
+  }, @with-screen);
+
   &__container {
     align-items: center;
 

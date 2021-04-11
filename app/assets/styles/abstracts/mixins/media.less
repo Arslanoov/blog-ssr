@@ -9,3 +9,15 @@
     @rules();
   }
 }
+
+.respond-from(@width, @rules, @withScreen: false) when (@withScreen = false) {
+  @media (min-width: @width) {
+    @rules();
+  }
+}
+
+.respond-from(@width, @rules, @withScreen: false) when (@withScreen = true) {
+  @media screen and (min-width: @width) {
+    @rules();
+  }
+}
