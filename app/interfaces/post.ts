@@ -1,10 +1,12 @@
 export interface PostInterface {
-  category: string
+  id?: number
+  category?: string
   createdAt: string
-  author: {
+  author?: {
     url: string
     name: string
   }
+  image?: string
   title: string
-  short: string
+  short?: string
 }
