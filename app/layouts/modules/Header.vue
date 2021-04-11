@@ -40,6 +40,8 @@ export default Vue.extend({
     max-width: 14rem;
     object-fit: cover;
 
+    .pointer-on-hover();
+
     .respond(@sizes[tablet], {
       grid-column: start / col-start 3;
     }, @without-screen);

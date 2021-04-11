@@ -48,10 +48,9 @@ export default Vue.extend({})
   }
 
   &__link {
-    text-decoration: none;
     text-transform: uppercase;
 
-    color: @nav-link;
+    .link();
   }
 }
 
