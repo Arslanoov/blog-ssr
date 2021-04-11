@@ -2,23 +2,27 @@
   header.header
     .container.header__container
       img(src="/images/logo.png", alt="").header__logo
-      nav.header__nav.
-        Nav
-      nav.header__nav-right.
-        Right nav
+      Nav().header__nav
+      RightNav().header__nav-right
 </template>
 
 <script lang="ts">
 import Vue from "vue"
 
-export default Vue.extend({})
+import Nav from "@/layouts/modules/Nav.vue"
+import RightNav from "@/layouts/modules/RightNav.vue"
+
+export default Vue.extend({
+  components: {
+    Nav,
+    RightNav
+  }
+})
 </script>
 
 <style lang="less" scoped>
 .header {
   padding: 3.2rem 4.2rem 1.8rem;
-
-  border: 2px solid red;
 
   .respond(@sizes[desktop-sm], {
     padding: 2rem 2.4rem 1rem;
@@ -26,8 +30,6 @@ export default Vue.extend({})
 
   &__container {
     align-items: center;
-
-    border: 2px solid green;
   }
 
   &__logo {
@@ -54,7 +56,7 @@ export default Vue.extend({})
     justify-content: center;
 
     .respond(@sizes[tablet], {
-      grid-column: col-start 6 / col-start 7;
+      grid-column: col-start 6 / col-start 8;
     }, @without-screen);
   }
 
