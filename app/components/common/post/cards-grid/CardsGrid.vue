@@ -34,6 +34,14 @@ export default defineComponent({
 
   margin: 5rem 0;
 
+  .respond(@sizes[tablet-land], {
+    grid-template-rows: repeat(4, 1fr);
+  }, @without-screen);
+
+  .respond(@sizes[tablet], {
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+  }, @without-screen);
+
   &__item,
   &__image {
     &:not(:last-of-type) {
@@ -81,9 +89,56 @@ export default defineComponent({
       & > * {
         &:first-of-type {
           margin-right: 2.5rem;
+
+          .respond(@sizes[tablet], {
+            margin-right: 0;
+          }, @without-screen);
         }
       }
     }
+
+    .respond(@sizes[tablet-land], {
+      &:first-child {
+        grid-row: 1 / span 2;
+      }
+
+      &:last-of-type {
+        grid-column: 1 / -1;
+        grid-row: 3 / -1;
+
+        align-self: start;
+      }
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      &:first-child,
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:last-of-type {
+        grid-column: 1 / -1;
+      }
+
+      &:first-child {
+        grid-row: 1 / span 1;
+      }
+
+      &:nth-of-type(2) {
+        grid-row: 2 / span 1;
+      }
+
+      &:nth-of-type(3) {
+        grid-row: 3 / span 1;
+      }
+
+      &:last-of-type {
+        grid-row: 4 / span 1;
+
+        box-shadow: 0 0 2rem rgba(215, 215, 215, .35);
+
+        flex-direction: column;
+        justify-content: center;
+      }
+    }, @without-screen);
   }
 
   &__content {
@@ -91,6 +146,10 @@ export default defineComponent({
 
     &_resettled {
       padding: 0;
+
+      .respond(@sizes[tablet], {
+        padding: 2.5rem;
+      }, @without-screen);
     }
   }
 
