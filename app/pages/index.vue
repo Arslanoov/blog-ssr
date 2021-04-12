@@ -12,6 +12,13 @@
           | 2 3
         CardsGrid(:posts=`posts`)
       img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
+
+    .transformed
+      .container
+        img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
+        .categories
+          CategorySwiper(v-for="category in categories", :key=`category.id`, :category=`category`).categories__item
+        img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 </template>
 
 <script lang="ts">
@@ -19,11 +26,13 @@ import { defineComponent, reactive, ref } from "@vue/composition-api"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
+import CategorySwiper from "~/components/common/category/swiper/CategorySwiper.vue"
 
 export default defineComponent({
   components: {
     MainCard,
-    CardsGrid
+    CardsGrid,
+    CategorySwiper
   },
   setup() {
     const post = reactive({
@@ -67,9 +76,37 @@ export default defineComponent({
       }
     ])
 
+    const categories = ref([
+      {
+        id: 1,
+        name: "Travel",
+        background: "/images/mock/category/mock.jpg",
+        postsCount: 30
+      },
+      {
+        id: 2,
+        name: "Lifestyle",
+        background: "/images/mock/category/mock.jpg",
+        postsCount: 60
+      },
+      {
+        id: 3,
+        name: "Beauty",
+        background: "/images/mock/category/mock.jpg",
+        postsCount: 60
+      },
+      {
+        id: 4,
+        name: "Technology",
+        background: "/images/mock/category/mock.jpg",
+        postsCount: 60
+      }
+    ])
+
     return {
       post,
-      posts
+      posts,
+      categories
     }
   }
 })
@@ -182,5 +219,33 @@ export default defineComponent({
       margin-left: 0;
     }, @without-screen);
   }
+}
+
+// TODO: Temp solution
+.transformed {
+  transform: translateY(-30%);
+
+  .respond(@sizes[tablet-land], {
+    transform: none;
+  }, @without-screen);
+}
+
+.categories {
+  grid-column: col-start 1 / col-end 12;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  &__item {
+    margin-bottom: 3rem;
+  }
+
+  .respond(@sizes[tablet], {
+    flex-direction: column;
+    justify-content: center;
+  }, @without-screen);
 }
 </style>
