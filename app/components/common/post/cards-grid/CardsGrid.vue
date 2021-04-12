@@ -24,7 +24,7 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .cards-grid {
-  grid-column: col-start 1 / col-end 12;
+  width: 100%;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -32,7 +32,13 @@ export default defineComponent({
 
   gap: 3rem;
 
-  margin: 5rem 0;
+  .respond(@sizes[tablet-land], {
+    grid-template-rows: repeat(4, 1fr);
+  }, @without-screen);
+
+  .respond(@sizes[tablet], {
+    grid-template-rows: repeat(4, minmax(min-content, max-content));
+  }, @without-screen);
 
   &__item,
   &__image {
@@ -52,7 +58,8 @@ export default defineComponent({
 
   &__item {
     &:not(:last-of-type) {
-      box-shadow: 0 0 2rem rgba(215, 215, 215, .35);
+      box-shadow: @cards-grid-shadow;
+      background: @cards-grid-background;
     }
 
     &:first-child {
@@ -81,9 +88,57 @@ export default defineComponent({
       & > * {
         &:first-of-type {
           margin-right: 2.5rem;
+
+          .respond(@sizes[tablet], {
+            margin-right: 0;
+          }, @without-screen);
         }
       }
     }
+
+    .respond(@sizes[tablet-land], {
+      &:first-child {
+        grid-row: 1 / span 2;
+      }
+
+      &:last-of-type {
+        grid-column: 1 / -1;
+        grid-row: 3 / -1;
+
+        align-self: start;
+      }
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      &:first-child,
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:last-of-type {
+        grid-column: 1 / -1;
+      }
+
+      &:first-child {
+        grid-row: 1 / span 1;
+      }
+
+      &:nth-of-type(2) {
+        grid-row: 2 / span 1;
+      }
+
+      &:nth-of-type(3) {
+        grid-row: 3 / span 1;
+      }
+
+      &:last-of-type {
+        grid-row: 4 / span 1;
+
+        box-shadow: @cards-grid-shadow;
+        background: @cards-grid-background;
+
+        flex-direction: column;
+        justify-content: center;
+      }
+    }, @without-screen);
   }
 
   &__content {
@@ -91,6 +146,10 @@ export default defineComponent({
 
     &_resettled {
       padding: 0;
+
+      .respond(@sizes[tablet], {
+        padding: 2.5rem;
+      }, @without-screen);
     }
   }
 
@@ -101,12 +160,12 @@ export default defineComponent({
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: @cards-grid-title-font-size;
+    font-weight: @cards-grid-title-font-weight;
 
-    line-height: 2.8rem;
+    line-height: @cards-grid-title-line-height;
 
-    color: #0b0f18;
+    color: @cards-grid-title-color;
 
     &_underlined {
       text-decoration: underline;
@@ -115,15 +174,15 @@ export default defineComponent({
 
   &__date,
   &__short {
-    font-size: 1.4rem;
+    font-size: @cards-grid-date-short-font-size;
   }
 
   &__date {
-    color: #e68c8c;
+    color: @cards-grid-date-color;
   }
 
   &__short {
-    color: rgba(#0b0f18, .8);
+    color: @cards-grid-short-color;
   }
 }
 </style>
