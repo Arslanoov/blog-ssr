@@ -60,7 +60,7 @@ export default defineComponent({
 
   &__item {
     &:not(:last-of-type) {
-      box-shadow: 0 0 2rem rgba(215, 215, 215, .35);
+      box-shadow: @cards-grid-shadow;
     }
 
     &:first-child {
@@ -133,7 +133,7 @@ export default defineComponent({
       &:last-of-type {
         grid-row: 4 / span 1;
 
-        box-shadow: 0 0 2rem rgba(215, 215, 215, .35);
+        box-shadow: @cards-grid-shadow;
 
         flex-direction: column;
         justify-content: center;
@@ -160,12 +160,12 @@ export default defineComponent({
   }
 
   &__title {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: @cards-grid-title-font-size;
+    font-weight: @cards-grid-title-font-weight;
 
-    line-height: 2.8rem;
+    line-height: @cards-grid-title-line-height;
 
-    color: #0b0f18;
+    color: @cards-grid-title-color;
 
     &_underlined {
       text-decoration: underline;
@@ -174,15 +174,15 @@ export default defineComponent({
 
   &__date,
   &__short {
-    font-size: 1.4rem;
+    font-size: @cards-grid-date-short-font-size;
   }
 
   &__date {
-    color: #e68c8c;
+    color: @cards-grid-date-color;
   }
 
   &__short {
-    color: rgba(#0b0f18, .8);
+    color: @cards-grid-short-color;
   }
 }
 </style>
