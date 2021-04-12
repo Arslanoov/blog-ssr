@@ -3,8 +3,15 @@
     .container.main-card-container
       MainCard(:post=`post`).main-card-container__card
 
-    .container
-      CardsGrid(:posts=`posts`)
+    .container.cards-grid__container
+      img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
+      .cards-grid__cards
+        .cards-grid__pagination
+          span.cards-grid__pagination_current 1
+          span.cards-grid__pagination_slash /
+          | 2 3
+        CardsGrid(:posts=`posts`)
+      img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 </template>
 
 <script lang="ts">
@@ -37,7 +44,7 @@ export default defineComponent({
         id: 1,
         createdAt: "January 02, 2020",
         title: "It's now easier to get between the US and Cape Town ",
-        image: "/images/mock/blog/posts/1.jpg"
+        image: "/images/mock/blog/posts/1.png"
       },
       {
         id: 2,
@@ -94,5 +101,86 @@ export default defineComponent({
 
     padding: 2rem 0;
   }, @without-screen);
+}
+
+.cards-grid {
+  &__pagination,
+  &__container {
+    z-index: 2;
+
+    position: relative;
+
+    transform: translateY(-30%);
+
+    .respond(@sizes[tablet-land], {
+      transform: none;
+    }, @without-screen);
+  }
+
+  &__pagination {
+    grid-column: col-start 1 / span 1;
+
+    color: @cards-grid-pagination-color;
+
+    font-size: @cards-grid-pagination-font-size;
+
+    &_current {
+      font-size: @cards-grid-pagination-current-font-size;
+    }
+
+    &_slash {
+      font-size: @cards-grid-pagination-slash-font-size;
+    }
+  }
+
+  &__cards {
+    grid-column: col-start 1 / col-end 12;
+
+    margin: 6rem 0;
+  }
+}
+
+.pagination__arrow {
+  margin-top: 7.5rem;
+
+  border-radius: 5rem;
+
+  background: @cards-grid-pagination-arrow-background;
+
+  .pointer-on-hover();
+
+  .respond(@sizes[tablet-land], {
+    background-color: @cards-grid-pagination-arrow-phone-background;
+
+    transform: scale(.7);
+  }, @without-screen);
+
+  .respond(@sizes[tablet], {
+    display: none;
+  }, @without-screen);
+
+  &_left {
+    grid-column: start / span 1;
+    justify-self: right;
+
+    margin-right: 1rem;
+    padding: 2.1rem 1.5rem 1.9rem 1.4rem;
+
+    .respond(@sizes[tablet-land], {
+      margin-right: 0;
+    }, @without-screen);
+  }
+
+  &_right {
+    grid-column: end / span 1;
+    justify-self: start;
+
+    margin-left: 1rem;
+    padding: 1.9rem 1.4rem 2.1rem 1.5rem;
+
+    .respond(@sizes[tablet-land], {
+      margin-left: 0;
+    }, @without-screen);
+  }
 }
 </style>

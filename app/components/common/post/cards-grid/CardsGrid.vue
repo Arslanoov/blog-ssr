@@ -24,15 +24,13 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .cards-grid {
-  grid-column: col-start 1 / col-end 12;
+  width: 100%;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
 
   gap: 3rem;
-
-  margin: 5rem 0;
 
   .respond(@sizes[tablet-land], {
     grid-template-rows: repeat(4, 1fr);
@@ -61,6 +59,7 @@ export default defineComponent({
   &__item {
     &:not(:last-of-type) {
       box-shadow: @cards-grid-shadow;
+      background: @cards-grid-background;
     }
 
     &:first-child {
@@ -134,6 +133,7 @@ export default defineComponent({
         grid-row: 4 / span 1;
 
         box-shadow: @cards-grid-shadow;
+        background: @cards-grid-background;
 
         flex-direction: column;
         justify-content: center;
