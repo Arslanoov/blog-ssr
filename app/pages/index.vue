@@ -17,7 +17,7 @@
       .container
         img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
         .categories
-          CategorySwiper(v-for="category in categories", :key=`category.id`, :category=`category`).categories__item
+          Category(v-for="category in categories", :key=`category.id`, :category=`category`).categories__item
         img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 </template>
 
@@ -26,13 +26,13 @@ import { defineComponent, reactive, ref } from "@vue/composition-api"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
-import CategorySwiper from "~/components/common/category/swiper/CategorySwiper.vue"
+import Category from "~/components/common/category/swiper/Category.vue"
 
 export default defineComponent({
   components: {
     MainCard,
     CardsGrid,
-    CategorySwiper
+    Category
   },
   setup() {
     const post = reactive({

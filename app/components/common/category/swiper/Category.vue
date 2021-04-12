@@ -1,12 +1,11 @@
 <template lang="pug">
-  .category-swiper
-    .category-swiper__item(:style=`{
-      backgroundImage: "url(" + category.background + ")"
-    }`)
-      img(:src=`category.background`, alt="").category-swiper__hidden
-      .category-swiper__content
-        .category-swiper__name {{ category.name }}
-        .category-swiper__posts-count {{ category.postsCount }}
+  .category(:style=`{
+    backgroundImage: "url(" + category.background + ")"
+  }`)
+    img(:src=`category.background`, alt="").category__hidden
+    .category__content
+      .category__name {{ category.name }}
+      .category__posts-count {{ category.postsCount }}
 </template>
 
 <script lang="ts">
@@ -24,13 +23,14 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
-.category-swiper {
-  &__item {
-    position: relative;
+<style lang="less" scoped>
+.category {
+  position: relative;
 
-    background-repeat: no-repeat;
-  }
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .pointer-on-hover();
 
   &__hidden {
     visibility: hidden;
@@ -51,16 +51,18 @@ export default defineComponent({
 
   &__name,
   &__posts-count {
-    color: #fff;
+    color: @category-text-color;
   }
 
   &__name {
-    font-size: 2rem;
-    font-weight: 500;
+    margin-bottom: 1rem;
+
+    font-size: @category-name-font-size;
+    font-weight: @category-name-font-weight;
   }
 
   &__posts-count {
-    font-size: 1.4rem;
+    font-size: @category-posts-count-font-size;
   }
 }
 </style>
