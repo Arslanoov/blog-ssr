@@ -33,7 +33,7 @@ export default defineComponent({
   gap: 3rem;
 
   .respond(@sizes[tablet-land], {
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }, @without-screen);
 
   .respond(@sizes[tablet], {
