@@ -6,10 +6,6 @@
     .container.cards-grid__container
       img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
       .cards-grid__cards
-        .cards-grid__pagination
-          span.cards-grid__pagination_current 1
-          span.cards-grid__pagination_slash /
-          | 2 3
         CardsGrid(:posts=`posts`)
       img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 
@@ -19,6 +15,9 @@
         .categories
           Category(v-for="category in categories", :key=`category.id`, :category=`category`).categories__item
         img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
+
+      .container
+        PopularPosts(:posts=`popularPosts`).popular-posts
 </template>
 
 <script lang="ts">
@@ -26,13 +25,15 @@ import { defineComponent, reactive, ref } from "@vue/composition-api"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
-import Category from "~/components/common/category/swiper/Category.vue"
+import Category from "~/components/common/category/Category.vue"
+import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"
 
 export default defineComponent({
   components: {
     MainCard,
     CardsGrid,
-    Category
+    Category,
+    PopularPosts
   },
   setup() {
     const post = reactive({
@@ -103,10 +104,68 @@ export default defineComponent({
       }
     ])
 
+    const popularPosts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more",
+        short: "Today I’m going to share some of my top tips for booking with\n" +
+          "AirBnB. For those of you who may not yet be familiar",
+        image: "/images/mock/blog/popular-posts/1.jpg"
+      },
+      {
+        id: 2,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "5 Things to do in Barcelona\n" +
+          "This Summer That Are\n" +
+          "Not in Your Guide Book",
+        short: "Today I’m going to share some of my top tips \n" +
+          "for booking with AirBnB. For those of you\n" +
+          "who may not yet be familiar",
+        image: "/images/mock/blog/popular-posts/1.jpg",
+        author: {
+          url: "/images/mock/avatar/1.png",
+          name: "Afaty Poprita"
+        }
+      },
+      {
+        id: 3,
+        category: "Beauty",
+        createdAt: "January 02, 2020",
+        title: "The Islands Of Japan \n" +
+          "Stretch Down The Asian\n" +
+          "Mainland",
+        image: "/images/mock/blog/popular-posts/2.jpg",
+        author: {
+          url: "/images/mock/avatar/1.png",
+          name: "Afaty Poprita"
+        }
+      },
+      {
+        id: 4,
+        category: "Beauty",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        short: "The plan in the beginning was always to leave after a year." +
+          " I’ve spent my share of summers here, as I tend to leave vacations " +
+          "for the winter. ",
+        image: "/images/mock/blog/popular-posts/3.jpg",
+        author: {
+          url: "/images/mock/avatar/2.png",
+          name: "Afaty Poprita"
+        }
+      }
+    ])
+
     return {
       post,
       posts,
-      categories
+      categories,
+      popularPosts
     }
   }
 })
@@ -141,39 +200,32 @@ export default defineComponent({
 }
 
 .cards-grid {
-  &__pagination,
   &__container {
     z-index: 2;
 
     position: relative;
 
-    transform: translateY(-30%);
+    transform: translateY(-15vh);
 
     .respond(@sizes[tablet-land], {
       transform: none;
     }, @without-screen);
   }
 
-  &__pagination {
-    grid-column: col-start 1 / span 1;
-
-    color: @cards-grid-pagination-color;
-
-    font-size: @cards-grid-pagination-font-size;
-
-    &_current {
-      font-size: @cards-grid-pagination-current-font-size;
-    }
-
-    &_slash {
-      font-size: @cards-grid-pagination-slash-font-size;
-    }
-  }
-
   &__cards {
     grid-column: col-start 1 / col-end 12;
 
     margin: 6rem 0;
+  }
+}
+
+.categories {
+  &__container {
+    margin: 5rem 0;
+
+    .respond(@sizes[tablet-land], {
+      margin: 0;
+    }, @without-screen);
   }
 }
 
@@ -221,9 +273,8 @@ export default defineComponent({
   }
 }
 
-// TODO: Temp solution
 .transformed {
-  transform: translateY(-30%);
+  transform: translateY(-15vh);
 
   .respond(@sizes[tablet-land], {
     transform: none;
@@ -247,5 +298,11 @@ export default defineComponent({
     flex-direction: column;
     justify-content: center;
   }, @without-screen);
+}
+
+.popular-posts {
+  grid-column: col-start 1 / col-end 12;
+
+  padding: 3rem 0;
 }
 </style>
