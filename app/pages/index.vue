@@ -324,5 +324,7 @@ export default defineComponent({
 
 .popular-posts {
   grid-column: col-start 1 / col-end 12;
+
+  padding: 3rem 0;
 }
 </style>

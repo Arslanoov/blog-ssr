@@ -51,6 +51,11 @@ export default defineComponent({
     grid-template-rows: repeat(2, 1fr);
 
     gap: 3rem;
+
+    .respond(@sizes[tablet-land], {
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(min-content, max-content);
+    }, @without-screen);
   }
 }
 
@@ -142,6 +147,11 @@ export default defineComponent({
     grid-column: 1 / span 2;
     grid-row: 1 / span 1;
 
+    .respond(@sizes[tablet-land], {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }, @without-screen);
+
     .post {
       &__category {
         background: transparent;
@@ -149,6 +159,10 @@ export default defineComponent({
 
       &__content {
         width: 60%;
+
+        .respond(@sizes[tablet-land], {
+          width: 100%;
+        }, @without-screen);
       }
     }
   }
@@ -156,6 +170,11 @@ export default defineComponent({
   &:nth-of-type(2) {
     grid-column: 3 / -1;
     grid-row: 1 / span 1;
+
+    .respond(@sizes[tablet-land], {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }, @without-screen);
 
     .post {
       &__category {
@@ -178,6 +197,11 @@ export default defineComponent({
   &:nth-of-type(3) {
     grid-column: 1 / span 1;
     grid-row: 2 / span 1;
+
+    .respond(@sizes[tablet-land], {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }, @without-screen);
   }
 
   &:last-of-type {
@@ -187,6 +211,15 @@ export default defineComponent({
     display: flex;
 
     color: #0b0f18;
+
+    .respond(@sizes[tablet], {
+      flex-direction: column;
+    }, @without-screen);
+
+    .respond(@sizes[tablet-land], {
+      grid-column: 1 / span 1;
+      grid-row: 4 / span 1;
+    }, @without-screen);
 
     .post {
       &__content {
@@ -202,6 +235,8 @@ export default defineComponent({
 
       &__image {
         display: block;
+
+        max-width: 100%;
       }
 
       &__author {
