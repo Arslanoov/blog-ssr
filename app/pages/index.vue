@@ -6,14 +6,10 @@
     .container.cards-grid__container
       img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
       .cards-grid__cards
-        .cards-grid__pagination
-          span.cards-grid__pagination_current 1
-          span.cards-grid__pagination_slash /
-          | 2 3
         CardsGrid(:posts=`posts`)
       img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 
-    .transformed.categories__container
+    .transformed
       .container
         img(src="/images/pagination/left-arrow.png", alt="").pagination__arrow.pagination__arrow_left
         .categories
@@ -204,33 +200,16 @@ export default defineComponent({
 }
 
 .cards-grid {
-  &__pagination,
   &__container {
     z-index: 2;
 
     position: relative;
 
-    transform: translateY(-30%);
+    transform: translateY(-15vh);
 
     .respond(@sizes[tablet-land], {
       transform: none;
     }, @without-screen);
-  }
-
-  &__pagination {
-    grid-column: col-start 1 / span 1;
-
-    color: @cards-grid-pagination-color;
-
-    font-size: @cards-grid-pagination-font-size;
-
-    &_current {
-      font-size: @cards-grid-pagination-current-font-size;
-    }
-
-    &_slash {
-      font-size: @cards-grid-pagination-slash-font-size;
-    }
   }
 
   &__cards {
@@ -294,9 +273,8 @@ export default defineComponent({
   }
 }
 
-// TODO: Temp solution
 .transformed {
-  transform: translateY(-20%);
+  transform: translateY(-15vh);
 
   .respond(@sizes[tablet-land], {
     transform: none;

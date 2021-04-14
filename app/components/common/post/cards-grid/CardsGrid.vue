@@ -1,11 +1,16 @@
 <template lang="pug">
   .cards-grid
-    .cards-grid__item(v-for="(post, index) in posts", key=`post.id`)
-      img(v-if=`post.image`, :src=`post.image`, alt="").cards-grid__image
-      .cards-grid__content(:class=`index === posts.length - 1 ? "cards-grid__content_resettled" : ""`)
-        .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`) {{ post.title }}
-        .cards-grid__element.cards-grid__date {{ post.createdAt }}
-        .cards-grid__element.cards-grid__short(v-if=`post.short`) {{ post.short }}
+    .cards-grid__pagination
+      span.cards-grid__pagination_current 1
+      span.cards-grid__pagination_slash /
+      | 2 3
+    .cards-grid__wrapper
+      .cards-grid__item(v-for="(post, index) in posts", key=`post.id`)
+        img(v-if=`post.image`, :src=`post.image`, alt="").cards-grid__image
+        .cards-grid__content(:class=`index === posts.length - 1 ? "cards-grid__content_resettled" : ""`)
+          .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`) {{ post.title }}
+          .cards-grid__element.cards-grid__date {{ post.createdAt }}
+          .cards-grid__element.cards-grid__short(v-if=`post.short`) {{ post.short }}
 </template>
 
 <script lang="ts">
@@ -26,19 +31,45 @@ export default defineComponent({
 .cards-grid {
   width: 100%;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  &__pagination {
+    grid-column: col-start 1 / span 1;
 
-  gap: 3rem;
+    transform: translateY(-3.8rem);
 
-  .respond(@sizes[tablet-land], {
-    grid-template-rows: repeat(3, 1fr);
-  }, @without-screen);
+    color: @cards-grid-pagination-color;
 
-  .respond(@sizes[tablet], {
-    grid-template-rows: repeat(4, minmax(min-content, max-content));
-  }, @without-screen);
+    font-size: @cards-grid-pagination-font-size;
+
+    &_current {
+      font-size: @cards-grid-pagination-current-font-size;
+    }
+
+    &_slash {
+      font-size: @cards-grid-pagination-slash-font-size;
+    }
+
+    .respond(@sizes[tablet-land], {
+      transform: translateY(-1.8rem);
+
+      color: #0b0f18;
+    }, @without-screen);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    gap: 3rem;
+
+    .respond(@sizes[tablet-land], {
+      grid-template-rows: repeat(3, 1fr);
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      grid-template-rows: repeat(4, minmax(min-content, max-content));
+    }, @without-screen);
+  }
 
   &__item,
   &__image {
