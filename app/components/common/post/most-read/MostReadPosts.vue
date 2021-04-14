@@ -31,7 +31,10 @@ export default defineComponent({
 <style lang="less" scoped>
 .most-read {
   &__title {
+    text-align: center;
+
     color: #fff;
+
     font-family: Dosis, sans-serif;
     font-size: 4rem;
     font-weight: 700;
@@ -42,6 +45,11 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .respond(@sizes[tablet-land], {
+      flex-wrap: wrap;
+      justify-content: center;
+    }, @without-screen);
   }
 
   &__item {
@@ -52,6 +60,11 @@ export default defineComponent({
     background: #fff;
 
     margin-right: 2rem;
+
+    .respond(@sizes[tablet-land], {
+      margin-right: 0;
+      margin-bottom: 3rem;
+    }, @without-screen);
   }
 
   &__index {
