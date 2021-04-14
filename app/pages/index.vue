@@ -21,6 +21,13 @@
 
       .container.most-read-container
         MostReadPosts(:posts=`mostReadPosts`).most-read-container__posts
+
+      .container.section-container
+        .section-container__left
+          PostsList(:posts=`postsList`).section-container__posts-list
+          Newsletter().section-container__newsletter
+        .section-container__right.
+          Right part
 </template>
 
 <script lang="ts">
@@ -31,6 +38,8 @@ import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
 import Category from "~/components/common/category/Category.vue"
 import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"
 import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
+import Newsletter from "~/components/common/newsletter/Newsletter.vue"
+import PostsList from "~/components/common/post/list/PostsList.vue"
 
 export default defineComponent({
   components: {
@@ -38,7 +47,9 @@ export default defineComponent({
     CardsGrid,
     Category,
     PopularPosts,
-    MostReadPosts
+    MostReadPosts,
+    Newsletter,
+    PostsList
   },
   setup() {
     const post = reactive({
@@ -201,12 +212,30 @@ export default defineComponent({
       }
     ])
 
+    const postsList = ref([
+      {
+        id: 1,
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/posts/3.jpg",
+        title: "It's now easier to get between\n" +
+          "the US and Cape Town "
+      },
+      {
+        id: 2,
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/posts/3.jpg",
+        title: "The 12 Best Beaches in Southern\n" +
+          "Vietnam"
+      },
+    ])
+
     return {
       post,
       posts,
       categories,
       popularPosts,
-      mostReadPosts
+      mostReadPosts,
+      postsList
     }
   }
 })
@@ -357,5 +386,28 @@ export default defineComponent({
   &__posts {
     grid-column: col-start 1 / col-end 12;
   }
+}
+
+.section-container {
+  padding: 5rem 0;
+
+  &__left {
+    grid-column: col-start 1 / col-end 8;
+  }
+
+  &__posts-list {
+    margin-bottom: 3.5rem;
+  }
+
+  &__right {
+    grid-column: col-start 9 / col-end 12;
+  }
+
+  .respond(@sizes[tablet-land], {
+    &__left,
+    &__right {
+      grid-column: col-start 1 / col-end 12;
+    }
+  }, @without-screen);
 }
 </style>
