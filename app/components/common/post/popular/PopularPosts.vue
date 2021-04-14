@@ -33,16 +33,16 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .popular-posts {
-  font-size: 1.4rem;
+  font-size: @popular-posts-base-font-size;
 
   &__title {
     text-align: center;
 
-    color: #0b0f18;
+    color: @popular-posts-title-color;
 
-    font-family: Dosis, sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
+    font-family: @popular-posts-title-font-family;
+    font-size: @popular-posts-title-font-family;
+    font-weight: @popular-posts-title-font-weight;
   }
 
   &__items {
@@ -60,7 +60,7 @@ export default defineComponent({
 }
 
 .post {
-  color: #fff;
+  color: @popular-post-color;
 
   &__content {
     position: relative;
@@ -87,9 +87,9 @@ export default defineComponent({
   &__name {
     margin-bottom: 1.2rem;
 
-    font-family: Dosis, sans-serif;
-    font-size: 2.8rem;
-    font-weight: 700;
+    font-family: @popular-post-name-font-family;
+    font-size: @popular-post-name-font-size;
+    font-weight: @popular-post-name-font-weight;
 
     .pointer-on-hover();
   }
@@ -113,14 +113,14 @@ export default defineComponent({
     }
 
     &-name {
-      font-size: 13px;
+      font-size: @popular-post-author-name-font-size;
     }
   }
 
   &__short {
     margin-bottom: 3.5rem;
 
-    line-height: 2.5rem;
+    line-height: @popular-post-short-line-height;
   }
 
   &__read-more {
@@ -178,8 +178,8 @@ export default defineComponent({
 
     .post {
       &__category {
-        background: #fff;
-        color: #e68c8c;
+        background: @second-popular-post-category-background;
+        color: @second-popular-post-category-color;
       }
     }
   }
@@ -188,8 +188,8 @@ export default defineComponent({
   &:last-of-type {
     .post {
       &__category {
-        background-color: #e68c8c;
-        color: #fff;
+        background-color: @second-popular-post-category-color;
+        color: @second-popular-post-category-background;
       }
     }
   }
@@ -210,7 +210,7 @@ export default defineComponent({
 
     display: flex;
 
-    color: #0b0f18;
+    color: @last-popular-name-color;
 
     .respond(@sizes[tablet], {
       flex-direction: column;
@@ -229,20 +229,10 @@ export default defineComponent({
         align-items: flex-start;
       }
 
-      &__name {
-        color: #0b0f18;
-      }
-
       &__image {
         display: block;
 
         max-width: 100%;
-      }
-
-      &__author {
-        &-name {
-          color: #0b0f18;
-        }
       }
 
       &__short {
