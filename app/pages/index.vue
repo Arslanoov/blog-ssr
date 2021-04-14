@@ -21,6 +21,9 @@
 
       .container.most-read-container
         MostReadPosts(:posts=`mostReadPosts`).most-read-container__posts
+
+      .container.newsletter-container
+        Newsletter().newsletter-container__newsletter
 </template>
 
 <script lang="ts">
@@ -31,6 +34,7 @@ import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
 import Category from "~/components/common/category/Category.vue"
 import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"
 import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
+import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 
 export default defineComponent({
   components: {
@@ -38,7 +42,8 @@ export default defineComponent({
     CardsGrid,
     Category,
     PopularPosts,
-    MostReadPosts
+    MostReadPosts,
+    Newsletter
   },
   setup() {
     const post = reactive({
@@ -356,6 +361,18 @@ export default defineComponent({
 
   &__posts {
     grid-column: col-start 1 / col-end 12;
+  }
+}
+
+.newsletter-container {
+  padding: 5rem 0;
+
+  &__newsletter {
+    grid-column: col-start 1 / col-end 8;
+
+    .respond(@sizes[tablet], {
+      grid-column: col-start 1 / col-end 12;
+    }, @without-screen);
   }
 }
 </style>
