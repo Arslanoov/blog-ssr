@@ -12,6 +12,12 @@
               .most-read__date {{ post.createdAt }}
               .most-read__read-more Read More
             .most-read__index {{ index < 9 ? "0" + (index + 1) : index + 1 }}
+
+    .most-read__pagination
+      .most-read__pagination-item.active
+      .most-read__pagination-item
+      .most-read__pagination-item
+      .most-read__pagination-item
 </template>
 
 <script lang="ts">
@@ -141,6 +147,35 @@ export default defineComponent({
     font-size: 1.4rem;
 
     .pointer-on-hover();
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 3rem;
+
+    &-item {
+      box-sizing: content-box;
+
+      width: .8rem;
+      height: .8rem;
+
+      border-radius: 1rem;
+
+      background-color: #fff;
+
+      .pointer-on-hover();
+
+      &:not(:last-of-type) {
+        margin-right: 1.5rem;
+      }
+
+      &.active {
+        border: 4px solid #e68c8c;
+      }
+    }
   }
 }
 </style>
