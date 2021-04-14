@@ -77,14 +77,15 @@ export default defineComponent({})
   }
 
   &__title {
-    font-family: Dosis, sans-serif;
-    font-size: 2.4rem;
-    line-height: 1;
+    font-family: @newsletter-title-font-family;
+    font-size: @newsletter-title-font-size;
+    line-height: @newsletter-title-line-height;
   }
 
   &__line {
     width: 3.7rem;
     height: .1rem;
+
     background-color: @newsletter-line-background;
   }
 
@@ -94,8 +95,8 @@ export default defineComponent({})
   }
 
   &__description {
-    font-size: 1.8rem;
-    opacity: 0.8;
+    font-size: @newsletter-description-font-size;
+    opacity: @newsletter-description-opacity;
   }
 
   &__input {
@@ -118,7 +119,7 @@ export default defineComponent({})
 
     border: 0;
 
-    font-size: 1.6rem;
+    font-size: @newsletter-subscribe-font-size;
 
     background-color: @newsletter-subscribe-button-background;
     color: @newsletter-subscribe-button-color;
