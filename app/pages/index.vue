@@ -214,9 +214,9 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .main-card-container {
-  height: @main-section-height;
-
   align-content: center;
+
+  height: @main-section-height;
 
   background-color: @home-main-card-background;
 
@@ -352,7 +352,7 @@ export default defineComponent({
 .most-read-container {
   padding: 3rem 0;
 
-  background: url("/images/blog/most-read.jpg") no-repeat #9d9d9d;
+  background: url("/images/blog/most-read.jpg") no-repeat @most-read-posts-background;
 
   &__posts {
     grid-column: col-start 1 / col-end 12;

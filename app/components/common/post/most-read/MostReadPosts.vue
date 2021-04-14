@@ -39,12 +39,12 @@ export default defineComponent({
   &__title {
     text-align: center;
 
-    color: #fff;
+    color: @most-read-title-color;
 
-    font-family: Dosis, sans-serif;
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 6rem;
+    font-family: @most-read-title-font-family;
+    font-size: @most-read-title-font-size;
+    font-weight: @most-read-title-font-weight;
+    line-height: @most-read-title-line-height;
   }
 
   &__items {
@@ -63,7 +63,7 @@ export default defineComponent({
     flex-direction: column;
     align-items: flex-start;
 
-    background: #fff;
+    background: @most-read-post-background;
 
     margin-right: 2rem;
 
@@ -73,19 +73,23 @@ export default defineComponent({
     }, @without-screen);
   }
 
+  &__image {
+    .pointer-on-hover();
+  }
+
   &__index {
     text-align: right;
 
-    line-height: 1;
+    color: @most-read-post-index-color;
 
-    color: #f7f3f3;
-    font-size: 8rem;
+    font-size: @most-read-post-font-size;
+    line-height: @most-read-post-line-height;
   }
 
   &__date {
-    color: #e68c8c;
+    font-size: @most-read-post-date-font-size;
 
-    font-size: 1.3rem;
+    color: @most-read-post-date-color;
   }
 
   &__row {
@@ -113,10 +117,10 @@ export default defineComponent({
 
     padding: .3rem 1.1rem;
 
-    font-size: 1.4rem;
+    font-size: @most-read-post-category-font-size;
 
-    background-color: #e68c8c;
-    color: #fff;
+    background-color: @most-read-post-category-background;
+    color: @most-read-post-category-color;
 
     .pointer-on-hover();
   }
@@ -124,11 +128,11 @@ export default defineComponent({
   &__name {
     margin-bottom: .5rem;
 
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 2.5rem;
+    font-size: @most-read-post-name-font-size;
+    font-weight: @most-read-post-name-font-weight;
+    line-height: @most-read-post-name-line-height;
 
-    color: #0b0f18;
+    color: @most-read-post-name-color;
 
     .pointer-on-hover();
   }
@@ -136,15 +140,16 @@ export default defineComponent({
   &__date {
     margin-bottom: 1rem;
 
-    color: #e68c8c;
+    color: @most-read-post-date-color;
 
-    font-size: 1.3rem;
+    font-size: @most-read-post-date-font-size;
     text-decoration: underline;
   }
 
   &__read-more {
-    color: #0b0f18;
-    font-size: 1.4rem;
+    color: @most-read-post-read-more-color;
+
+    font-size: @most-read-post-read-more-font-size;
 
     .pointer-on-hover();
   }
@@ -159,21 +164,21 @@ export default defineComponent({
     &-item {
       box-sizing: content-box;
 
-      width: .8rem;
-      height: .8rem;
+      width: @dot-pagination-size;
+      height: @dot-pagination-size;
 
       border-radius: 1rem;
 
-      background-color: #fff;
+      background-color: @dot-pagination-background;
 
       .pointer-on-hover();
 
       &:not(:last-of-type) {
-        margin-right: 1.5rem;
+        margin-right: @dot-pagination-margin;
       }
 
       &.active {
-        border: 4px solid #e68c8c;
+        border: @dot-pagination-active-border;
       }
     }
   }
