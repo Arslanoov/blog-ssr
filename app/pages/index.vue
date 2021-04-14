@@ -16,8 +16,11 @@
           Category(v-for="category in categories", :key=`category.id`, :category=`category`).categories__item
         img(src="/images/pagination/right-arrow.png", alt="").pagination__arrow.pagination__arrow_right
 
-      .container
-        PopularPosts(:posts=`popularPosts`).popular-posts
+      .container.popular-posts-container
+        PopularPosts(:posts=`popularPosts`).popular-posts-container__posts
+
+      .container.most-read-container
+        MostReadPosts(:posts=`mostReadPosts`).most-read-container__posts
 </template>
 
 <script lang="ts">
@@ -27,13 +30,15 @@ import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
 import Category from "~/components/common/category/Category.vue"
 import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"
+import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
 
 export default defineComponent({
   components: {
     MainCard,
     CardsGrid,
     Category,
-    PopularPosts
+    PopularPosts,
+    MostReadPosts
   },
   setup() {
     const post = reactive({
@@ -161,11 +166,47 @@ export default defineComponent({
       }
     ])
 
+    const mostReadPosts = ref([
+      {
+        id: 1,
+        category: "Beauty",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 2,
+        category: "Design",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 3,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 4,
+        category: "Food",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      }
+    ])
+
     return {
       post,
       posts,
       categories,
-      popularPosts
+      popularPosts,
+      mostReadPosts
     }
   }
 })
@@ -173,9 +214,9 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .main-card-container {
-  height: @main-section-height;
-
   align-content: center;
+
+  height: @main-section-height;
 
   background-color: @home-main-card-background;
 
@@ -300,9 +341,21 @@ export default defineComponent({
   }, @without-screen);
 }
 
-.popular-posts {
-  grid-column: col-start 1 / col-end 12;
+.popular-posts-container {
+  &__posts {
+    grid-column: col-start 1 / col-end 12;
 
+    padding: 3rem 0;
+  }
+}
+
+.most-read-container {
   padding: 3rem 0;
+
+  background: url("/images/blog/most-read.jpg") no-repeat @most-read-posts-background;
+
+  &__posts {
+    grid-column: col-start 1 / col-end 12;
+  }
 }
 </style>
