@@ -1,7 +1,14 @@
 <template lang="pug">
-  .post-rollup
+  .post-rollup(v-if=`inverted`)
+    img(:src=`post.image`, alt="").post-rollup__image
+    .post-rollup__content.inverted
+      h5.post-rollup__name.post-rollup__item {{ post.title }} {{ inverted ? "true" : "false" }}
+      p.post-rollup__short.post-rollup__item {{ post.short }}
+      .post-rollup__date.post-rollup__item {{ post.createdAt }}
+      font-awesome-icon(:icon=`["far", "bookmark"]`).post-rollup__bookmark
+  .post-rollup(v-else)
     .post-rollup__content
-      h5.post-rollup__name.post-rollup__item {{ post.title }}
+      h5.post-rollup__name.post-rollup__item {{ post.title }}  {{ inverted ? "true" : "false" }}
       p.post-rollup__short.post-rollup__item {{ post.short }}
       .post-rollup__date.post-rollup__item {{ post.createdAt }}
       font-awesome-icon(:icon=`["far", "bookmark"]`).post-rollup__bookmark
@@ -18,6 +25,11 @@ export default defineComponent({
     post: {
       type: Object as () => PostInterface,
       required: true
+    },
+    inverted: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   computed: {
@@ -36,6 +48,11 @@ export default defineComponent({
     flex-direction: column;
 
     margin-right: 2rem;
+
+    &.inverted {
+      margin-right: 0;
+      margin-left: 2rem;
+    }
   }
 
   &__item {

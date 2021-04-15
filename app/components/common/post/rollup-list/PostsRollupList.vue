@@ -1,7 +1,9 @@
 <template lang="pug">
   .posts-rollup-list
-    h2.posts-rollup-list__title Posts rollup
-    PostRollup(v-for=`post in posts`, :key=`post.id`, :post=`post`).posts-rollup-list__item
+    h2.posts-rollup-list__title {{ title }}
+    PostRollup(v-for=`post in posts`, :key=`post.id`, :post=`post`, :class=`{
+      inverted
+    }` :inverted=`inverted`).posts-rollup-list__item
 </template>
 
 <script lang="ts">
@@ -10,6 +12,18 @@ import { defineComponent, ref } from "@vue/composition-api";
 import PostRollup from "~/components/common/post/rollup/PostRollup.vue"
 
 export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: ""
+    },
+    inverted: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   components: {
     PostRollup
   },
@@ -59,6 +73,12 @@ export default defineComponent({
   width: 100%;
 
   margin: 3rem 0;
+
+  &.inverted {
+    &:nth-child(odd) {
+      align-self: end;
+    }
+  }
 
   &__title {
     color: #0b0f18;
