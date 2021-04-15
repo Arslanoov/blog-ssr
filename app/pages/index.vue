@@ -26,8 +26,8 @@
         .section-container__left
           PostsList(:posts=`postsList`).section-container__posts-list
           Newsletter().section-container__newsletter
-        .section-container__right.
-          Right part
+        .section-container__right
+          PostsRollupList()
 </template>
 
 <script lang="ts">
@@ -40,6 +40,7 @@ import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"
 import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
 import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 import PostsList from "~/components/common/post/list/PostsList.vue"
+import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
 
 export default defineComponent({
   components: {
@@ -49,7 +50,8 @@ export default defineComponent({
     PopularPosts,
     MostReadPosts,
     Newsletter,
-    PostsList
+    PostsList,
+    PostsRollupList
   },
   setup() {
     const post = reactive({
@@ -389,6 +391,8 @@ export default defineComponent({
 }
 
 .section-container {
+  column-gap: 3rem;
+
   padding: 5rem 0;
 
   &__left {
