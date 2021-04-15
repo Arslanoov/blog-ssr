@@ -25,6 +25,7 @@ export default {
     "@nuxt/typescript-build",
     "@nuxtjs/style-resources",
     "@nuxtjs/composition-api",
+    "@nuxtjs/fontawesome",
   ],
 
   styleResources: {
@@ -38,6 +39,12 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
   ],
+
+  fontawesome: {
+    icons: {
+      regular: ["faBookmark"],
+    },
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

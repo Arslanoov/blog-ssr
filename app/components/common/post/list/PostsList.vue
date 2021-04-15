@@ -22,7 +22,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .posts-list {
   display: flex;
   justify-content: space-between;

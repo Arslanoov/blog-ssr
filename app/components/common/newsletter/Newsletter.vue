@@ -17,7 +17,7 @@ import { defineComponent } from "@vue/composition-api"
 export default defineComponent({})
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .newsletter {
   position: relative;
 
