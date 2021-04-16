@@ -29,10 +29,17 @@
         .section-container__right
           PostsRollupList(title="Posts rollup", :length=3)
           PostsRollupList(title="Top reviews posts", :length=2, inverted=true)
+
+      .container.section-container
+        PublishedTrending().section-container__left
+        .section-container__right.
+          Right
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "@vue/composition-api"
+
+import PublishedTrending from "~/components/common/sections/published-trending/PublishedTrending.vue"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
@@ -43,8 +50,11 @@ import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
 
+/* TODO: Separate into sections */
 export default defineComponent({
   components: {
+    PublishedTrending,
+
     MainCard,
     CardsGrid,
     Category,
