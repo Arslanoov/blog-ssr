@@ -31,8 +31,6 @@ export default defineComponent({
       required: false,
       default: false
     }
-  },
-  computed: {
   }
 })
 </script>
@@ -59,23 +57,31 @@ export default defineComponent({
     margin-bottom: 1rem;
   }
 
-  &__name {
-    color: #0b0f18;
-    font-size: 1.6rem;
-    font-weight: 500;
-
+  &__name,
+  &__bookmark,
+  &__image {
     .pointer-on-hover();
   }
 
+  &__name {
+    font-size: @post-rollup-name-font-size;
+    font-weight: @post-rollup-name-font-weight;
+
+    color: @post-rollup-name-color;
+  }
+
   &__short {
-    opacity: 0.8;
-    color: #0b0f18;
-    font-size: 14px;
+    opacity: @post-rollup-short-opacity;
+
+    font-size: @post-rollup-short-font-size;
+
+    color: @post-rollup-short-color;
   }
 
   &__date {
-    color: #e68c8c;
-    font-size: 13px;
+    color: @post-rollup-date-color;
+
+    font-size: @post-rollup-date-font-size;
 
     text-decoration: underline;
   }
@@ -85,14 +91,9 @@ export default defineComponent({
 
     margin-top: -3rem;
 
-    color: #0b0f18;
-    font-size: 16px;
+    color: @post-rollup-bookmark-color;
 
-    .pointer-on-hover();
-  }
-
-  &__image {
-    .pointer-on-hover();
+    font-size: @post-rollup-bookmark-font-size;
   }
 }
 </style>

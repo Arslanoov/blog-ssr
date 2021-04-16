@@ -88,16 +88,17 @@ export default defineComponent({
   &__title {
     margin-bottom: .8rem;
 
-    color: #0b0f18;
-    font-size: 16px;
-    font-weight: 500;
+    color: @posts-rollup-title-color;
+
+    font-size: @posts-rollup-title-font-size;
+    font-weight: @posts-rollup-title-font-weight;
     text-transform: uppercase;
   }
 
   &__line {
     width: 10rem;
     height: .1rem;
-    background-color: #d2d2d3;
+    background-color: @posts-rollup-line-background-color;
   }
 
   &__item {
