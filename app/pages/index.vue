@@ -27,8 +27,8 @@
           PostsList(:posts=`postsList`).section-container__posts-list
           Newsletter().section-container__newsletter
         .section-container__right
-          PostsRollupList(title="Posts rollup", length=3)
-          PostsRollupList(title="Top reviews posts", length=2, inverted=true)
+          PostsRollupList(title="Posts rollup", :length=3)
+          PostsRollupList(title="Top reviews posts", :length=2, inverted=true)
 </template>
 
 <script lang="ts">

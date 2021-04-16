@@ -1,6 +1,7 @@
 <template lang="pug">
   .posts-rollup-list
     h2.posts-rollup-list__title {{ title }}
+    .posts-rollup-list__line
     PostRollup(v-for=`(post, index) in posts`, v-if=`index < length`, :key=`post.id`, :post=`post`, :class=`{
       inverted: inverted && index % 2 !== 0
     }` :inverted=`inverted && index % 2 !== 0`).posts-rollup-list__item
@@ -85,14 +86,22 @@ export default defineComponent({
   }
 
   &__title {
+    margin-bottom: .8rem;
+
     color: #0b0f18;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
   }
 
+  &__line {
+    width: 10rem;
+    height: .1rem;
+    background-color: #d2d2d3;
+  }
+
   &__item {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
 }
 </style>
