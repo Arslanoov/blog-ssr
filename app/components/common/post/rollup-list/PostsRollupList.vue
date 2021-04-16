@@ -1,9 +1,9 @@
 <template lang="pug">
   .posts-rollup-list
     h2.posts-rollup-list__title {{ title }}
-    PostRollup(v-for=`post in posts`, :key=`post.id`, :post=`post`, :class=`{
-      inverted
-    }` :inverted=`inverted`).posts-rollup-list__item
+    PostRollup(v-for=`(post, index) in posts`, v-if=`index < length`, :key=`post.id`, :post=`post`, :class=`{
+      inverted: inverted && index % 2 !== 0
+    }` :inverted=`inverted && index % 2 !== 0`).posts-rollup-list__item
 </template>
 
 <script lang="ts">
@@ -22,6 +22,10 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false
+    },
+    length: {
+      type: Number,
+      required: true
     }
   },
   components: {
