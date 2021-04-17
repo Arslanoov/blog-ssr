@@ -106,11 +106,13 @@ export default defineComponent({
   &__title {
     color: #0b0f18;
     font-family: Dosis, sans-serif;
-    font-size: 40px;
+    font-size: 4rem;
   }
 
   /* TODO: Reset styles for button */
   &__see-more {
+    flex-shrink: 0;
+
     border: 0;
     outline: 0;
 
@@ -124,6 +126,7 @@ export default defineComponent({
 
   &__pagination {
     display: flex;
+    justify-content: center;
     align-items: center;
 
     font-size: 1.6rem;
