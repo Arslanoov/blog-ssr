@@ -35,12 +35,14 @@
         .published-trending-container__right
           PostsSlider(:posts=`sliderPosts`).published-trending-container__slider
           PostsSlider(:posts=`secondSliderPosts`, detailed=true).published-trending-container__slider
+          FeaturedPosts()
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "@vue/composition-api"
 
 import PublishedTrending from "~/components/common/sections/published-trending/PublishedTrending.vue"
+import FeaturedPosts from "~/components/common/sections/featured-posts/FeaturedPosts.vue"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
@@ -56,6 +58,7 @@ import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
 export default defineComponent({
   components: {
     PublishedTrending,
+    FeaturedPosts,
 
     MainCard,
     CardsGrid,
