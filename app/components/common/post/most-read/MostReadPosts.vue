@@ -21,14 +21,47 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api";
 
 export default defineComponent({
-  props: {
-    posts: {
-      // TODO: Array<PostInterface>
-      type: Array,
-      required: true
+  setup() {
+    const posts = ref([
+      {
+        id: 1,
+        category: "Beauty",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 2,
+        category: "Design",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 3,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      },
+      {
+        id: 4,
+        category: "Food",
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/most-read-posts/1.jpg",
+        title: "Travelling around the holidays\n" +
+          " is always a bit more"
+      }
+    ])
+
+    return {
+      posts
     }
   }
 })
@@ -37,6 +70,8 @@ export default defineComponent({
 <style lang="less" scoped>
 .most-read {
   &__title {
+    margin-bottom: 3rem;
+
     text-align: center;
 
     color: @most-read-title-color;

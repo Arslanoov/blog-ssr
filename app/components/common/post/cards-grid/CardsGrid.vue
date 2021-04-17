@@ -5,7 +5,7 @@
       span.cards-grid__pagination_slash /
       | 2 3
     .cards-grid__wrapper
-      .cards-grid__item(v-for="(post, index) in posts", key=`post.id`)
+      .cards-grid__item(v-for="(post, index) in posts", :key=`post.id`)
         img(v-if=`post.image`, :src=`post.image`, alt="").cards-grid__image
         .cards-grid__content(:class=`index === posts.length - 1 ? "cards-grid__content_resettled" : ""`)
           .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`) {{ post.title }}
@@ -14,14 +14,40 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api";
 
 export default defineComponent({
-  props: {
-    posts: {
-      /* TODO: Array<PostInterface> */
-      type: Array,
-      required: true
+  setup() {
+    const posts = ref([
+      {
+        id: 1,
+        createdAt: "January 02, 2020",
+        title: "It's now easier to get between the US and Cape Town ",
+        image: "/images/mock/blog/posts/1.png"
+      },
+      {
+        id: 2,
+        createdAt: "January 02, 2020",
+        title: "The best Vietnam islands to visit",
+      },
+      {
+        id: 3,
+        createdAt: "January 02, 2020",
+        title: "12 Things to do in Barcelona in September",
+      },
+      {
+        id: 4,
+        createdAt: "January 02, 2020",
+        title: "5 Things to do in Barcelona This Summer That Are Not in Your Guide Book",
+        image: "/images/mock/blog/posts/2.jpg",
+        short: "The plan in the beginning was always to leave after a year." +
+          " I’ve spent my share of summers here, as I tend to leave vacations " +
+          "for the winter. "
+      }
+    ])
+
+    return {
+      posts
     }
   }
 })

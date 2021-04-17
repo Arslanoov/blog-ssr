@@ -60,6 +60,10 @@ export default defineComponent({})
       right: 0;
 
       z-index: 0;
+
+      .respond(@sizes[tablet], {
+        width: 100%;
+      }, @without-screen);
     }
 
     &:last-of-type {
@@ -86,6 +90,9 @@ export default defineComponent({})
     width: 3.7rem;
     height: .1rem;
 
+    margin-top: 1rem;
+    margin-bottom: 1.6rem;
+
     background-color: @newsletter-line-background;
   }
 
@@ -95,6 +102,8 @@ export default defineComponent({})
   }
 
   &__description {
+    text-align: center;
+
     font-size: @newsletter-description-font-size;
     opacity: @newsletter-description-opacity;
   }
