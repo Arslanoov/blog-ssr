@@ -3,8 +3,9 @@
     .container.footer__container
       .footer__content
         Deals().footer__deals
-        .footer__columns
-        img(src="/images/logo.png", alt="").footer__logo
+        FooterColumns().footer__columns
+        nuxt-link(to="/").footer__link
+          img(src="/images/logo.png", alt="").footer__logo
         .footer__copyright 2020. All Rights Reserved.
 </template>
 
@@ -12,35 +13,43 @@
 import { defineComponent } from "@vue/composition-api"
 
 import Deals from "~/components/common/newsletter/Deals.vue"
+import FooterColumns from "~/layouts/modules/FooterColumns.vue"
 
 export default defineComponent({
   components: {
-    Deals
+    Deals,
+    FooterColumns
   }
 })
 </script>
 
 <style lang="less" scoped>
 .footer {
-  padding: 3rem 0;
+  padding: 8rem 0 3rem;
 
   color: @footer-color;
   background-color: @footer-background-color;
 
   &__content {
-    grid-column: col-start 3 / col-end 10;
+    grid-column: col-start 1 / col-end 12;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .respond(@sizes[tablet], {
-      grid-column: col-start 1 / col-end 12;
-    }, @without-screen);
   }
 
   &__deals {
     width: 100%;
+
+    margin-bottom: 5rem;
+  }
+
+  &__columns {
+    margin-bottom: 10rem;
+  }
+
+  &__logo {
+    margin-bottom: 3rem;
   }
 
   &__copyright {
