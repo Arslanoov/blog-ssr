@@ -424,7 +424,7 @@ export default defineComponent({
 .most-read-container {
   padding: 3rem 0;
 
-  background: url("/images/blog/most-read.jpg") no-repeat @most-read-posts-background;
+  background: url("/images/mock/blog/most-read.jpg") no-repeat @most-read-posts-background;
 
   &__posts {
     grid-column: col-start 1 / col-end 12;
