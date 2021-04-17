@@ -1,30 +1,105 @@
 <template lang="pug">
   .published-trending
-    h2.published-trending__title Published Trending
-    button.published-trending__see-more See More
+    .published-trending__info
+      h2.published-trending__title Published Trending
+      button.published-trending__see-more See More
+
+    PublishedPosts(:posts=`posts`)
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api"
 
-export default defineComponent({})
+import PublishedPosts from "~/components/common/post/published-posts/PublishedPosts.vue"
+
+export default defineComponent({
+  components: {
+    PublishedPosts
+  },
+  setup() {
+    const posts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "What If How We Respond to the Crisis is \n" +
+          "Part of the Crisis?",
+        short: "Today I’m going to share some of my top tips for booking with\n" +
+          "AirBnB. For those of you who may not yet be familiar",
+        image: "/images/mock/blog/published-posts/1.jpg",
+        author: {
+          url: "/images/mock/avatar/2.png",
+          name: "Afaty Poprita"
+        }
+      },
+      {
+        id: 2,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        short: "Today I’m going to share some of my top tips for booking with\n" +
+          "AirBnB. For those of you who may not yet be familiar",
+        image: "/images/mock/blog/published-posts/2.jpg",
+        author: {
+          url: "/images/mock/avatar/2.png",
+          name: "Afaty Poprita"
+        }
+      },
+      {
+        id: 3,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        short: "Today I’m going to share some of my top tips for booking with\n" +
+          "AirBnB. For those of you who may not yet be familiar",
+        image: "/images/mock/blog/published-posts/2.jpg",
+        author: {
+          url: "/images/mock/avatar/2.png",
+          name: "Afaty Poprita"
+        }
+      },
+      {
+        id: 4,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        short: "Today I’m going to share some of my top tips for booking with\n" +
+          "AirBnB. For those of you who may not yet be familiar",
+        image: "/images/mock/blog/published-posts/2.jpg",
+        author: {
+          url: "/images/mock/avatar/2.png",
+          name: "Afaty Poprita"
+        }
+      }
+    ])
+
+    return {
+      posts
+    }
+  }
+})
 </script>
 
 <style lang="less" scoped>
 .published-trending {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  padding: 1.6rem 0;
+    margin-bottom: 3.5rem;
+    padding: 1.6rem 0;
 
-  border-bottom: .1rem solid #eaeaea;
+    border-bottom: .1rem solid #eaeaea;
+  }
 
   &__title {
     color: #0b0f18;
     font-family: Dosis, sans-serif;
     font-size: 40px;
-    font-weight: 700;
   }
 
   /* TODO: Reset styles for button */

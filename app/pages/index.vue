@@ -30,9 +30,9 @@
           PostsRollupList(title="Posts rollup", :length=3)
           PostsRollupList(title="Top reviews posts", :length=2, inverted=true)
 
-      .container.section-container
-        PublishedTrending().section-container__left
-        .section-container__right.
+      .container.published-trending-container
+        PublishedTrending().published-trending-container__left
+        .published-trending-container__right.
           Right
 </template>
 
@@ -402,20 +402,33 @@ export default defineComponent({
 }
 
 .section-container {
-  column-gap: 3rem;
-
-  padding: 5rem 0;
-
   &__left {
     grid-column: col-start 1 / col-end 8;
   }
 
-  &__posts-list {
-    margin-bottom: 3.5rem;
+  &__right {
+    grid-column: col-start 9 / col-end 12;
+  }
+}
+
+.published-trending-container {
+  &__left {
+    grid-column: col-start 1 / col-end 10;
   }
 
   &__right {
-    grid-column: col-start 9 / col-end 12;
+    grid-column: col-start 11 / col-end 12;
+  }
+}
+
+.section-container,
+.published-trending-container {
+  column-gap: 3rem;
+
+  padding: 5rem 0;
+
+  &__posts-list {
+    margin-bottom: 3.5rem;
   }
 
   .respond(@sizes[tablet-land], {
