@@ -5,6 +5,13 @@
       button.published-trending__see-more See More
 
     PublishedPosts(:posts=`posts`)
+
+    .published-trending__pagination
+      .published-trending__page.published-trending__page_active 01
+      .published-trending__page 02
+      .published-trending__page 03
+      .published-trending__page 04
+      font-awesome-icon(:icon=`["fas", "arrow-right"]`).published-trending__next
 </template>
 
 <script lang="ts">
@@ -113,6 +120,28 @@ export default defineComponent({
     padding: 1.2rem;
 
     .pointer-on-hover();
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+
+    font-size: 1.6rem;
+  }
+
+  &__page,
+  &__next {
+    .pointer-on-hover();
+  }
+
+  &__page {
+    margin-right: 1rem;
+
+    &_active {
+      color: #e88484;
+
+      .without-pointer-on-hover();
+    }
   }
 }
 </style>
