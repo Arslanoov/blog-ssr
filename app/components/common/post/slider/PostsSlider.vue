@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from "@vue/composition-api"
+import { defineComponent } from "@vue/composition-api"
 
 export default defineComponent({
   props: {
@@ -72,19 +72,19 @@ export default defineComponent({
   }
 
   &__dot {
-    width: .7rem;
-    height: .7rem;
+    width: @dot-pagination-size;
+    height: @dot-pagination-size;
 
-    border-radius: 1rem;
+    border-radius: 1.5rem;
 
-    background-color: #ebd8d4;
+    background-color: @posts-slider-dot-background-color;
 
     &:not(:last-of-type) {
       margin-right: .4rem;
     }
 
     &_active {
-      background-color: #e68c8c;
+      background-color: @posts-slider-active-dot-background-color;
     }
   }
 
@@ -94,10 +94,10 @@ export default defineComponent({
   }
 
   &__arrow {
-    width: 1.9rem;
-    height: 1rem;
+    width: @arrow-width;
+    height: @arrow-height;
 
-    color: rgba(#0b0f18, .8);
+    color: @posts-slider-arrow-color;
 
     &-left {
       margin-right: 1rem;
@@ -128,7 +128,7 @@ export default defineComponent({
 
     border-radius: 1rem;
 
-    color: #ffffff;
+    color: @posts-slider-item-color;
 
     .respond(@sizes[tablet-land], {
       width: 27rem;
@@ -143,9 +143,9 @@ export default defineComponent({
   &__title {
     margin-bottom: .9rem;
 
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 2.5rem;
+    font-size: @posts-slider-font-size;
+    font-weight: @posts-slider-font-weight;
+    line-height: @posts-slider-line-height;
 
     &_only {
       margin-bottom: 0;
@@ -157,13 +157,13 @@ export default defineComponent({
   &__date {
     margin-bottom: 2rem;
 
-    font-size: 1.3rem;
+    font-size: @posts-slider-date-font-size;
 
     text-decoration: underline;
   }
 
   &__read-more {
-    font-size: 1.4rem;
+    font-size: @posts-slider-read-more-font-size;
   }
 }
 </style>
