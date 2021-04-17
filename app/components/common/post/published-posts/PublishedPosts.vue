@@ -64,11 +64,20 @@ export default defineComponent({
     align-items: flex-start;
 
     width: 50%;
+
+    .respond(@sizes[tablet-land], {
+      width: 100%;
+    }, @without-screen);
   }
 
   &__item {
     display: flex;
     justify-content: space-between;
+
+    .respond(@sizes[tablet], {
+      flex-direction: column;
+      justify-content: center;
+    }, @without-screen);
 
     .published-posts {
       &__date {
@@ -85,6 +94,10 @@ export default defineComponent({
     padding: 2.5rem 1.3rem 1rem 6rem;
 
     background-color: #faf8f8;
+
+    .respond(@sizes[tablet], {
+      padding: 2.5rem 2rem;
+    }, @without-screen);
   }
 
   &__category,
@@ -110,6 +123,14 @@ export default defineComponent({
   }
 
   &__image {
+    .respond(@sizes[tablet-land], {
+      max-width: 40%;
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      width: 100%;
+      max-width: 100%;
+    }, @without-screen);
   }
 
   &__title {

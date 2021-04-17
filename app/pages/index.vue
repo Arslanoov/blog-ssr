@@ -427,6 +427,10 @@ export default defineComponent({
 
   padding: 5rem 0;
 
+  .respond(@sizes[tablet-land], {
+    column-gap: 0;
+  }, @without-screen);
+
   &__posts-list {
     margin-bottom: 3.5rem;
   }
