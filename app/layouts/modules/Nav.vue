@@ -14,7 +14,7 @@
 
     ul.nav__list
       +navItem("Home", "/")
-      +navItem("Posts", "/posts")
+      +navItem("Posts", "/articles")
       +navItem("About us", "/about")
       +navItem("Contact", "/contact")
 </template>

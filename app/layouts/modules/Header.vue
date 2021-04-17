@@ -24,6 +24,8 @@ export default Vue.extend({
 .header {
   padding: 3.2rem 4.2rem 1.8rem;
 
+  border-bottom: .1rem solid #efefef;
+
   .respond(@sizes[desktop-sm], {
     padding: 2rem 2.4rem 1rem;
   }, @without-screen);

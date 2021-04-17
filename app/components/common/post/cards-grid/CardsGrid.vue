@@ -5,7 +5,7 @@
       span.cards-grid__pagination_slash /
       | 2 3
     .cards-grid__wrapper
-      .cards-grid__item(v-for="(post, index) in posts", key=`post.id`)
+      .cards-grid__item(v-for="(post, index) in posts", :key=`post.id`)
         img(v-if=`post.image`, :src=`post.image`, alt="").cards-grid__image
         .cards-grid__content(:class=`index === posts.length - 1 ? "cards-grid__content_resettled" : ""`)
           .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`) {{ post.title }}

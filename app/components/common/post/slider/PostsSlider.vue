@@ -50,8 +50,6 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .posts-slider {
-  margin: 5rem 0;
-
   &__pagination {
     display: flex;
     justify-content: space-between;
@@ -125,6 +123,9 @@ export default defineComponent({
     justify-content: flex-end;
 
     padding: 2.5rem;
+
+    background-repeat: no-repeat;
+    background-size: cover;
 
     border-radius: 1rem;
 
