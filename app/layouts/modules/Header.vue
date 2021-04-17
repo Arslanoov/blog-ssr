@@ -1,7 +1,8 @@
 <template lang="pug">
   header.header
     .container.header__container
-      img(src="/images/logo.png", alt="").header__logo
+      nuxt-link(to="/").header__logo
+       img(src="/images/logo.png", alt="").header__image
       Nav().header__nav
       RightNav().header__nav-right
 </template>
@@ -37,11 +38,6 @@ export default Vue.extend({
   &__logo {
     grid-column: start / span 1;
 
-    width: 100%;
-    min-width: 8rem;
-    max-width: 14rem;
-    object-fit: cover;
-
     .pointer-on-hover();
 
     .respond(@sizes[tablet], {
@@ -51,6 +47,13 @@ export default Vue.extend({
     .respond(@sizes[mobile], {
       grid-column: start / col-start 4;
     }, @without-screen);
+  }
+
+  &__image {
+    width: 100%;
+    min-width: 8rem;
+    max-width: 14rem;
+    object-fit: cover;
   }
 
   &__nav {
