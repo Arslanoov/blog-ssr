@@ -32,8 +32,9 @@
 
       .container.published-trending-container
         PublishedTrending().published-trending-container__left
-        .published-trending-container__right.
-          Right
+        .published-trending-container__right
+          PostsSlider(:posts=`sliderPosts`).published-trending-container__slider
+          PostsSlider(:posts=`secondSliderPosts`, detailed=true).published-trending-container__slider
 </template>
 
 <script lang="ts">
@@ -49,6 +50,7 @@ import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
 import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
+import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
 
 /* TODO: Separate into sections */
 export default defineComponent({
@@ -62,7 +64,8 @@ export default defineComponent({
     MostReadPosts,
     Newsletter,
     PostsList,
-    PostsRollupList
+    PostsRollupList,
+    PostsSlider
   },
   setup() {
     const post = reactive({
@@ -242,13 +245,37 @@ export default defineComponent({
       },
     ])
 
+    const sliderPosts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "The Most And Least Visited\n" +
+          " Countries In The World",
+        image: "/images/mock/blog/slider/1.png"
+      }
+    ])
+
+    const secondSliderPosts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        image: "/images/mock/blog/slider/1.png"
+      }
+    ])
+
     return {
       post,
       posts,
       categories,
       popularPosts,
       mostReadPosts,
-      postsList
+      postsList,
+      sliderPosts,
+      secondSliderPosts
     }
   }
 })
@@ -413,11 +440,11 @@ export default defineComponent({
 
 .published-trending-container {
   &__left {
-    grid-column: col-start 1 / col-end 10;
+    grid-column: col-start 1 / col-end 9;
   }
 
   &__right {
-    grid-column: col-start 11 / col-end 12;
+    grid-column: col-start 10 / col-end 12;
   }
 }
 
@@ -427,15 +454,17 @@ export default defineComponent({
 
   padding: 5rem 0;
 
-  .respond(@sizes[tablet-land], {
-    column-gap: 0;
-  }, @without-screen);
+  &__slider {
+    margin-bottom: 3rem;
+  }
 
   &__posts-list {
     margin-bottom: 3.5rem;
   }
 
   .respond(@sizes[tablet-land], {
+    column-gap: 0;
+
     &__left,
     &__right {
       grid-column: col-start 1 / col-end 12;
