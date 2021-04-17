@@ -100,13 +100,14 @@ export default defineComponent({
     margin-bottom: 3.5rem;
     padding: 1.6rem 0;
 
-    border-bottom: .1rem solid #eaeaea;
+    border-bottom: @published-trending-info-border-bottom;
   }
 
   &__title {
-    color: #0b0f18;
-    font-family: Dosis, sans-serif;
-    font-size: 4rem;
+    font-family: @published-trending-title-font-family;
+    font-size: @published-trending-title-font-size;
+
+    color: @published-trending-title-color;
   }
 
   /* TODO: Reset styles for button */
@@ -116,10 +117,10 @@ export default defineComponent({
     border: 0;
     outline: 0;
 
-    background-color: #0b0f18;
-    color: #fefefe;
-
     padding: 1.2rem;
+
+    color: @published-trending-see-more-color;
+    background-color: @published-trending-see-more-background-color;
 
     .pointer-on-hover();
   }
@@ -129,7 +130,7 @@ export default defineComponent({
     justify-content: center;
     align-items: center;
 
-    font-size: 1.6rem;
+    font-size: @published-trending-pagination-font-size;
   }
 
   &__page,
@@ -141,7 +142,7 @@ export default defineComponent({
     margin-right: 1rem;
 
     &_active {
-      color: #e88484;
+      color: @published-trending-pagination-active-color;
 
       .without-pointer-on-hover();
     }

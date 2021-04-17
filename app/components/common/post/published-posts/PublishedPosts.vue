@@ -55,7 +55,7 @@ export default defineComponent({
 
     padding: 3.2rem 2.8rem;
 
-    color: #ffffff;
+    color: @published-posts-main-item-color;
   }
 
   &__half {
@@ -81,7 +81,7 @@ export default defineComponent({
 
     .published-posts {
       &__date {
-        color: #0b0f18;
+        color: @published-posts-date-color;
       }
     }
   }
@@ -93,7 +93,7 @@ export default defineComponent({
 
     padding: 2.5rem 1.3rem 1rem 6rem;
 
-    background-color: #faf8f8;
+    background-color: @published-posts-content-background-color;
 
     .respond(@sizes[tablet], {
       padding: 2.5rem 2rem;
@@ -114,12 +114,12 @@ export default defineComponent({
   }
 
   &__category {
-    font-size: 14px;
-
     padding: .6rem 1.1rem;
 
-    background-color: #e68c8c;
-    color: #ffffff;
+    font-size: @published-posts-category-font-size;
+
+    background-color: @published-posts-category-background-color;
+    color: @published-posts-category-color;
   }
 
   &__image {
@@ -134,20 +134,20 @@ export default defineComponent({
   }
 
   &__title {
-    font-family: Dosis, sans-serif;
-    font-size: 28px;
+    font-family: @published-posts-title-font-family;
+    font-size: @published-posts-title-font-size;
   }
 
   &__date {
     text-decoration: underline;
 
-    font-size: 13px;
+    font-size: @published-posts-date-font-size;
   }
 
   &__short {
     margin-bottom: 4rem;
 
-    font-size: 14px;
+    font-size: @published-posts-short-font-size;
   }
 
   &__author {
@@ -163,7 +163,7 @@ export default defineComponent({
     }
 
     &-name {
-      font-size: 13px;
+      font-size: @published-posts-author-name-font-size;
     }
   }
 
@@ -176,9 +176,9 @@ export default defineComponent({
   }
 
   &__bookmark {
-    font-size: 20px;
+    font-size: @published-posts-bookmark-font-size;
 
-    color: #797979;
+    color: @published-posts-bookmark-color;
   }
 }
 </style>
