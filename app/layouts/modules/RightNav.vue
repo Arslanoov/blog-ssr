@@ -1,6 +1,6 @@
 <template lang="pug">
   nav.right-nav
-    nuxt-link(to="/auth").right-nav__auth
+    nuxt-link(to="/login").right-nav__auth
       .right-nav__auth-name Login
       img(src="/images/lock.png", alt="").right-nav__auth-icon
     .right-nav__line
