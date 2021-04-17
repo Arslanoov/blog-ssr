@@ -9,14 +9,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api";
 
 export default defineComponent({
-  props: {
-    posts: {
-      // TODO: Array<PostInterface>
-      type: Array,
-      required: true
+  setup() {
+    const posts = ref([
+      {
+        id: 1,
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/posts/3.jpg",
+        title: "It's now easier to get between\n" +
+          "the US and Cape Town "
+      },
+      {
+        id: 2,
+        createdAt: "January 02, 2020",
+        image: "/images/mock/blog/posts/3.jpg",
+        title: "The 12 Best Beaches in Southern\n" +
+          "Vietnam"
+      },
+    ])
+
+    return {
+      posts
     }
   }
 })

@@ -14,14 +14,40 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api";
 
 export default defineComponent({
-  props: {
-    posts: {
-      /* TODO: Array<PostInterface> */
-      type: Array,
-      required: true
+  setup() {
+    const posts = ref([
+      {
+        id: 1,
+        createdAt: "January 02, 2020",
+        title: "It's now easier to get between the US and Cape Town ",
+        image: "/images/mock/blog/posts/1.png"
+      },
+      {
+        id: 2,
+        createdAt: "January 02, 2020",
+        title: "The best Vietnam islands to visit",
+      },
+      {
+        id: 3,
+        createdAt: "January 02, 2020",
+        title: "12 Things to do in Barcelona in September",
+      },
+      {
+        id: 4,
+        createdAt: "January 02, 2020",
+        title: "5 Things to do in Barcelona This Summer That Are Not in Your Guide Book",
+        image: "/images/mock/blog/posts/2.jpg",
+        short: "The plan in the beginning was always to leave after a year." +
+          " I’ve spent my share of summers here, as I tend to leave vacations " +
+          "for the winter. "
+      }
+    ])
+
+    return {
+      posts
     }
   }
 })
