@@ -8,13 +8,19 @@
       .newsletter__line
       p.newsletter__description Get more travel inspiration, tips and exclusive offers sent straight to your inbox
       input(type="text", placeholder="Your email address").newsletter__input
-      button.newsletter__subscribe Subscribe
+      Button(content="Subscribe", padding="2rem 5rem")
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api"
 
-export default defineComponent({})
+import Button from "~/components/base/button/Button.vue"
+
+export default defineComponent({
+  components: {
+    Button
+  }
+})
 </script>
 
 <style lang="less" scoped>
@@ -121,19 +127,6 @@ export default defineComponent({})
     background-color: @newsletter-input-background;
 
     color: @newsletter-input-color;
-  }
-
-  &__subscribe {
-    padding: 2rem 5rem;
-
-    border: 0;
-
-    font-size: @newsletter-subscribe-font-size;
-
-    background-color: @newsletter-subscribe-button-background;
-    color: @newsletter-subscribe-button-color;
-
-    .pointer-on-hover();
   }
 }
 </style>
