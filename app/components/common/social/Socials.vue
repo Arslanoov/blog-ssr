@@ -1,7 +1,9 @@
 <template lang="pug">
   .socials
-    .socials__title Social
-    .socials__items
+    .socials__title(v-if=`title`) {{ title }}
+    .socials__items(:class=`{
+      "socials__items_bordered": withBorder
+    }`)
       font-awesome-icon(:icon=`["fab", "facebook"]`).socials__item
       font-awesome-icon(:icon=`["fab", "google"]`).socials__item
       font-awesome-icon(:icon=`["fab", "pinterest"]`).socials__item
@@ -12,7 +14,19 @@
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api"
 
-export default defineComponent({})
+export default defineComponent({
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    withBorder: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  }
+})
 </script>
 
 <style lang="less" scoped>
@@ -22,7 +36,6 @@ export default defineComponent({})
 
     font-size: @socials-title-font-size;
     font-weight: @socials-title-font-weight;
-    text-transform: uppercase;
 
     color: @socials-title-color;
   }
@@ -32,7 +45,9 @@ export default defineComponent({})
 
     padding: .8rem .7rem;
 
-    border-bottom: @socials-border-bottom;
+    &_bordered {
+      border-bottom: @socials-border-bottom;
+    }
   }
 
   &__item {
@@ -40,11 +55,11 @@ export default defineComponent({})
 
     color: @socials-item-color;
 
+    .pointer-on-hover();
+
     &:not(:last-of-type) {
       margin-right: 2rem;
     }
-
-    .pointer-on-hover();
   }
 }
 </style>

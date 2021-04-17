@@ -36,7 +36,7 @@
           PostsSlider(:posts=`sliderPosts`).published-trending-container__slider
           PostsSlider(:posts=`secondSliderPosts`, detailed=true).published-trending-container__slider
           FeaturedPosts()
-          Socials()
+          Socials(title="SOCIAL", with-border=true)
 </template>
 
 <script lang="ts">
