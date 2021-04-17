@@ -8,7 +8,7 @@
       .contact-container__form.form
         img(src="/images/contact/map.png", alt="").contact-container__map
         .form__overlay
-          .form__text Send me a message at:  youremail@gmail.com
+          .form__text Send me a message at: youremail@gmail.com
           .form__row
             input(type="text", placeholder="Name").form__input
             input(type="email", placeholder="Your email address").form__input
