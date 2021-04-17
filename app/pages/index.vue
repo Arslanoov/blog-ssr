@@ -115,16 +115,6 @@ export default defineComponent({
   }
 }
 
-.categories {
-  &__container {
-    margin: 5rem 0;
-
-    .respond(@sizes[tablet-land], {
-      margin: 0;
-    }, @without-screen);
-  }
-}
-
 .pagination__arrow {
   margin-top: 7.5rem;
 
@@ -174,25 +164,6 @@ export default defineComponent({
 
   .respond(@sizes[tablet-land], {
     transform: none;
-  }, @without-screen);
-}
-
-.categories {
-  grid-column: col-start 1 / col-end 12;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  &__item {
-    margin-bottom: 3rem;
-  }
-
-  .respond(@sizes[tablet], {
-    flex-direction: column;
-    justify-content: center;
   }, @without-screen);
 }
 

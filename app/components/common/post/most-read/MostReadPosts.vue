@@ -70,6 +70,8 @@ export default defineComponent({
 <style lang="less" scoped>
 .most-read {
   &__title {
+    margin-bottom: 3rem;
+
     text-align: center;
 
     color: @most-read-title-color;

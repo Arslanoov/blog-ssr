@@ -91,6 +91,8 @@ export default defineComponent({
   font-size: @popular-posts-base-font-size;
 
   &__title {
+    margin-bottom: 4rem;
+
     text-align: center;
 
     color: @popular-posts-title-color;

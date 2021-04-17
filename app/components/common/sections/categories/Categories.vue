@@ -48,5 +48,30 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.categories {
+  grid-column: col-start 1 / col-end 12;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  &__item {
+    margin-bottom: 3rem;
+  }
+
+  .respond(@sizes[tablet], {
+    flex-direction: column;
+    justify-content: center;
+  }, @without-screen);
+
+  &__container {
+    margin: 5rem 0;
+
+    .respond(@sizes[tablet-land], {
+      margin: 0;
+    }, @without-screen);
+  }
+}
 </style>
