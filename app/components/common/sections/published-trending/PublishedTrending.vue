@@ -2,7 +2,7 @@
   .published-trending
     .published-trending__info
       h2.published-trending__title Published Trending
-      button.published-trending__see-more See More
+      Button(content="See More", padding="1.2rem 1.3rem")
 
     PublishedPosts(:posts=`posts`)
 
@@ -17,10 +17,13 @@
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api"
 
+import Button from "~/components/base/button/Button.vue"
+
 import PublishedPosts from "~/components/common/post/published-posts/PublishedPosts.vue"
 
 export default defineComponent({
   components: {
+    Button,
     PublishedPosts
   },
   setup() {
@@ -108,21 +111,6 @@ export default defineComponent({
     font-size: @published-trending-title-font-size;
 
     color: @published-trending-title-color;
-  }
-
-  /* TODO: Reset styles for button */
-  &__see-more {
-    flex-shrink: 0;
-
-    border: 0;
-    outline: 0;
-
-    padding: 1.2rem;
-
-    color: @published-trending-see-more-color;
-    background-color: @published-trending-see-more-background-color;
-
-    .pointer-on-hover();
   }
 
   &__pagination {

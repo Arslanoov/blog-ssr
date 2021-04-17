@@ -3,13 +3,19 @@
     .deals__title Get travel deals and news right to your inbox
     .deals__form
       input(type="text", placeholder="Your email address").deals__input
-      button.deals__submit Submit
+      Button(content="Submit", padding="1.6rem 5.8rem")
 </template>
 
 <script lang="ts">
 import { defineComponent } from "@vue/composition-api"
 
-export default defineComponent({})
+import Button from "~/components/base/button/Button.vue"
+
+export default defineComponent({
+  components: {
+    Button
+  }
+})
 </script>
 
 <style lang="less" scoped>
@@ -66,20 +72,6 @@ export default defineComponent({})
     &::placeholder {
       color: @deals-input-color;
     }
-  }
-
-  &__submit {
-    padding: 1.6rem 5.8rem;
-
-    border: 0;
-    outline: 0;
-
-    font-size: @deals-submit-font-size;
-
-    color: @deals-submit-color;
-    background-color: @deals-submit-background-color;
-
-    .pointer-on-hover();
   }
 }
 </style>
