@@ -1,9 +1,9 @@
 <template lang="pug">
-  .container.register-container
-    .register-container__content
-      h2.register-container__title Login
-      .register-container__line
-      .register-container__form.form
+  .container.login-container
+    .login-container__content
+      h2.login-container__title Login
+      .login-container__line
+      .login-container__form.form
         .form__overlay
           .form__title Login
           input(type="text", placeholder="Username").form__input
@@ -30,7 +30,7 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
-.register-container {
+.login-container {
   margin: 5rem 0;
 
   &__content {
