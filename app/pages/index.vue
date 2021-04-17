@@ -36,6 +36,7 @@
           PostsSlider(:posts=`sliderPosts`).published-trending-container__slider
           PostsSlider(:posts=`secondSliderPosts`, detailed=true).published-trending-container__slider
           FeaturedPosts()
+          Socials()
 </template>
 
 <script lang="ts">
@@ -53,6 +54,7 @@ import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
 import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
+import Socials from "~/components/common/social/Socials.vue"
 
 /* TODO: Separate into sections */
 export default defineComponent({
@@ -68,7 +70,8 @@ export default defineComponent({
     Newsletter,
     PostsList,
     PostsRollupList,
-    PostsSlider
+    PostsSlider,
+    Socials
   },
   setup() {
     const post = reactive({

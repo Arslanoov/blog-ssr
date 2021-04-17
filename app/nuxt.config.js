@@ -44,6 +44,7 @@ export default {
     icons: {
       regular: ["faBookmark"],
       solid: ["faArrowLeft", "faArrowRight"],
+      brands: ["faFacebook", "faGoogle", "faPinterest", "faLinkedin", "faTwitter"],
     },
   },
 
