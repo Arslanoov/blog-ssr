@@ -61,7 +61,7 @@ export default defineComponent({
   }
 
   &__content {
-    color: #0b0f18;
+    color: @address-list-content-color;
 
     .respond(@sizes[tablet], {
       width: 100%;
@@ -89,18 +89,18 @@ export default defineComponent({
   }
 
   &__name {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: @address-list-font-size;
+    font-weight: @address-list-font-weight;
   }
 
   &__address {
-    font-size: 16px;
+    font-size: @address-list-address-font-size;
   }
 
   &__link {
-    font-size: 14px;
+    font-size: @address-list-link-font-size;
 
-    color: #e68c8c;
+    color: @address-list-link-color;
 
     text-decoration: underline;
   }

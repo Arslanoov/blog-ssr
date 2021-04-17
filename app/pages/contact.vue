@@ -72,15 +72,15 @@ export default defineComponent({
   }
 
   &__title {
-    font-family: Dosis, sans-serif;
-    font-size: 55px;
-    font-weight: 700;
+    font-family: @contact-title-font-family;
+    font-size: @contact-title-font-size;
+    font-weight: @contact-title-font-weight;
   }
 
   &__line {
     margin: 3rem 0;
 
-    background-color: #ececec;
+    background-color: @contact-line-background-color;
     width: 40rem;
     height: .1rem;
 
@@ -96,7 +96,7 @@ export default defineComponent({
 
     text-align: center;
 
-    font-size: 25px;
+    font-size: @contact-info-font-size;
   }
 
   &__form {
@@ -104,7 +104,7 @@ export default defineComponent({
 
     width: 100%;
 
-    background-color: #fafafa;
+    background-color: @contact-form-background-color;
 
     .respond(@sizes[tablet-land], {
       overflow-x: hidden;
@@ -154,9 +154,9 @@ export default defineComponent({
   &__text {
     margin-bottom: 3rem;
 
-    font-family: Dosis, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: @contact-text-font-family;
+    font-size: @contact-text-font-size;
+    font-weight: @contact-text-font-weight;
   }
 
   &__row {
@@ -182,7 +182,7 @@ export default defineComponent({
 
     padding: 1.8rem 1.5rem;
 
-    border: 1px solid #e6e6e6;
+    border: @contact-input-textarea-border;
     outline: 0;
 
     .respond(@sizes[tablet-land], {
@@ -199,7 +199,7 @@ export default defineComponent({
     }
 
     &::placeholder {
-      color: #503c57;
+      color: @contact-input-placeholder-color;
     }
   }
 }
