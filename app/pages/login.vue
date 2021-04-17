@@ -1,6 +1,7 @@
 <template lang="pug">
   .container.login-container
     .login-container__content
+      // TODO: Replace into layout
       h2.login-container__title Login
       .login-container__line
       .login-container__form.form
