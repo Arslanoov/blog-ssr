@@ -30,16 +30,20 @@
           PostsRollupList(title="Posts rollup", :length=3)
           PostsRollupList(title="Top reviews posts", :length=2, inverted=true)
 
-      .container.section-container
-        PublishedTrending().section-container__left
-        .section-container__right.
-          Right
+      .container.published-trending-container
+        PublishedTrending().published-trending-container__left
+        .published-trending-container__right
+          PostsSlider(:posts=`sliderPosts`).published-trending-container__slider
+          PostsSlider(:posts=`secondSliderPosts`, detailed=true).published-trending-container__slider
+          FeaturedPosts()
+          Socials()
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "@vue/composition-api"
 
 import PublishedTrending from "~/components/common/sections/published-trending/PublishedTrending.vue"
+import FeaturedPosts from "~/components/common/sections/featured-posts/FeaturedPosts.vue"
 
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
@@ -49,11 +53,14 @@ import MostReadPosts from "~/components/common/post/most-read/MostReadPosts.vue"
 import Newsletter from "~/components/common/newsletter/Newsletter.vue"
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
+import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
+import Socials from "~/components/common/social/Socials.vue"
 
 /* TODO: Separate into sections */
 export default defineComponent({
   components: {
     PublishedTrending,
+    FeaturedPosts,
 
     MainCard,
     CardsGrid,
@@ -62,7 +69,9 @@ export default defineComponent({
     MostReadPosts,
     Newsletter,
     PostsList,
-    PostsRollupList
+    PostsRollupList,
+    PostsSlider,
+    Socials
   },
   setup() {
     const post = reactive({
@@ -242,13 +251,37 @@ export default defineComponent({
       },
     ])
 
+    const sliderPosts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "The Most And Least Visited\n" +
+          " Countries In The World",
+        image: "/images/mock/blog/slider/1.png"
+      }
+    ])
+
+    const secondSliderPosts = ref([
+      {
+        id: 1,
+        category: "Travel",
+        createdAt: "January 02, 2020",
+        title: "Visual Elements — Basic Things\n" +
+          "That Can Be Seen",
+        image: "/images/mock/blog/slider/1.png"
+      }
+    ])
+
     return {
       post,
       posts,
       categories,
       popularPosts,
       mostReadPosts,
-      postsList
+      postsList,
+      sliderPosts,
+      secondSliderPosts
     }
   }
 })
@@ -394,7 +427,7 @@ export default defineComponent({
 .most-read-container {
   padding: 3rem 0;
 
-  background: url("/images/blog/most-read.jpg") no-repeat @most-read-posts-background;
+  background: url("/images/mock/blog/most-read.jpg") no-repeat @most-read-posts-background;
 
   &__posts {
     grid-column: col-start 1 / col-end 12;
@@ -402,23 +435,42 @@ export default defineComponent({
 }
 
 .section-container {
+  &__left {
+    grid-column: col-start 1 / col-end 8;
+  }
+
+  &__right {
+    grid-column: col-start 9 / col-end 12;
+  }
+}
+
+.published-trending-container {
+  &__left {
+    grid-column: col-start 1 / col-end 9;
+  }
+
+  &__right {
+    grid-column: col-start 10 / col-end 12;
+  }
+}
+
+.section-container,
+.published-trending-container {
   column-gap: 3rem;
 
   padding: 5rem 0;
 
-  &__left {
-    grid-column: col-start 1 / col-end 8;
+  &__slider {
+    margin-bottom: 3rem;
   }
 
   &__posts-list {
     margin-bottom: 3.5rem;
   }
 
-  &__right {
-    grid-column: col-start 9 / col-end 12;
-  }
-
   .respond(@sizes[tablet-land], {
+    column-gap: 0;
+
     &__left,
     &__right {
       grid-column: col-start 1 / col-end 12;
