@@ -58,10 +58,10 @@ export default defineComponent({
   &__title {
     margin-bottom: 2.3rem;
 
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: @featured-posts-title-font-size;
+    font-weight: @featured-posts-title-font-weight;
 
-    color: #0b0f18;
+    color: @featured-posts-title-color;
   }
 
   &__items {

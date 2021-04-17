@@ -34,7 +34,7 @@ export default defineComponent({
   }, @without-screen);
 
   &__content {
-    color: #0b0f18;
+    color: @featured-post-content-color;
   }
 
   &__image,
@@ -59,16 +59,15 @@ export default defineComponent({
   &__title {
     margin-bottom: 1rem;
 
-    font-size: 1.6rem;
-    font-weight: 500;
+    font-size: @featured-post-title-font-size;
+    font-weight: @featured-post-title-font-weight;
   }
 
   &__date {
-    font-size: 1.3rem;
-
+    font-size: @featured-post-date-font-size;
     text-decoration: underline;
 
-    opacity: .8;
+    opacity: @featured-post-date-opacity;
   }
 }
 </style>
