@@ -49,6 +49,8 @@
               Tags(:tags=`post.tags`).single-container__tags
               .single-container__comments-count {{ post.commentsCount }} Comments
 
+          TimelinePosts(:prev-post=`prevPost`, :next-post=`nextPost`)
+
         .single-container__right
           Sidebar(with-categories=true)
 </template>
@@ -60,13 +62,15 @@ import Socials from "~/components/base/social/Socials.vue"
 
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Tags from "~/components/common/tag/Tags.vue"
+import TimelinePosts from "~/components/common/post/timeline/TimelinePosts.vue"
 
 export default defineComponent({
   components: {
     Sidebar,
 
     Socials,
-    Tags
+    Tags,
+    TimelinePosts
   },
   setup() {
     const post = reactive({
@@ -138,10 +142,26 @@ export default defineComponent({
       }
     ])
 
+    const prevPost = reactive({
+      id: 1,
+      createdAt: "January 02, 2020",
+      title: "The Most And Least Visited Countries In The World\n" +
+        "There are 196 countries in the world"
+    })
+
+    const nextPost = reactive({
+      id: 2,
+      createdAt: "January 02, 2020",
+      title: "The Most And Least Visited Countries In The World\n" +
+        "There are 196 countries in the world"
+    })
+
     return {
       post,
       socials,
-      bottomSocials
+      bottomSocials,
+      prevPost,
+      nextPost
     }
   }
 })
