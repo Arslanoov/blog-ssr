@@ -51,6 +51,8 @@
 
           TimelinePosts(:prev-post=`prevPost`, :next-post=`nextPost`)
 
+          CommentsList(:items=`comments`)
+
         .single-container__right
           Sidebar(with-categories=true)
 </template>
@@ -63,6 +65,7 @@ import Socials from "~/components/base/social/Socials.vue"
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Tags from "~/components/common/tag/Tags.vue"
 import TimelinePosts from "~/components/common/post/timeline/TimelinePosts.vue"
+import CommentsList from "~/components/common/comment/list/CommentsList.vue"
 
 export default defineComponent({
   components: {
@@ -70,7 +73,8 @@ export default defineComponent({
 
     Socials,
     Tags,
-    TimelinePosts
+    TimelinePosts,
+    CommentsList
   },
   setup() {
     const post = reactive({
@@ -156,12 +160,45 @@ export default defineComponent({
         "There are 196 countries in the world"
     })
 
+    const comments = ref([
+      {
+        id: 1,
+        createdAt: "20 Jan, 2020",
+        author: {
+          url: "/images/mock/comment/1.jpg",
+          name: "Tamim anj"
+        },
+        content: "Before we begin to build your home, we want to get to know you. Through our design \n" +
+          "process, we will be asking",
+        repliedTo: {
+          id: 2,
+          createdAt: "8 Jan, 2020",
+          author: {
+            url: "/images/mock/comment/2.jpg",
+            name: "Mahfuz Riad"
+          },
+          content: "Can you imagine what we will be downloading in another twenty years?",
+        }
+      },
+      {
+        id: 3,
+        createdAt: "20 Jan, 2020",
+        author: {
+          url: "/images/mock/comment/1.jpg",
+          name: "Tamim anj"
+        },
+        content: "Before we begin to build your home, we want to get to know you. Through our design \n" +
+          "process, we will be asking "
+      }
+    ])
+
     return {
       post,
       socials,
       bottomSocials,
       prevPost,
-      nextPost
+      nextPost,
+      comments
     }
   }
 })
