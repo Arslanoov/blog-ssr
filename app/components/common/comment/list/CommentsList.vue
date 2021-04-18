@@ -27,7 +27,7 @@ export default defineComponent({
 <style lang="less" scoped>
 .comments-list {
   &__title {
-    margin-bottom: 3rem;
+    margin: 3rem 0;
 
     font-size: @comments-list-font-size;
     font-weight: @comments-list-font-weight;

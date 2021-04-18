@@ -52,6 +52,7 @@
           TimelinePosts(:prev-post=`prevPost`, :next-post=`nextPost`)
 
           CommentsList(:items=`comments`)
+          CommentSendForm()
 
         .single-container__right
           Sidebar(with-categories=true)
@@ -66,6 +67,7 @@ import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Tags from "~/components/common/tag/Tags.vue"
 import TimelinePosts from "~/components/common/post/timeline/TimelinePosts.vue"
 import CommentsList from "~/components/common/comment/list/CommentsList.vue"
+import CommentSendForm from "~/components/common/comment/form/CommentSendForm.vue"
 
 export default defineComponent({
   components: {
@@ -74,7 +76,8 @@ export default defineComponent({
     Socials,
     Tags,
     TimelinePosts,
-    CommentsList
+    CommentsList,
+    CommentSendForm
   },
   setup() {
     const post = reactive({
@@ -375,11 +378,11 @@ export default defineComponent({
     &-icon {
       margin-right: 1.5rem;
 
-      font-size: 1.8rem;
+      font-size: @single-article-share-icon-font-size;
     }
 
     &-text {
-      font-size: 1.8rem;
+      font-size: @single-article-share-text-font-size;
     }
   }
 
@@ -388,7 +391,7 @@ export default defineComponent({
   }
 
   &__comments-count {
-    font-size: 1.4rem;
+    font-size: @single-article-comments-count-font-size;
   }
 }
 
@@ -412,7 +415,9 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
 
-    flex-wrap: wrap;
+    .respond(@sizes[desktop-md], {
+      flex-wrap: wrap;
+    }, @without-screen);
   }
 
   &__group {
@@ -438,16 +443,7 @@ export default defineComponent({
   }
 
   &__image {
-    max-width: 100%;
-
-    &:first-of-type,
-    &:nth-of-type(2) {
-      margin-bottom: 1rem;
-    }
-
     &:first-of-type {
-      flex-basis: 30%;
-
       margin-right: 1.8rem;
 
       .respond(@sizes[tablet-land], {
@@ -456,7 +452,17 @@ export default defineComponent({
     }
 
     &:nth-of-type(2) {
-      flex-basis: 60%;
+      max-width: 70%;
+    }
+
+    &:first-of-type,
+    &:nth-of-type(2) {
+      margin-bottom: 1rem;
+
+      .respond(@sizes[mobile], {
+        width: 100%;
+        max-width: 100%;
+      }, @without-screen);
     }
 
     &_full {
