@@ -4,11 +4,8 @@
     .socials__items(:class=`{
       "socials__items_bordered": withBorder
     }`)
-      font-awesome-icon(:icon=`["fab", "facebook"]`).socials__item
-      font-awesome-icon(:icon=`["fab", "google"]`).socials__item
-      font-awesome-icon(:icon=`["fab", "pinterest"]`).socials__item
-      font-awesome-icon(:icon=`["fab", "linkedin"]`).socials__item
-      font-awesome-icon(:icon=`["fab", "twitter"]`).socials__item
+      nuxt-link(v-for=`item in items`, :to=`item.url`, :key=`item.url`).socials__item
+        font-awesome-icon(:icon=`["fab", item.icon]`)
 </template>
 
 <script lang="ts">
@@ -24,6 +21,10 @@ export default defineComponent({
       type: Boolean,
       required: false,
       default: false
+    },
+    items: {
+      type: Array,
+      required: true
     }
   }
 })
@@ -32,7 +33,7 @@ export default defineComponent({
 <style lang="less" scoped>
 .socials {
   &__title {
-    margin: 1.5rem 0;
+    margin-bottom: 1.5rem;
 
     font-size: @socials-title-font-size;
     font-weight: @socials-title-font-weight;

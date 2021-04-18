@@ -1,29 +1,40 @@
 <template lang="pug">
   .sidebar
     PostsSlider(:posts=`sliderPosts`).sidebar__slider
+    Categories(v-if=`withCategories`)
     PostsSlider(:posts=`secondSliderPosts`, detailed=true).sidebar__slider
     FeaturedPosts()
-    Socials(title="SOCIAL", with-border=true)
+    Socials(title="SOCIAL", :items=`socials`, with-border=true)
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "@vue/composition-api";
+
+import Socials from "~/components/base/social/Socials.vue"
 
 import FeaturedPosts from "~/components/common/sections/featured-posts/FeaturedPosts.vue"
 
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
 import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
-import Socials from "~/components/common/social/Socials.vue"
 
 export default defineComponent({
+  props: {
+    withCategories: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   components: {
+    Socials,
+
     FeaturedPosts,
+    Categories: () => import("~/components/common/category/List.vue"),
 
     PostsList,
     PostsRollupList,
-    PostsSlider,
-    Socials
+    PostsSlider
   },
   setup() {
     const sliderPosts = ref([
@@ -48,9 +59,33 @@ export default defineComponent({
       }
     ])
 
+    const socials = ref([
+      {
+        icon: "facebook",
+        url: "https://facebook.com"
+      },
+      {
+        icon: "google",
+        url: "https://google.com"
+      },
+      {
+        icon: "pinterest",
+        url: "https://pinterest.com"
+      },
+      {
+        icon: "linkedin",
+        url: "https://ru.linkedin.com"
+      },
+      {
+        icon: "twitter",
+        url: "https://twitter.com"
+      }
+    ])
+
     return {
       sliderPosts,
-      secondSliderPosts
+      secondSliderPosts,
+      socials
     }
   }
 })

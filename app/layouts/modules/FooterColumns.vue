@@ -26,17 +26,45 @@
     .footer-columns__item
       .footer-columns__name Connect with us
       .footer-columns__value
-        Socials(title="")
+        Socials(title="", :items=`socials`)
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, ref } from "@vue/composition-api";
 
-import Socials from "~/components/common/social/Socials.vue"
+import Socials from "~/components/base/social/Socials.vue"
 
 export default defineComponent({
   components: {
     Socials
+  },
+  setup() {
+    const socials = ref([
+      {
+        icon: "facebook",
+        url: "https://facebook.com"
+      },
+      {
+        icon: "google",
+        url: "https://google.com"
+      },
+      {
+        icon: "pinterest",
+        url: "https://pinterest.com"
+      },
+      {
+        icon: "linkedin",
+        url: "https://ru.linkedin.com"
+      },
+      {
+        icon: "twitter",
+        url: "https://twitter.com"
+      }
+    ])
+
+    return {
+      socials
+    }
   }
 })
 </script>
