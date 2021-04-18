@@ -10,7 +10,7 @@
           .single-container__author-name {{ post.author.name }}
         .single-container__short {{ post.short }}
       .single-container__bottom
-        .single-container__socials Socials
+        Socials(title="", :items=`socials`).single-container__socials
         font-awesome-icon(:icon=`["far", "bookmark"]`).single-container__bookmark
       img(:src=`post.image`, alt="").single-container__image
       .container.single-container__row
@@ -20,13 +20,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from "@vue/composition-api"
+import { defineComponent, reactive, ref } from "@vue/composition-api"
 
-import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue";
+import Socials from "~/components/base/social/Socials.vue"
+
+import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 
 export default defineComponent({
   components: {
-    Sidebar
+    Sidebar,
+
+    Socials
   },
   setup() {
     const post = reactive({
@@ -45,8 +49,32 @@ export default defineComponent({
       content: ""
     })
 
+    const socials = ref([
+      {
+        icon: "pinterest",
+        url: "https://pinterest.com"
+      },
+      {
+        icon: "facebook",
+        url: "https://facebook.com"
+      },
+      {
+        icon: "twitter",
+        url: "https://twitter.com"
+      },
+      {
+        icon: "linkedin",
+        url: "https://ru.linkedin.com"
+      },
+      {
+        icon: "instagram",
+        url: "https://instagram.com"
+      }
+    ])
+
     return {
-      post
+      post,
+      socials
     }
   }
 })
@@ -54,6 +82,8 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .single-container {
+  margin: 5rem 0;
+
   &__content {
     grid-column: col-start 1 / col-end 12;
 
@@ -70,6 +100,8 @@ export default defineComponent({
     align-items: center;
 
     width: 60%;
+
+    text-align: center;
   }
 
   &__category {
@@ -79,8 +111,6 @@ export default defineComponent({
   }
 
   &__title {
-    text-align: center;
-
     font-size: 28px;
     font-weight: 700;
   }
@@ -122,6 +152,8 @@ export default defineComponent({
     align-items: center;
 
     width: 100%;
+
+    margin-bottom: 3rem;
   }
 
   &__socials {
@@ -133,8 +165,6 @@ export default defineComponent({
 
     color: #797979;
   }
-
-
 
   &__left {
     grid-column: col-start 1 / col-end 9;
