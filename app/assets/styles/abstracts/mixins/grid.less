@@ -4,3 +4,7 @@
     repeat(@columns-count, e(@column-start-name) 1fr e(@column-end-name))
     [end] minmax(@padding, 1fr);
 }
+
+.grid-columns-without-padding() {
+  grid-template-columns: repeat(@columns-count, e(@column-start-name) 1fr e(@column-end-name));
+}

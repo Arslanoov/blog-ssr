@@ -24,3 +24,10 @@
     .grid-columns(calc(50vw - 590px));
   });
 }
+
+.fluid-container {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+
+  .grid-columns-without-padding();
+}
