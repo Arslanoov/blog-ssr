@@ -4,7 +4,7 @@
     .socials__items(:class=`{
       "socials__items_bordered": withBorder
     }`)
-      nuxt-link(v-for=`item in items`, :to=`item.url`, :key=`item.url`).socials__item
+      a(v-for=`item in items`, :href=`item.url`, :key=`item.url`, target="_blank").socials__item
         font-awesome-icon(:icon=`["fab", item.icon]`)
 </template>
 

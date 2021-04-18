@@ -13,7 +13,7 @@
         Socials(title="", :items=`socials`).single-container__socials
         font-awesome-icon(:icon=`["far", "bookmark"]`).single-container__bookmark
       img(:src=`post.image`, alt="").single-container__image
-      .container.single-container__row
+      .fluid-container.single-container__row
         .single-container__left How Long Will Your Trip Be?
         .single-container__right
           Sidebar(with-categories=true)
@@ -105,17 +105,28 @@ export default defineComponent({
   }
 
   &__category {
+    margin-bottom: 2rem;
     padding: .4rem 1.6rem;
 
+    font-size: 14px;
+
+    color: #ffffff;
     background-color: #e68c8c;
+
+    .pointer-on-hover();
   }
 
   &__title {
+    margin-bottom: 1rem;
+
+    font-family: Dosis, sans-serif;
     font-size: 28px;
     font-weight: 700;
   }
 
   &__date {
+    margin-bottom: 2rem;
+
     font-size: 13px;
     text-decoration: underline;
   }
@@ -124,6 +135,10 @@ export default defineComponent({
   &__author {
     display: flex;
     align-items: center;
+
+    margin-bottom: 2.5rem;
+
+    .pointer-on-hover();
 
     &-image {
       width: 3.8rem;
@@ -138,12 +153,16 @@ export default defineComponent({
   }
 
   &__short {
+    margin-bottom: 3rem;
+
     font-size: 20px;
     opacity: 0.8;
   }
 
   &__image {
     width: 100%;
+
+    margin-bottom: 4.5rem;
   }
 
   &__bottom {
