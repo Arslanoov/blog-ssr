@@ -415,7 +415,9 @@ export default defineComponent({
     justify-content: space-between;
     align-items: center;
 
-    flex-wrap: wrap;
+    .respond(@sizes[desktop-md], {
+      flex-wrap: wrap;
+    }, @without-screen);
   }
 
   &__group {
@@ -441,16 +443,7 @@ export default defineComponent({
   }
 
   &__image {
-    max-width: 100%;
-
-    &:first-of-type,
-    &:nth-of-type(2) {
-      margin-bottom: 1rem;
-    }
-
     &:first-of-type {
-      flex-basis: 30%;
-
       margin-right: 1.8rem;
 
       .respond(@sizes[tablet-land], {
@@ -459,7 +452,17 @@ export default defineComponent({
     }
 
     &:nth-of-type(2) {
-      flex-basis: 60%;
+      max-width: 70%;
+    }
+
+    &:first-of-type,
+    &:nth-of-type(2) {
+      margin-bottom: 1rem;
+
+      .respond(@sizes[mobile], {
+        width: 100%;
+        max-width: 100%;
+      }, @without-screen);
     }
 
     &_full {
