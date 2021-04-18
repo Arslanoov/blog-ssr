@@ -52,6 +52,7 @@
           TimelinePosts(:prev-post=`prevPost`, :next-post=`nextPost`)
 
           CommentsList(:items=`comments`)
+          CommentSendForm()
 
         .single-container__right
           Sidebar(with-categories=true)
@@ -66,6 +67,7 @@ import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Tags from "~/components/common/tag/Tags.vue"
 import TimelinePosts from "~/components/common/post/timeline/TimelinePosts.vue"
 import CommentsList from "~/components/common/comment/list/CommentsList.vue"
+import CommentSendForm from "~/components/common/comment/form/CommentSendForm.vue"
 
 export default defineComponent({
   components: {
@@ -74,7 +76,8 @@ export default defineComponent({
     Socials,
     Tags,
     TimelinePosts,
-    CommentsList
+    CommentsList,
+    CommentSendForm
   },
   setup() {
     const post = reactive({
@@ -375,11 +378,11 @@ export default defineComponent({
     &-icon {
       margin-right: 1.5rem;
 
-      font-size: 1.8rem;
+      font-size: @single-article-share-icon-font-size;
     }
 
     &-text {
-      font-size: 1.8rem;
+      font-size: @single-article-share-text-font-size;
     }
   }
 
@@ -388,7 +391,7 @@ export default defineComponent({
   }
 
   &__comments-count {
-    font-size: 1.4rem;
+    font-size: @single-article-comments-count-font-size;
   }
 }
 

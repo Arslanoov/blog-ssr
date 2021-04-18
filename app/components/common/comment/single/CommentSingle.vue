@@ -19,7 +19,8 @@ import { CommentInterface } from "~/interfaces/comment"
 
 export default defineComponent({
   components: {
-    repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue")
+    /* TODO: Fix */
+    repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any
   },
   props: {
     item: {
