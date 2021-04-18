@@ -9,10 +9,12 @@
           img(:src=`post.author.url`, alt="").single-container__author-image
           .single-container__author-name {{ post.author.name }}
         .single-container__short {{ post.short }}
-      .single-container__bottom
+      .single-container__preview-bottom
         Socials(title="", :items=`socials`).single-container__socials
         font-awesome-icon(:icon=`["far", "bookmark"]`).single-container__bookmark
+
       img(:src=`post.image`, alt="").single-container__image
+
       .fluid-container.single-container__row
         .single-container__left
           // TODO: Change .content to post.content
@@ -35,6 +37,17 @@
                 “The mystical world of snow invites guests to experience the magic of winter,” the Ice Village staff told Lonely Planet. Winter magic is also tailor-made for kids, with a whole set of activities ranging from playing ice instruments to ice sculpturing classes.
             p.content__text.
               The Ice Village is connected to the Hoshino Resort Tomamu, and it’s open both for day trips and longer stays for the resort’s guests— starting from the pre-opening in December and the official opening in January, going on until March 2019. The entrance fee is 500 yen, or US$5. The Ice Hotel will be in operation from 19 – 28 January of 2019.
+          .single-container__left-bottom
+            .single-container__group
+              .single-container__share
+                font-awesome-icon(:icon=`["fas", "share-alt"]`).single-container__share-icon
+                span.single-container__share-text Share The Post
+              .single-container__socials
+                Socials(title="", :items=`bottomSocials`).single-container__socials
+
+            .single-container__group
+              Tags(:tags=`post.tags`).single-container__tags
+              .single-container__comments-count {{ post.commentsCount }} Comments
 
         .single-container__right
           Sidebar(with-categories=true)
@@ -46,12 +59,14 @@ import { defineComponent, reactive, ref } from "@vue/composition-api"
 import Socials from "~/components/base/social/Socials.vue"
 
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
+import Tags from "~/components/common/tag/Tags.vue"
 
 export default defineComponent({
   components: {
     Sidebar,
 
-    Socials
+    Socials,
+    Tags
   },
   setup() {
     const post = reactive({
@@ -67,7 +82,18 @@ export default defineComponent({
       short: "There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go.here are 196 \n" +
         "countries in the world",
       // TODO: Change content to post.content
-      content: ""
+      content: "",
+      commentsCount: 3,
+      tags: [
+        {
+          id: 1,
+          name: "Travel"
+        },
+        {
+          id: 2,
+          name: "Trip"
+        }
+      ]
     })
 
     const socials = ref([
@@ -93,9 +119,29 @@ export default defineComponent({
       }
     ])
 
+    const bottomSocials = ref([
+      {
+        icon: "facebook",
+        url: "https://facebook.com"
+      },
+      {
+        icon: "linkedin",
+        url: "https://ru.linkedin.com"
+      },
+      {
+        icon: "google",
+        url: "https://google.com"
+      },
+      {
+        icon: "twitter",
+        url: "https://twitter.com"
+      }
+    ])
+
     return {
       post,
-      socials
+      socials,
+      bottomSocials
     }
   }
 })
@@ -123,6 +169,16 @@ export default defineComponent({
     width: 60%;
 
     text-align: center;
+  }
+
+  &__preview-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom: 1rem;
   }
 
   &__category {
@@ -200,6 +256,8 @@ export default defineComponent({
     font-size: @single-article-bookmark-font-size;
 
     color: @single-article-category-bookmark-color;
+
+    .pointer-on-hover();
   }
 
   &__row {
@@ -219,6 +277,61 @@ export default defineComponent({
     .respond(@sizes[tablet-land], {
       grid-column: col-start 1 / col-end 12;
     }, @without-screen);
+  }
+
+  &__left-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .respond(@sizes[tablet-land], {
+      margin: 3rem 0;
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      flex-direction: column;
+      align-items: flex-start;
+    }, @without-screen);
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+
+    .respond(@sizes[tablet], {
+      flex-wrap: wrap;
+    }, @without-screen);
+
+    .respond(@sizes[tablet], {
+      margin-bottom: 2rem;
+    }, @without-screen);
+  }
+
+  &__share {
+    display: flex;
+    align-items: center;
+
+    margin-right: 3.5rem;
+
+    .pointer-on-hover();
+
+    &-icon {
+      margin-right: 1.5rem;
+
+      font-size: 1.8rem;
+    }
+
+    &-text {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__tags {
+    margin-right: 2rem;
+  }
+
+  &__comments-count {
+    font-size: 1.4rem;
   }
 }
 

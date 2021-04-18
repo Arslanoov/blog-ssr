@@ -43,7 +43,7 @@ export default {
   fontawesome: {
     icons: {
       regular: ["faBookmark"],
-      solid: ["faArrowLeft", "faArrowRight"],
+      solid: ["faArrowLeft", "faArrowRight", "faShareAlt"],
       brands: ["faFacebook", "faGoogle", "faPinterest", "faLinkedin", "faTwitter", "faInstagram"],
     },
   },
