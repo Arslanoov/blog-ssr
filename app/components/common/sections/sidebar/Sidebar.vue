@@ -1,6 +1,7 @@
 <template lang="pug">
   .sidebar
     PostsSlider(:posts=`sliderPosts`).sidebar__slider
+    Categories(v-if=`withCategories`)
     PostsSlider(:posts=`secondSliderPosts`, detailed=true).sidebar__slider
     FeaturedPosts()
     Socials(title="SOCIAL", with-border=true)
@@ -17,8 +18,16 @@ import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
 import Socials from "~/components/common/social/Socials.vue"
 
 export default defineComponent({
+  props: {
+    withCategories: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   components: {
     FeaturedPosts,
+    Categories: () => import("~/components/common/category/List.vue"),
 
     PostsList,
     PostsRollupList,
