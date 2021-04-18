@@ -14,7 +14,28 @@
         font-awesome-icon(:icon=`["far", "bookmark"]`).single-container__bookmark
       img(:src=`post.image`, alt="").single-container__image
       .fluid-container.single-container__row
-        .single-container__left How Long Will Your Trip Be?
+        .single-container__left
+          // TODO: Change .content to post.content
+          .content
+            .content__title How Long Will Your Trip Be?
+            p.content__text.
+              Although it’s not impossible to backpack across Europe cheaply (You can – that’s why you’re reading this!), the dollar stretches much less there than in Southeast Asia. For those with less money and time, going somewhere a bit cheaper pays.
+            .content__row
+              img(src="/images/mock/blog/single/2.jpg", alt="").content__image
+              img(src="/images/mock/blog/single/3.jpg", alt="").content__image
+            p.content__text.
+              There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go. Where you want to go first is widely dependent on your personal preferences. Once a year, go Some place you’ve Never been before.
+            p.content__text.
+              WeChat mini programs are an essential part of the Chinese user experience,” Tencent WeChat team said. “Our partnership with Udacity is offering a great way of teaching engineers around the world how to enter the Chinese market
+            img(src="/images/mock/blog/single/4.jpg", alt="").content__image.content__image_full
+            p.content__text You can wander through the rooms of the Ice Hotel, where everything (except for bedding and covers) is made of ice and then sip a cocktail from an ice glass at the Ice Bar. The bookshelves at the Ice Café are, you guessed it,
+            .content__group
+              .content__line
+              .content__quote.
+                “The mystical world of snow invites guests to experience the magic of winter,” the Ice Village staff told Lonely Planet. Winter magic is also tailor-made for kids, with a whole set of activities ranging from playing ice instruments to ice sculpturing classes.
+            p.content__text.
+              The Ice Village is connected to the Hoshino Resort Tomamu, and it’s open both for day trips and longer stays for the resort’s guests— starting from the pre-opening in December and the official opening in January, going on until March 2019. The entrance fee is 500 yen, or US$5. The Ice Hotel will be in operation from 19 – 28 January of 2019.
+
         .single-container__right
           Sidebar(with-categories=true)
 </template>
@@ -91,7 +112,7 @@ export default defineComponent({
     flex-direction: column;
     align-items: center;
 
-    color: #0b0f18;
+    color: @single-article-color;
   }
 
   &__preview {
@@ -108,10 +129,10 @@ export default defineComponent({
     margin-bottom: 2rem;
     padding: .4rem 1.6rem;
 
-    font-size: 14px;
+    font-size: @single-article-category-font-size;
 
-    color: #ffffff;
-    background-color: #e68c8c;
+    color: @single-article-category-color;
+    background-color: @single-article-category-background-color;
 
     .pointer-on-hover();
   }
@@ -119,15 +140,15 @@ export default defineComponent({
   &__title {
     margin-bottom: 1rem;
 
-    font-family: Dosis, sans-serif;
-    font-size: 28px;
-    font-weight: 700;
+    font-family: @single-article-title-font-family;
+    font-size: @single-article-title-font-size;
+    font-weight: @single-article-title-font-weight;
   }
 
   &__date {
     margin-bottom: 2rem;
 
-    font-size: 13px;
+    font-size: @single-article-date-font-size;
     text-decoration: underline;
   }
 
@@ -148,15 +169,15 @@ export default defineComponent({
     }
 
     &-name {
-      font-size: 13px;
+      font-size: @single-article-name-font-size;
     }
   }
 
   &__short {
     margin-bottom: 3rem;
 
-    font-size: 20px;
-    opacity: 0.8;
+    font-size: @single-article-short-font-size;
+    opacity: @single-article-short-opacity;
   }
 
   &__image {
@@ -175,14 +196,14 @@ export default defineComponent({
     margin-bottom: 3rem;
   }
 
-  &__socials {
+  &__bookmark {
+    font-size: @single-article-bookmark-font-size;
 
+    color: @single-article-category-bookmark-color;
   }
 
-  &__bookmark {
-    font-size: 20px;
-
-    color: #797979;
+  &__row {
+    column-gap: 3rem;
   }
 
   &__left {
@@ -191,6 +212,86 @@ export default defineComponent({
 
   &__right {
     grid-column: col-start 10 / col-end 12;
+  }
+
+  &__left,
+  &__right {
+    .respond(@sizes[tablet-land], {
+      grid-column: col-start 1 / col-end 12;
+    }, @without-screen);
+  }
+}
+
+.content {
+  color: #0b0f18;
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 3rem 0;
+
+    font-size: 1.6rem;
+    opacity: .8;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+
+    width: 85%;
+  }
+
+  &__line {
+    align-self: stretch;
+
+    width: 1rem;
+
+    padding: 1rem 0;
+    margin-right: 1rem;
+
+    background-color: #e68c8c;
+  }
+
+  &__quote {
+    font-size: 1.8rem;
+  }
+
+  &__image {
+    max-width: 100%;
+
+    &:first-of-type,
+    &:nth-of-type(2) {
+      margin-bottom: 1rem;
+    }
+
+    &:first-of-type {
+      flex-basis: 30%;
+
+      margin-right: 1.8rem;
+
+      .respond(@sizes[tablet-land], {
+        margin-right: 0;
+      }, @without-screen);
+    }
+
+    &:nth-of-type(2) {
+      flex-basis: 60%;
+    }
+
+    &_full {
+      width: 100%;
+    }
   }
 }
 </style>
