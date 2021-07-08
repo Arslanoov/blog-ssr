@@ -13,12 +13,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.1",
+    "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/pwa": "^3.3.5",
+    "@vuex-orm/core": "^0.36.4",
+    "@vuex-orm/plugin-graphql": "v1.0.0-rc.42",
     "core-js": "^3.9.1",
+    "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
