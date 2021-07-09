@@ -1,4 +1,6 @@
 export default {
+  components: true,
+
   head: {
     title: "app",
     meta: [
@@ -11,27 +13,24 @@ export default {
 
   css: ["@/assets/styles/main.less"],
 
-  plugins: [
-    '~/plugins/graphql',
-    '~/plugins/orm'
-  ],
-
-  components: true,
-
-  buildModules: ["@nuxt/typescript-build", "@nuxtjs/style-resources", "@nuxtjs/composition-api", "@nuxtjs/fontawesome"],
-
   styleResources: {
     less: ["@/assets/styles/bootstrap.less"],
   },
 
-  modules: ['@nuxtjs/pwa', '@nuxtjs/apollo',],
+  plugins: ["~/plugins/graphql", "~/plugins/orm"],
+
+  buildModules: ["@nuxt/typescript-build", "@nuxtjs/style-resources", "@nuxtjs/composition-api", "@nuxtjs/fontawesome"],
+
+  modules: ["@nuxtjs/pwa", "@nuxtjs/apollo"],
+
+  build: {},
 
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:4000',
-      }
-    }
+        httpEndpoint: "http://localhost:4000",
+      },
+    },
   },
 
   fontawesome: {
@@ -47,8 +46,6 @@ export default {
       lang: "en",
     },
   },
-
-  build: {},
 
   server: {
     host: "0.0.0.0",

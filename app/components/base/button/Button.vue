@@ -11,13 +11,13 @@ export default defineComponent({
   props: {
     content: {
       type: String,
-      required: true
+      required: true,
     },
     padding: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
