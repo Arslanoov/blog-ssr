@@ -34,9 +34,9 @@ export default defineComponent({
     posts: {
       // TODO: Array<PostInterface>
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
@@ -114,7 +114,7 @@ export default defineComponent({
   }
 
   &__category {
-    padding: .6rem 1.1rem;
+    padding: 0.6rem 1.1rem;
 
     font-size: @published-posts-category-font-size;
 

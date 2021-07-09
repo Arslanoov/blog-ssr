@@ -18,8 +18,8 @@ import Button from "~/components/base/button/Button.vue"
 
 export default defineComponent({
   components: {
-    Button
-  }
+    Button,
+  },
 })
 </script>
 
@@ -94,7 +94,7 @@ export default defineComponent({
 
   &__line {
     width: 3.7rem;
-    height: .1rem;
+    height: 0.1rem;
 
     margin-top: 1rem;
     margin-bottom: 1.6rem;

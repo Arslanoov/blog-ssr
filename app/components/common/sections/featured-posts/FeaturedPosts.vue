@@ -12,44 +12,40 @@ import FeaturedPost from "~/components/common/post/featured-post/FeaturedPost.vu
 
 export default defineComponent({
   components: {
-    FeaturedPost
+    FeaturedPost,
   },
   setup() {
     const posts = ref([
       {
         id: 1,
         createdAt: "January 02, 2020",
-        title: "Cape Breton was the \n" +
-          "second stop of our road",
-        image: "/images/mock/blog/featured-posts/1.jpg"
+        title: "Cape Breton was the \n" + "second stop of our road",
+        image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 2,
         createdAt: "January 02, 2020",
-        title: "How to Apply \n" +
-          "Maximalist Design ",
-        image: "/images/mock/blog/featured-posts/1.jpg"
+        title: "How to Apply \n" + "Maximalist Design ",
+        image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 3,
         createdAt: "January 02, 2020",
-        title: "Augmented Reality vs \n" +
-          "Virtual Reality Games",
-        image: "/images/mock/blog/featured-posts/1.jpg"
+        title: "Augmented Reality vs \n" + "Virtual Reality Games",
+        image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 4,
         createdAt: "January 02, 2020",
-        title: "Best virtual reality apps\n" +
-          "for 2019",
-        image: "/images/mock/blog/featured-posts/1.jpg"
-      }
+        title: "Best virtual reality apps\n" + "for 2019",
+        image: "/images/mock/blog/featured-posts/1.jpg",
+      },
     ])
 
     return {
-      posts
+      posts,
     }
-  }
+  },
 })
 </script>
 

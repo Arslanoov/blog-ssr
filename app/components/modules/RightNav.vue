@@ -26,7 +26,7 @@ export default Vue.extend({})
     font-size: 1.6rem;
 
     &-name {
-      margin-right: .7rem;
+      margin-right: 0.7rem;
     }
 
     .link();
@@ -35,7 +35,7 @@ export default Vue.extend({})
   &__line {
     align-self: stretch;
 
-    width: .1rem;
+    width: 0.1rem;
 
     margin: 0 1rem;
 

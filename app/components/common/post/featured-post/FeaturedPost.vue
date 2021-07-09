@@ -15,9 +15,9 @@ export default defineComponent({
   props: {
     post: {
       type: Object as () => PostInterface,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

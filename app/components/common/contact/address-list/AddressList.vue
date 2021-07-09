@@ -17,9 +17,9 @@ export default defineComponent({
     list: {
       // TODO: Array<AddressInterface>
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

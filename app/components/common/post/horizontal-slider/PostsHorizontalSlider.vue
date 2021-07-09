@@ -14,27 +14,24 @@ export default defineComponent({
       {
         id: 1,
         createdAt: "January 02, 2020",
-        title: "It's now easier to get between\n" +
-          "the US and Cape Town "
+        title: "It's now easier to get between\n" + "the US and Cape Town ",
       },
       {
         id: 2,
         createdAt: "January 02, 2020",
-        title: "It's now easier to get between\n" +
-          "the US and Cape Town "
+        title: "It's now easier to get between\n" + "the US and Cape Town ",
       },
       {
         id: 3,
         createdAt: "January 02, 2020",
-        title: "It's now easier to get between\n" +
-          "the US and Cape Town "
-      }
+        title: "It's now easier to get between\n" + "the US and Cape Town ",
+      },
     ])
 
     return {
-      posts
+      posts,
     }
-  }
+  },
 })
 </script>
 

@@ -17,8 +17,8 @@ import Button from "~/components/base/button/Button.vue"
 
 export default defineComponent({
   components: {
-    Button
-  }
+    Button,
+  },
 })
 </script>
 

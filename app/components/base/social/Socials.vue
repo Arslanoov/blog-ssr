@@ -15,18 +15,18 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     withBorder: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     items: {
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
@@ -44,7 +44,7 @@ export default defineComponent({
   &__items {
     display: inline-block;
 
-    padding: .8rem .7rem;
+    padding: 0.8rem 0.7rem;
 
     &_bordered {
       border-bottom: @socials-border-bottom;

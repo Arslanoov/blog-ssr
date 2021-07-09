@@ -17,9 +17,9 @@ export default defineComponent({
   props: {
     category: {
       type: Object as () => CategoryInterface,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

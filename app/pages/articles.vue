@@ -16,7 +16,7 @@ import Article from "~/components/common/post/article/Article.vue"
 export default defineComponent({
   components: {
     Article,
-    Sidebar
+    Sidebar,
   },
   setup() {
     const articles = ref([
@@ -27,12 +27,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
         title: "Ultimate Europe Travel Bucket List for This Summer",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 2,
@@ -41,12 +42,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
         title: "Ultimate Europe Travel Bucket List for This Summer",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 3,
@@ -55,13 +57,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "3 Things You Should Know about \n" +
-          "Social Media Marketing for Creatives",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "3 Things You Should Know about \n" + "Social Media Marketing for Creatives",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 4,
@@ -70,13 +72,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "How to Apply Maximalist Design \n" +
-          "to a Small Living Space",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "How to Apply Maximalist Design \n" + "to a Small Living Space",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 5,
@@ -85,13 +87,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "How to Apply Maximalist Design \n" +
-          "to a Small Living Space",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "How to Apply Maximalist Design \n" + "to a Small Living Space",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 6,
@@ -100,13 +102,13 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "The best Vietnam islands to visit\n" +
-          "Vietnam’s popularity ",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "The best Vietnam islands to visit\n" + "Vietnam’s popularity ",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 7,
@@ -114,13 +116,13 @@ export default defineComponent({
         createdAt: "January 02, 2020",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "Kim Kardashian West's Hairstylist Told Us How to Stop \n" +
-          "Breakage Once and for All",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "Kim Kardashian West's Hairstylist Told Us How to Stop \n" + "Breakage Once and for All",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
+          "splashing around in the water and exploring your limits. ",
       },
       {
         id: 8,
@@ -129,20 +131,20 @@ export default defineComponent({
         image: "/images/mock/blog/article/1.jpg",
         author: {
           url: "/images/mock/blog/avatar.png",
-          name: "Masum Rana"
+          name: "Masum Rana",
         },
-        title: "10 Beauty Bloggers Who Leveled\n" +
-          "Up in 2019",
-        short: "Europe may be famous for its history, monuments and sightseeing," +
+        title: "10 Beauty Bloggers Who Leveled\n" + "Up in 2019",
+        short:
+          "Europe may be famous for its history, monuments and sightseeing," +
           " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-          "splashing around in the water and exploring your limits. "
-      }
+          "splashing around in the water and exploring your limits. ",
+      },
     ])
 
     return {
-      articles
+      articles,
     }
-  }
+  },
 })
 </script>
 

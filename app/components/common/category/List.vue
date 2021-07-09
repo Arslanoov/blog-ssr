@@ -15,39 +15,39 @@ export default defineComponent({
       {
         id: 1,
         name: "Life style",
-        postsCount: 30
+        postsCount: 30,
       },
       {
         id: 2,
         name: "News",
-        postsCount: 7
+        postsCount: 7,
       },
       {
         id: 3,
         name: "Food supply chains",
-        postsCount: 6
+        postsCount: 6,
       },
       {
         id: 4,
         name: "Wedding",
-        postsCount: 20
+        postsCount: 20,
       },
       {
         id: 5,
         name: "Beauty",
-        postsCount: 12
+        postsCount: 12,
       },
       {
         id: 6,
         name: "Other",
-        postsCount: 15
-      }
+        postsCount: 15,
+      },
     ])
 
     return {
-      categories
+      categories,
     }
-  }
+  },
 })
 </script>
 

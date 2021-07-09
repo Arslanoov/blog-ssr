@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
 
@@ -30,32 +30,28 @@ import AddressList from "~/components/common/contact/address-list/AddressList.vu
 export default defineComponent({
   components: {
     AddressList,
-    Button
+    Button,
   },
   setup() {
     const addresses = ref([
       {
         image: "/images/mock/contact/addresses/1.jpg",
         name: "London",
-        address: "3 Waterhouse Square, 138-142 \n" +
-          "Holborn London, England EC1N 2SW\n" +
-          "UK",
-        link: "/"
+        address: "3 Waterhouse Square, 138-142 \n" + "Holborn London, England EC1N 2SW\n" + "UK",
+        link: "/",
       },
       {
         image: "/images/mock/contact/addresses/1.jpg",
         name: "New York City",
-        address: "627 Broadway, 9th Floor\n" +
-          "New York, NY 10012\n" +
-          "USA",
-        link: "/"
-      }
+        address: "627 Broadway, 9th Floor\n" + "New York, NY 10012\n" + "USA",
+        link: "/",
+      },
     ])
 
     return {
-      addresses
+      addresses,
     }
-  }
+  },
 })
 </script>
 
@@ -82,7 +78,7 @@ export default defineComponent({
 
     background-color: @contact-line-background-color;
     width: 40rem;
-    height: .1rem;
+    height: 0.1rem;
 
     .respond(@sizes[mobile], {
       width: 100%;

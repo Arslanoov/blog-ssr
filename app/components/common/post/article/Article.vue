@@ -21,9 +21,9 @@ export default defineComponent({
   props: {
     article: {
       type: Object as () => PostInterface,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
@@ -69,7 +69,7 @@ export default defineComponent({
   &__category {
     margin-bottom: 2rem;
 
-    padding: .6rem .8rem;
+    padding: 0.6rem 0.8rem;
 
     font-size: @article-category-font-size;
 
