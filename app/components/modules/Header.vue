@@ -10,14 +10,14 @@
 <script lang="ts">
 import Vue from "vue"
 
-import Nav from "@/layouts/modules/Nav.vue"
-import RightNav from "@/layouts/modules/RightNav.vue"
+import Nav from "@/components/modules/Nav.vue"
+import RightNav from "@/components/modules/RightNav.vue"
 
 export default Vue.extend({
   components: {
     Nav,
-    RightNav
-  }
+    RightNav,
+  },
 })
 </script>
 

@@ -9,11 +9,13 @@ module.exports = {
   rules: {
     quotes: ["error", "double"],
     semi: ["error", "never"],
-    "no-unused-vars": "warn",
-    // TODO: Check env
-    "vue/no-unused-vars": "warn",
 
+    "vue/no-unused-vars": process.env.NODE_ENV === "production" ? "error" : "warn",
+    "@typescript-eslint/no-unused-vars": process.env.NODE_ENV === "production" ? "error" : "warn",
+
+    "no-unused-vars": "off",
     "no-unused-expressions": "off",
     "no-template-curly-in-string": "off",
+    "import/no-duplicates": "off",
   },
 }

@@ -1,8 +1,8 @@
-import { Context } from "@nuxt/types";
+import { Context } from "@nuxt/types"
 
-import VuexORM from '@vuex-orm/core';
-import database from '~/database';
+import VuexORM from "@vuex-orm/core"
+import orm from "~/orm"
 
 export default ({ store }: Context) => {
-  VuexORM.install(database)(store);
+  VuexORM.install(orm)(store)
 }

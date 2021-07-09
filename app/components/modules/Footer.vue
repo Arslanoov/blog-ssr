@@ -13,13 +13,13 @@
 import { defineComponent } from "@vue/composition-api"
 
 import Deals from "~/components/common/newsletter/Deals.vue"
-import FooterColumns from "~/layouts/modules/FooterColumns.vue"
+import FooterColumns from "~/components/modules/FooterColumns.vue"
 
 export default defineComponent({
   components: {
     Deals,
-    FooterColumns
-  }
+    FooterColumns,
+  },
 })
 </script>
 
