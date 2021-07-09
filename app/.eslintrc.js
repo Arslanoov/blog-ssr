@@ -10,6 +10,10 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "no-unused-vars": "warn",
+    // TODO: Check env
     "vue/no-unused-vars": "warn",
+
+    "no-unused-expressions": "off",
+    "no-template-curly-in-string": "off",
   },
 }

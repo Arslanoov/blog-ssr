@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# e2e tests
+tests_output
