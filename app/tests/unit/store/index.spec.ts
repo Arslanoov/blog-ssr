@@ -1,5 +1,5 @@
 import VuexORMGraphQL, { setupTestUtils, mock } from "@vuex-orm/plugin-graphql"
-import User from "~/models/User"
+import User from "~/orm/models/User"
 
 setupTestUtils(VuexORMGraphQL)
 

@@ -51,4 +51,6 @@ export default {
     host: "0.0.0.0",
     port: 8086,
   },
+
+  serverMiddleware: [{ path: "/api", handler: "~/api/index.js" }],
 }
