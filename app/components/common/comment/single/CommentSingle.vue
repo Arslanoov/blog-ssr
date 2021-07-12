@@ -20,14 +20,14 @@ import { CommentInterface } from "~/interfaces/comment"
 export default defineComponent({
   components: {
     /* TODO: Fix */
-    repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any
+    repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any,
   },
   props: {
     item: {
       type: Object as () => CommentInterface,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
@@ -99,7 +99,7 @@ export default defineComponent({
   }
 
   &__reply {
-    padding: .8rem 2rem;
+    padding: 0.8rem 2rem;
 
     border-radius: 1rem;
 

@@ -12,15 +12,15 @@ import CommentSingle from "~/components/common/comment/single/CommentSingle.vue"
 
 export default defineComponent({
   components: {
-    CommentSingle
+    CommentSingle,
   },
   props: {
     items: {
       // TODO: Array<CommentInterface>
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

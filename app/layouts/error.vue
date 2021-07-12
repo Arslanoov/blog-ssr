@@ -11,9 +11,9 @@ export default Vue.extend({
   props: {
     error: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

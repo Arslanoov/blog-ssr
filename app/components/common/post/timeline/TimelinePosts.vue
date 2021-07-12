@@ -22,13 +22,13 @@ export default defineComponent({
   props: {
     prevPost: {
       type: Object as () => TagInterface,
-      required: true
+      required: true,
     },
     nextPost: {
       type: Object as () => TagInterface,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 

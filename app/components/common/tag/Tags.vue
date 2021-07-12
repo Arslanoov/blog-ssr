@@ -11,9 +11,9 @@ export default defineComponent({
     tags: {
       // TODO: Array<TagInterface>
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 })
 </script>
 
@@ -31,7 +31,7 @@ export default defineComponent({
     .pointer-on-hover();
 
     &:not(:last-of-type) {
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
 }

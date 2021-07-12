@@ -8,29 +8,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api"
 
 import PostRollup from "~/components/common/post/rollup/PostRollup.vue"
 
 export default defineComponent({
+  components: {
+    PostRollup,
+  },
   props: {
     title: {
       type: String,
       required: false,
-      default: ""
+      default: "",
     },
     inverted: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     length: {
       type: Number,
-      required: true
-    }
-  },
-  components: {
-    PostRollup
+      required: true,
+    },
   },
   setup() {
     const posts = ref([
@@ -38,35 +38,29 @@ export default defineComponent({
         id: 1,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "Travelling around the  holidays \n" +
-          "is always a bit more ",
-        short: "Lorem quis bibendum auctor, \n" +
-          "rmninkis elit ipsum,"
+        title: "Travelling around the  holidays \n" + "is always a bit more ",
+        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
       },
       {
         id: 2,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "The Importance of \n" +
-          "Imagination – an interview",
-        short: "Lorem quis bibendum auctor, \n" +
-          "rmninkis elit ipsum,"
+        title: "The Importance of \n" + "Imagination – an interview",
+        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
       },
       {
         id: 3,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "How do we collaborate to\n" +
-          "bring about Transition",
-        short: "Lorem quis bibendum auctor, \n" +
-          "rmninkis elit ipsum,"
-      }
+        title: "How do we collaborate to\n" + "bring about Transition",
+        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
+      },
     ])
 
     return {
-      posts
+      posts,
     }
-  }
+  },
 })
 </script>
 
@@ -86,7 +80,7 @@ export default defineComponent({
   }
 
   &__title {
-    margin-bottom: .8rem;
+    margin-bottom: 0.8rem;
 
     color: @posts-rollup-title-color;
 
@@ -97,7 +91,7 @@ export default defineComponent({
 
   &__line {
     width: 10rem;
-    height: .1rem;
+    height: 0.1rem;
     background-color: @posts-rollup-line-background-color;
   }
 

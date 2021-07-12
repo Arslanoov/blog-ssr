@@ -30,42 +30,42 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api"
 
 import Socials from "~/components/base/social/Socials.vue"
 
 export default defineComponent({
   components: {
-    Socials
+    Socials,
   },
   setup() {
     const socials = ref([
       {
         icon: "facebook",
-        url: "https://facebook.com"
+        url: "https://facebook.com",
       },
       {
         icon: "google",
-        url: "https://google.com"
+        url: "https://google.com",
       },
       {
         icon: "pinterest",
-        url: "https://pinterest.com"
+        url: "https://pinterest.com",
       },
       {
         icon: "linkedin",
-        url: "https://ru.linkedin.com"
+        url: "https://ru.linkedin.com",
       },
       {
         icon: "twitter",
-        url: "https://twitter.com"
-      }
+        url: "https://twitter.com",
+      },
     ])
 
     return {
-      socials
+      socials,
     }
-  }
+  },
 })
 </script>
 

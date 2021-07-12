@@ -63,7 +63,7 @@ export default defineComponent({
     PostsRollupList,
     MostReadPosts,
     Newsletter,
-  }
+  },
 })
 </script>
 
@@ -127,7 +127,7 @@ export default defineComponent({
   .respond(@sizes[tablet-land], {
     background-color: @cards-grid-pagination-arrow-phone-background;
 
-    transform: scale(.7);
+    transform: scale(0.7);
   }, @without-screen);
 
   .respond(@sizes[tablet], {

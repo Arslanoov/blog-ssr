@@ -29,22 +29,22 @@ export default defineComponent({
     posts: {
       // TODO: Array<PostInterface>
       type: Array,
-      required: true
+      required: true,
     },
     detailed: {
       type: Boolean,
       required: false,
-      default: false
-    }
+      default: false,
+    },
   },
   setup() {
     // TODO: Change length to posts.length
     const length = 4
 
     return {
-      length
+      length,
     }
-  }
+  },
 })
 </script>
 
@@ -78,7 +78,7 @@ export default defineComponent({
     background-color: @posts-slider-dot-background-color;
 
     &:not(:last-of-type) {
-      margin-right: .4rem;
+      margin-right: 0.4rem;
     }
 
     &_active {
@@ -142,7 +142,7 @@ export default defineComponent({
   }
 
   &__title {
-    margin-bottom: .9rem;
+    margin-bottom: 0.9rem;
 
     font-size: @posts-slider-font-size;
     font-weight: @posts-slider-font-weight;

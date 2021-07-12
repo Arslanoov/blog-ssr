@@ -19,18 +19,19 @@ export default defineComponent({
       createdAt: "January 02, 2020",
       author: {
         url: "/images/mock/blog/avatar.png",
-        name: "Masum Rana"
+        name: "Masum Rana",
       },
       title: "Ultimate Europe Travel Bucket List for This Summer",
-      short: "Europe may be famous for its history, monuments and sightseeing," +
+      short:
+        "Europe may be famous for its history, monuments and sightseeing," +
         " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +
-        "splashing around in the water and exploring your limits. "
+        "splashing around in the water and exploring your limits. ",
     })
 
     return {
-      post
+      post,
     }
-  }
+  },
 })
 </script>
 

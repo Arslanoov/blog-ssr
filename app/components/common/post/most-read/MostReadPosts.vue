@@ -31,39 +31,35 @@ export default defineComponent({
         category: "Beauty",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" +
-          " is always a bit more"
+        title: "Travelling around the holidays\n" + " is always a bit more",
       },
       {
         id: 2,
         category: "Design",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" +
-          " is always a bit more"
+        title: "Travelling around the holidays\n" + " is always a bit more",
       },
       {
         id: 3,
         category: "Travel",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" +
-          " is always a bit more"
+        title: "Travelling around the holidays\n" + " is always a bit more",
       },
       {
         id: 4,
         category: "Food",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" +
-          " is always a bit more"
-      }
+        title: "Travelling around the holidays\n" + " is always a bit more",
+      },
     ])
 
     return {
-      posts
+      posts,
     }
-  }
+  },
 })
 </script>
 
@@ -150,7 +146,7 @@ export default defineComponent({
 
     display: inline-flex;
 
-    padding: .3rem 1.1rem;
+    padding: 0.3rem 1.1rem;
 
     font-size: @most-read-post-category-font-size;
 
@@ -161,7 +157,7 @@ export default defineComponent({
   }
 
   &__name {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 
     font-size: @most-read-post-name-font-size;
     font-weight: @most-read-post-name-font-weight;

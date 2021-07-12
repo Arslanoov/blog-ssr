@@ -22,8 +22,8 @@ import Button from "~/components/base/button/Button.vue"
 
 export default defineComponent({
   components: {
-    Button
-  }
+    Button,
+  },
 })
 </script>
 
@@ -52,7 +52,7 @@ export default defineComponent({
 
     background-color: @auth-line-background-color;
     width: 40rem;
-    height: .1rem;
+    height: 0.1rem;
 
     .respond(@sizes[mobile], {
       width: 100%;

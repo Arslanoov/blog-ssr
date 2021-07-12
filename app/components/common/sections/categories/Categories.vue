@@ -4,13 +4,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api"
 
 import Category from "~/components/common/category/Category.vue"
 
 export default defineComponent({
   components: {
-    Category
+    Category,
   },
   setup() {
     const categories = ref([
@@ -18,32 +18,32 @@ export default defineComponent({
         id: 1,
         name: "Travel",
         background: "/images/mock/category/mock.jpg",
-        postsCount: 30
+        postsCount: 30,
       },
       {
         id: 2,
         name: "Lifestyle",
         background: "/images/mock/category/mock.jpg",
-        postsCount: 60
+        postsCount: 60,
       },
       {
         id: 3,
         name: "Beauty",
         background: "/images/mock/category/mock.jpg",
-        postsCount: 60
+        postsCount: 60,
       },
       {
         id: 4,
         name: "Technology",
         background: "/images/mock/category/mock.jpg",
-        postsCount: 60
-      }
+        postsCount: 60,
+      },
     ])
 
     return {
-      categories
+      categories,
     }
-  }
+  },
 })
 </script>
 

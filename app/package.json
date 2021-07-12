@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "nuxt-blog",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,8 @@
     "generate": "nuxt generate",
     "start": "nuxt start",
     "lint": "npm run lint:js",
-    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:js:fix": "eslint --ext \".js,.vue\" --fix --ignore-path .gitignore .",
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --ext \".js,.ts,.vue\" --fix --ignore-path .gitignore .",
     "test:e2e": "nightwatch",
     "test:unit": "jest"
   },
@@ -19,6 +19,7 @@
     "@vuex-orm/core": "^0.36.4",
     "@vuex-orm/plugin-graphql": "v1.0.0-rc.42",
     "core-js": "^3.9.1",
+    "express": "^4.17.1",
     "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.3"
   },

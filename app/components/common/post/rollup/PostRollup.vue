@@ -24,14 +24,14 @@ export default defineComponent({
   props: {
     post: {
       type: Object as () => PostInterface,
-      required: true
+      required: true,
     },
     inverted: {
       type: Boolean,
       required: false,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 })
 </script>
 

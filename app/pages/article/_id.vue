@@ -77,7 +77,7 @@ export default defineComponent({
     Tags,
     TimelinePosts,
     CommentsList,
-    CommentSendForm
+    CommentSendForm,
   },
   setup() {
     const post = reactive({
@@ -86,11 +86,11 @@ export default defineComponent({
       image: "/images/mock/blog/single/1.jpg",
       author: {
         url: "/images/mock/blog/avatar.png",
-        name: "Afaty Poprita"
+        name: "Afaty Poprita",
       },
-      title: "The Most And Least Visited Countries In The World\n" +
-        "There are 196 countries in the world",
-      short: "There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go.here are 196 \n" +
+      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
+      short:
+        "There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go.here are 196 \n" +
         "countries in the world",
       // TODO: Change content to post.content
       content: "",
@@ -98,69 +98,67 @@ export default defineComponent({
       tags: [
         {
           id: 1,
-          name: "Travel"
+          name: "Travel",
         },
         {
           id: 2,
-          name: "Trip"
-        }
-      ]
+          name: "Trip",
+        },
+      ],
     })
 
     const socials = ref([
       {
         icon: "pinterest",
-        url: "https://pinterest.com"
+        url: "https://pinterest.com",
       },
       {
         icon: "facebook",
-        url: "https://facebook.com"
+        url: "https://facebook.com",
       },
       {
         icon: "twitter",
-        url: "https://twitter.com"
+        url: "https://twitter.com",
       },
       {
         icon: "linkedin",
-        url: "https://ru.linkedin.com"
+        url: "https://ru.linkedin.com",
       },
       {
         icon: "instagram",
-        url: "https://instagram.com"
-      }
+        url: "https://instagram.com",
+      },
     ])
 
     const bottomSocials = ref([
       {
         icon: "facebook",
-        url: "https://facebook.com"
+        url: "https://facebook.com",
       },
       {
         icon: "linkedin",
-        url: "https://ru.linkedin.com"
+        url: "https://ru.linkedin.com",
       },
       {
         icon: "google",
-        url: "https://google.com"
+        url: "https://google.com",
       },
       {
         icon: "twitter",
-        url: "https://twitter.com"
-      }
+        url: "https://twitter.com",
+      },
     ])
 
     const prevPost = reactive({
       id: 1,
       createdAt: "January 02, 2020",
-      title: "The Most And Least Visited Countries In The World\n" +
-        "There are 196 countries in the world"
+      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
     })
 
     const nextPost = reactive({
       id: 2,
       createdAt: "January 02, 2020",
-      title: "The Most And Least Visited Countries In The World\n" +
-        "There are 196 countries in the world"
+      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
     })
 
     const comments = ref([
@@ -169,30 +167,32 @@ export default defineComponent({
         createdAt: "20 Jan, 2020",
         author: {
           url: "/images/mock/comment/1.jpg",
-          name: "Tamim anj"
+          name: "Tamim anj",
         },
-        content: "Before we begin to build your home, we want to get to know you. Through our design \n" +
+        content:
+          "Before we begin to build your home, we want to get to know you. Through our design \n" +
           "process, we will be asking",
         repliedTo: {
           id: 2,
           createdAt: "8 Jan, 2020",
           author: {
             url: "/images/mock/comment/2.jpg",
-            name: "Mahfuz Riad"
+            name: "Mahfuz Riad",
           },
           content: "Can you imagine what we will be downloading in another twenty years?",
-        }
+        },
       },
       {
         id: 3,
         createdAt: "20 Jan, 2020",
         author: {
           url: "/images/mock/comment/1.jpg",
-          name: "Tamim anj"
+          name: "Tamim anj",
         },
-        content: "Before we begin to build your home, we want to get to know you. Through our design \n" +
-          "process, we will be asking "
-      }
+        content:
+          "Before we begin to build your home, we want to get to know you. Through our design \n" +
+          "process, we will be asking ",
+      },
     ])
 
     return {
@@ -201,9 +201,9 @@ export default defineComponent({
       bottomSocials,
       prevPost,
       nextPost,
-      comments
+      comments,
     }
-  }
+  },
 })
 </script>
 
@@ -243,7 +243,7 @@ export default defineComponent({
 
   &__category {
     margin-bottom: 2rem;
-    padding: .4rem 1.6rem;
+    padding: 0.4rem 1.6rem;
 
     font-size: @single-article-category-font-size;
 
@@ -407,7 +407,7 @@ export default defineComponent({
     margin: 3rem 0;
 
     font-size: 1.6rem;
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &__row {

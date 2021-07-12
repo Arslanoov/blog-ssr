@@ -60,8 +60,8 @@ import PostsHorizontalSlider from "~/components/common/post/horizontal-slider/Po
 
 export default defineComponent({
   components: {
-    PostsHorizontalSlider
-  }
+    PostsHorizontalSlider,
+  },
 })
 </script>
 
@@ -93,7 +93,7 @@ export default defineComponent({
 
   &__line {
     width: 40rem;
-    height: .1rem;
+    height: 0.1rem;
 
     margin: 3rem 0;
 
@@ -177,7 +177,7 @@ export default defineComponent({
   .respond(@sizes[tablet-land], {
     background-color: @cards-grid-pagination-arrow-phone-background;
 
-    transform: scale(.7);
+    transform: scale(0.7);
   }, @without-screen);
 
   .respond(@sizes[tablet], {
