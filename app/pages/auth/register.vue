@@ -6,23 +6,46 @@
       .register-container__form.form
         .form__overlay
           .form__title Join Typer
-          input(type="text", placeholder="Username").form__input
-          input(type="text", placeholder="Your Name").form__input
-          input(type="email", placeholder="Email").form__input
-          Button(content="REGISTER", padding="1.6rem 4rem").form__register
+          input(v-model="form.name", type="text", placeholder="Username").form__input
+          input(v-model="form.email", type="email", placeholder="Email").form__input
+          input(v-model="form.password", type="password", placeholder="Password").form__input
+          Button(v-on:click="onSubmit", content="REGISTER", padding="1.6rem 4rem").form__register
           .form__info
             span.form__text Already have an account?
-            nuxt-link(to="/login").form__link  Login here.
+            nuxt-link(to="/login").form__link Login here.
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent, reactive } from "@vue/composition-api"
+import { Model } from "@vuex-orm/core"
+
+import User from "~/orm/models/User"
 
 import Button from "~/components/base/button/Button.vue"
 
 export default defineComponent({
   components: {
     Button,
+  },
+  setup(props) {
+    const form = reactive({
+      name: null,
+      email: null,
+      password: null,
+    })
+
+    const onSubmit = async () => {
+      await User.create({
+        data: form,
+      })
+
+      await User.mutate({ name: "signUp" })
+    }
+
+    return {
+      onSubmit,
+      form,
+    }
   },
 })
 </script>
