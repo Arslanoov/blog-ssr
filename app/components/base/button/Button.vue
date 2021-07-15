@@ -1,10 +1,10 @@
 <template lang="pug">
-  button.button(:style=`{
+  button.button(@click="onClick", :style=`{
     padding
   }`) {{ content }}
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "@vue/composition-api"
 
 export default defineComponent({
@@ -17,6 +17,13 @@ export default defineComponent({
       type: String,
       required: true,
     },
+  },
+  setup(_, { emit }) {
+    const onClick = (e: Event) => emit("click", e)
+
+    return {
+      onClick,
+    }
   },
 })
 </script>

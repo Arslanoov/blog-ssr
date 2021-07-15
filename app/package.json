@@ -16,11 +16,8 @@
   "dependencies": {
     "@nuxtjs/apollo": "^4.0.1-rc.5",
     "@nuxtjs/pwa": "^3.3.5",
-    "@vuex-orm/core": "^0.36.4",
-    "@vuex-orm/plugin-graphql": "v1.0.0-rc.42",
     "core-js": "^3.9.1",
     "express": "^4.17.1",
-    "graphql-tag": "^2.12.5",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
