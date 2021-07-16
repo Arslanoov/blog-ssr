@@ -4,7 +4,12 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended", "plugin:nuxt/recommended"],
+  extends: [
+    "@nuxtjs/eslint-config-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:nuxt/recommended",
+  ],
   plugins: [],
   rules: {
     quotes: ["error", "double"],
@@ -16,6 +21,9 @@ module.exports = {
     "no-unused-vars": "off",
     "no-unused-expressions": "off",
     "no-template-curly-in-string": "off",
-    "import/no-duplicates": "off",
+    "import/no-mutable-exports": "off",
+
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
   },
 }
