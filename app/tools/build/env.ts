@@ -1,7 +1,7 @@
-export enum Environments {
-  dev = "development",
-  prod = "production",
-  test = "test",
+export const Environments = {
+  dev: "development",
+  prod: "production",
+  test: "test",
 }
 
 export const getEnv = () => process.env.NODE_ENV

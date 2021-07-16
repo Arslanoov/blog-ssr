@@ -5,49 +5,51 @@
       .register-container__line
       .register-container__form.form
         .form__overlay
-          .form__title Join Typer
-          input(v-model="form.name", type="text", placeholder="Username").form__input
-          input(v-model="form.email", type="email", placeholder="Email").form__input
-          input(v-model="form.password", type="password", placeholder="Password").form__input
-          Button(v-on:click="onSubmit", content="REGISTER", padding="1.6rem 4rem").form__register
+          .form__title Join Us
+          base-input(
+            @change="changeEmail",
+            :value="form.email",
+            type="email",
+            placeholder="Email"
+          ).form__input
+          base-input(
+            @change="changePassword",
+            :value="form.password",
+            type="password",
+            placeholder="Password"
+          ).form__input
+          Button(@click="signUp", content="REGISTER", padding="1.6rem 4rem").form__register
           .form__info
             span.form__text Already have an account?
             nuxt-link(to="/login").form__link Login here.
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from "@vue/composition-api"
-import { Model } from "@vuex-orm/core"
-
-import User from "~/orm/models/User"
+import { Component, Vue } from "nuxt-property-decorator"
+import { namespace } from "vuex-class"
 
 import Button from "~/components/base/button/Button.vue"
+import BaseInput from "~/components/base/input/BaseInput.vue"
 
-export default defineComponent({
+import { RegisterFormInterface } from "~/interfaces/forms/register"
+
+import AuthStoreModule from "~/store/auth"
+const authModule = namespace("auth")
+
+@Component({
   components: {
     Button,
   },
-  setup(props) {
-    const form = reactive({
-      name: null,
-      email: null,
-      password: null,
-    })
-
-    const onSubmit = async () => {
-      await User.create({
-        data: form,
-      })
-
-      await User.mutate({ name: "signUp" })
-    }
-
-    return {
-      onSubmit,
-      form,
-    }
-  },
 })
+export default class Register extends Vue {
+  @authModule.State("registerForm") form!: RegisterFormInterface
+
+  @authModule.Mutation("changeRegisterFormEmail") changeEmail!: typeof AuthStoreModule.prototype.changeRegisterFormEmail
+  @authModule.Mutation("changeRegisterFormPassword")
+  changePassword!: typeof AuthStoreModule.prototype.changeRegisterFormPassword
+
+  @authModule.Action("signUp") signUp!: typeof AuthStoreModule.prototype.signUp
+}
 </script>
 
 <style lang="less" scoped>
@@ -123,24 +125,6 @@ export default defineComponent({
 
     font-size: @auth-form-title-font-size;
     font-weight: @auth-form-title-font-weight;
-  }
-
-  &__input {
-    flex-grow: 1;
-
-    width: 100%;
-
-    margin-bottom: 2rem;
-    padding: 1.8rem 1.5rem;
-
-    border: @auth-input-border;
-    outline: 0;
-
-    &::placeholder {
-      font-size: @auth-input-placeholder-font-size;
-
-      color: @auth-input-placeholder-color;
-    }
   }
 
   &__register {

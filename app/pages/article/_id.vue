@@ -59,7 +59,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "@vue/composition-api"
+import { defineComponent, reactive, ref } from "@nuxt/composition-api"
 
 import Socials from "~/components/base/social/Socials.vue"
 

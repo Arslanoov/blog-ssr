@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent } from "@nuxt/composition-api"
 
 import { PostInterface } from "~/interfaces/post"
 
