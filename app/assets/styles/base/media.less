@@ -1,0 +1,11 @@
+html {
+  font-size: 62.5%;
+
+  .respond(@sizes[tablet], {
+    font-size: 57.5%;
+  }, @without-screen);
+
+  .respond(@sizes[mobile], {
+    font-size: 55%;
+  }, @without-screen);
+}

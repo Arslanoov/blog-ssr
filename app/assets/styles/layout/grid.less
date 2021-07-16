@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+
+  .grid-columns(15px);
+
+  .respond-from(350px, {
+    .grid-columns(35px);
+  });
+
+  .respond-from(575.98px, {
+    .grid-columns(calc(50vw - 270px));
+  });
+
+  .respond-from(991.98px, {
+    .grid-columns(calc(50vw - 480px));
+  });
+
+  .respond-from(1199.98px, {
+    .grid-columns(calc(50vw - 590px));
+  });
+}
+
+.fluid-container {
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+
+  .grid-columns-without-padding();
+}
