@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent } from "@nuxt/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
 

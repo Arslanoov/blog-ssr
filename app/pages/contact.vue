@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@vue/composition-api"
+import { defineComponent, ref } from "@nuxt/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
 

@@ -54,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent } from "@nuxt/composition-api"
 
 import PostsHorizontalSlider from "~/components/common/post/horizontal-slider/PostsHorizontalSlider.vue"
 

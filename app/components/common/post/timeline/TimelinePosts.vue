@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent } from "@nuxt/composition-api"
 
 import { TagInterface } from "~/interfaces/tag"
 

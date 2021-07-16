@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@vue/composition-api"
+import { defineComponent } from "@nuxt/composition-api"
 
 import CommentSingle from "~/components/common/comment/single/CommentSingle.vue"
 
