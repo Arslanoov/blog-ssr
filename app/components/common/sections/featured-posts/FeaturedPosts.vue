@@ -14,6 +14,7 @@ export default defineComponent({
   components: {
     FeaturedPost,
   },
+
   setup() {
     const posts = ref([
       {

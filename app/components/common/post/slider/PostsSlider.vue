@@ -31,12 +31,14 @@ export default defineComponent({
       type: Array,
       required: true,
     },
+
     detailed: {
       type: Boolean,
       required: false,
       default: false,
     },
   },
+
   setup() {
     // TODO: Change length to posts.length
     const length = 4

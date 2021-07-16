@@ -30,10 +30,9 @@ import { namespace } from "vuex-class"
 
 import Button from "~/components/base/button/Button.vue"
 import BaseInput from "~/components/base/input/BaseInput.vue"
-
 import { RegisterFormInterface } from "~/interfaces/forms/register"
-
 import AuthStoreModule from "~/store/auth"
+
 const authModule = namespace("auth")
 
 @Component({

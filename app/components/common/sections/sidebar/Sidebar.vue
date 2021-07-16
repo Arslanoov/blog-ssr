@@ -11,9 +11,7 @@
 import { defineComponent, ref } from "@nuxt/composition-api"
 
 import Socials from "~/components/base/social/Socials.vue"
-
 import FeaturedPosts from "~/components/common/sections/featured-posts/FeaturedPosts.vue"
-
 import PostsList from "~/components/common/post/list/PostsList.vue"
 import PostsRollupList from "~/components/common/post/rollup-list/PostsRollupList.vue"
 import PostsSlider from "~/components/common/post/slider/PostsSlider.vue"
@@ -29,6 +27,7 @@ export default defineComponent({
     PostsRollupList,
     PostsSlider,
   },
+
   props: {
     withCategories: {
       type: Boolean,
@@ -36,6 +35,7 @@ export default defineComponent({
       default: false,
     },
   },
+
   setup() {
     const sliderPosts = ref([
       {

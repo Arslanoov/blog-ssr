@@ -62,7 +62,6 @@
 import { defineComponent, reactive, ref } from "@nuxt/composition-api"
 
 import Socials from "~/components/base/social/Socials.vue"
-
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Tags from "~/components/common/tag/Tags.vue"
 import TimelinePosts from "~/components/common/post/timeline/TimelinePosts.vue"
@@ -79,22 +78,28 @@ export default defineComponent({
     CommentsList,
     CommentSendForm,
   },
+
   setup() {
     const post = reactive({
       category: "Travel",
       createdAt: "January 02, 2020",
       image: "/images/mock/blog/single/1.jpg",
+
       author: {
         url: "/images/mock/blog/avatar.png",
         name: "Afaty Poprita",
       },
+
       title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
+
       short:
         "There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go.here are 196 \n" +
         "countries in the world",
+
       // TODO: Change content to post.content
       content: "",
       commentsCount: 3,
+
       tags: [
         {
           id: 1,
@@ -165,30 +170,37 @@ export default defineComponent({
       {
         id: 1,
         createdAt: "20 Jan, 2020",
+
         author: {
           url: "/images/mock/comment/1.jpg",
           name: "Tamim anj",
         },
+
         content:
           "Before we begin to build your home, we want to get to know you. Through our design \n" +
           "process, we will be asking",
+
         repliedTo: {
           id: 2,
           createdAt: "8 Jan, 2020",
+
           author: {
             url: "/images/mock/comment/2.jpg",
             name: "Mahfuz Riad",
           },
+
           content: "Can you imagine what we will be downloading in another twenty years?",
         },
       },
       {
         id: 3,
         createdAt: "20 Jan, 2020",
+
         author: {
           url: "/images/mock/comment/1.jpg",
           name: "Tamim anj",
         },
+
         content:
           "Before we begin to build your home, we want to get to know you. Through our design \n" +
           "process, we will be asking ",

@@ -40,6 +40,7 @@ export default defineComponent({
         createdAt: "January 02, 2020",
         title: "5 Things to do in Barcelona This Summer That Are Not in Your Guide Book",
         image: "/images/mock/blog/posts/2.jpg",
+
         short:
           "The plan in the beginning was always to leave after a year." +
           " I’ve spent my share of summers here, as I tend to leave vacations " +

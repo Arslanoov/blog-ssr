@@ -1,8 +1,7 @@
 import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators"
 
 import { RegisterFormInterface, CLEAR_REGISTER_FORM } from "~/interfaces/forms/register"
-
-import * as api from "~/api/v1/auth"
+import { signUp } from "~/api/v1/auth"
 
 @Module({
   name: process.env.NODE_ENV === "test" ? "auth" : undefined,
@@ -24,7 +23,7 @@ export default class Auth extends VuexModule {
 
   @Action({ rawError: true })
   signUp() {
-    api.signUp(this.registerForm.email, this.registerForm.password).then((response) => {
+    signUp(this.registerForm.email, this.registerForm.password).then((response) => {
       alert(1)
       console.log("RESPONSE", response)
     })

@@ -17,11 +17,13 @@ export default defineComponent({
       type: String,
       required: true,
     },
+
     withBorder: {
       type: Boolean,
       required: false,
       default: false,
     },
+
     items: {
       type: Array,
       required: true,

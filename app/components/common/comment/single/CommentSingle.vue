@@ -22,6 +22,7 @@ export default defineComponent({
     /* TODO: Fix */
     repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any,
   },
+
   props: {
     item: {
       type: Object as () => CommentInterface,

@@ -3,11 +3,13 @@ export default {
 
   head: {
     title: "Nuxt Blog",
+
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" },
     ],
+
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
@@ -35,6 +37,7 @@ export default {
       appId: process.env.FIREBASE_APP_ID,
       databaseURL: process.env.FIREBASE_PROJECT_ID,
     },
+
     services: {
       auth: {
         ssr: true,

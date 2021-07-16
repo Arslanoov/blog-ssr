@@ -28,9 +28,11 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "Travelling around the holidays\n" + " is always a bit more",
+
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
           "AirBnB. For those of you who may not yet be familiar",
+
         image: "/images/mock/blog/popular-posts/1.jpg",
       },
       {
@@ -38,11 +40,14 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "5 Things to do in Barcelona\n" + "This Summer That Are\n" + "Not in Your Guide Book",
+
         short:
           "Today I’m going to share some of my top tips \n" +
           "for booking with AirBnB. For those of you\n" +
           "who may not yet be familiar",
+
         image: "/images/mock/blog/popular-posts/1.jpg",
+
         author: {
           url: "/images/mock/avatar/1.png",
           name: "Afaty Poprita",
@@ -54,6 +59,7 @@ export default defineComponent({
         createdAt: "January 02, 2020",
         title: "The Islands Of Japan \n" + "Stretch Down The Asian\n" + "Mainland",
         image: "/images/mock/blog/popular-posts/2.jpg",
+
         author: {
           url: "/images/mock/avatar/1.png",
           name: "Afaty Poprita",
@@ -64,11 +70,14 @@ export default defineComponent({
         category: "Beauty",
         createdAt: "January 02, 2020",
         title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+
         short:
           "The plan in the beginning was always to leave after a year." +
           " I’ve spent my share of summers here, as I tend to leave vacations " +
           "for the winter. ",
+
         image: "/images/mock/blog/popular-posts/3.jpg",
+
         author: {
           url: "/images/mock/avatar/2.png",
           name: "Afaty Poprita",

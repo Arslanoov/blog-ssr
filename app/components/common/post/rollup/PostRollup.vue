@@ -26,6 +26,7 @@ export default defineComponent({
       type: Object as () => PostInterface,
       required: true,
     },
+
     inverted: {
       type: Boolean,
       required: false,

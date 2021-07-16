@@ -41,7 +41,6 @@ import { defineComponent } from "@nuxt/composition-api"
 import PublishedTrending from "~/components/common/sections/published-trending/PublishedTrending.vue"
 import Categories from "~/components/common/sections/categories/Categories.vue"
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
-
 import MainCard from "~/components/common/post/main-card/MainCard.vue"
 import CardsGrid from "~/components/common/post/cards-grid/CardsGrid.vue"
 import PopularPosts from "~/components/common/post/popular/PopularPosts.vue"

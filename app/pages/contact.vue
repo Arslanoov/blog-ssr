@@ -24,7 +24,6 @@
 import { defineComponent, ref } from "@nuxt/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
-
 import AddressList from "~/components/common/contact/address-list/AddressList.vue"
 
 export default defineComponent({
@@ -32,6 +31,7 @@ export default defineComponent({
     AddressList,
     Button,
   },
+
   setup() {
     const addresses = ref([
       {

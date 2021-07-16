@@ -17,11 +17,14 @@ export default defineComponent({
     const post = reactive({
       category: "Travel",
       createdAt: "January 02, 2020",
+
       author: {
         url: "/images/mock/blog/avatar.png",
         name: "Masum Rana",
       },
+
       title: "Ultimate Europe Travel Bucket List for This Summer",
+
       short:
         "Europe may be famous for its history, monuments and sightseeing," +
         " but summer is for enjoying the outdoors. For hiking, cycling, swimming, " +

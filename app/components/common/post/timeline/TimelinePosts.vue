@@ -24,6 +24,7 @@ export default defineComponent({
       type: Object as () => TagInterface,
       required: true,
     },
+
     nextPost: {
       type: Object as () => TagInterface,
       required: true,

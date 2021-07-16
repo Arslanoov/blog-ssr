@@ -12,6 +12,7 @@ export default defineComponent({
   components: {
     Category,
   },
+
   setup() {
     const categories = ref([
       {

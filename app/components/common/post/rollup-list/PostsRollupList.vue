@@ -16,22 +16,26 @@ export default defineComponent({
   components: {
     PostRollup,
   },
+
   props: {
     title: {
       type: String,
       required: false,
       default: "",
     },
+
     inverted: {
       type: Boolean,
       required: false,
       default: false,
     },
+
     length: {
       type: Number,
       required: true,
     },
   },
+
   setup() {
     const posts = ref([
       {

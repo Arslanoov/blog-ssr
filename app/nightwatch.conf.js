@@ -1,4 +1,5 @@
 const Services = {}
+
 loadServices()
 
 module.exports = {
@@ -38,8 +39,10 @@ module.exports = {
     firefox: {
       desiredCapabilities: {
         browserName: "firefox",
+
         alwaysMatch: {
           acceptInsecureCerts: true,
+
           "moz:firefoxOptions": {
             args: [
               // '-headless',
@@ -48,10 +51,12 @@ module.exports = {
           },
         },
       },
+
       webdriver: {
         start_process: true,
         port: 4444,
         server_path: Services.geckodriver ? Services.geckodriver.path : "",
+
         cli_args: [
           // very verbose geckodriver logs
           // '-vv'
@@ -62,11 +67,13 @@ module.exports = {
     chrome: {
       desiredCapabilities: {
         browserName: "chrome",
+
         "goog:chromeOptions": {
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
           //
           // This tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
           w3c: false,
+
           args: [
             // '--no-sandbox',
             // '--ignore-certificate-errors',
@@ -80,6 +87,7 @@ module.exports = {
         start_process: true,
         port: 9515,
         server_path: Services.chromedriver ? Services.chromedriver.path : "",
+
         cli_args: [
           // --verbose
         ],
@@ -89,8 +97,10 @@ module.exports = {
     edge: {
       desiredCapabilities: {
         browserName: "MicrosoftEdge",
+
         "ms:edgeOptions": {
           w3c: false,
+
           // More info on EdgeDriver: https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/capabilities-edge-options
           args: [
             // '--headless'
@@ -100,9 +110,11 @@ module.exports = {
 
       webdriver: {
         start_process: true,
+
         // Download msedgedriver from https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/
         //  and set the location below:
         server_path: "",
+
         cli_args: [
           // --verbose
         ],
@@ -114,6 +126,7 @@ module.exports = {
         host: "hub-cloud.browserstack.com",
         port: 443,
       },
+
       desiredCapabilities: {
         "bstack:options": {
           userName: "${BROWSERSTACK_USER}",
@@ -122,11 +135,13 @@ module.exports = {
       },
 
       disable_error_log: true,
+
       webdriver: {
         timeout_options: {
-          timeout: 15000,
+          timeout: 15_000,
           retry_attempts: 3,
         },
+
         keep_alive: true,
         start_process: false,
       },
@@ -134,6 +149,7 @@ module.exports = {
 
     "browserstack.local": {
       extends: "browserstack",
+
       desiredCapabilities: {
         "browserstack.local": true,
       },
@@ -141,8 +157,10 @@ module.exports = {
 
     "browserstack.chrome": {
       extends: "browserstack",
+
       desiredCapabilities: {
         browserName: "chrome",
+
         chromeOptions: {
           w3c: false,
         },
@@ -151,6 +169,7 @@ module.exports = {
 
     "browserstack.firefox": {
       extends: "browserstack",
+
       desiredCapabilities: {
         browserName: "firefox",
       },
@@ -158,6 +177,7 @@ module.exports = {
 
     "browserstack.ie": {
       extends: "browserstack",
+
       desiredCapabilities: {
         browserName: "internet explorer",
         browserVersion: "11.0",
@@ -166,6 +186,7 @@ module.exports = {
 
     "browserstack.safari": {
       extends: "browserstack",
+
       desiredCapabilities: {
         browserName: "safari",
       },
@@ -173,6 +194,7 @@ module.exports = {
 
     "browserstack.local_chrome": {
       extends: "browserstack.local",
+
       desiredCapabilities: {
         browserName: "chrome",
       },
@@ -180,16 +202,19 @@ module.exports = {
 
     "browserstack.local_firefox": {
       extends: "browserstack.local",
+
       desiredCapabilities: {
         browserName: "firefox",
       },
     },
+
     selenium_server: {
       // Selenium Server is running locally and is managed by Nightwatch
       selenium: {
         start_process: true,
         port: 4444,
         server_path: Services.seleniumServer ? Services.seleniumServer.path : "",
+
         cli_args: {
           "webdriver.gecko.driver": Services.geckodriver ? Services.geckodriver.path : "",
           "webdriver.chrome.driver": Services.chromedriver ? Services.chromedriver.path : "",
@@ -199,8 +224,10 @@ module.exports = {
 
     "selenium.chrome": {
       extends: "selenium_server",
+
       desiredCapabilities: {
         browserName: "chrome",
+
         chromeOptions: {
           w3c: false,
         },
@@ -209,8 +236,10 @@ module.exports = {
 
     "selenium.firefox": {
       extends: "selenium_server",
+
       desiredCapabilities: {
         browserName: "firefox",
+
         "moz:firefoxOptions": {
           args: [
             // '-headless',
@@ -225,13 +254,13 @@ module.exports = {
 function loadServices() {
   try {
     Services.seleniumServer = require("selenium-server")
-  } catch (err) {}
+  } catch {}
 
   try {
     Services.chromedriver = require("chromedriver")
-  } catch (err) {}
+  } catch {}
 
   try {
     Services.geckodriver = require("geckodriver")
-  } catch (err) {}
+  } catch {}
 }

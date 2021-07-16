@@ -9,7 +9,6 @@
 
 <script lang="ts">
 import Vue from "vue"
-
 import Nav from "@/components/modules/Nav.vue"
 import RightNav from "@/components/modules/RightNav.vue"
 

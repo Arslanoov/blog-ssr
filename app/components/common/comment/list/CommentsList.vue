@@ -14,6 +14,7 @@ export default defineComponent({
   components: {
     CommentSingle,
   },
+
   props: {
     items: {
       // TODO: Array<CommentInterface>

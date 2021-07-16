@@ -4,6 +4,7 @@ import { isDev } from "~/tools/build/env"
 
 export const apiSuccess = <T>(response: T) => {
   isDev() && console.log("[API Success]:", response)
+
   return response
 }
 
@@ -19,5 +20,6 @@ export const formatFirebaseErrorMessage = (error: FirebaseError) => ({
 
 export const apiError = (error: FirebaseError) => {
   isDev() && console.error("[API Error]:", error.message)
+
   return formatFirebaseErrorMessage(error)
 }

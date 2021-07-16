@@ -1,4 +1,5 @@
 import { mount } from "@vue/test-utils"
+
 import Button from "~/components/base/button/Button.vue"
 
 describe("Base Button", () => {
@@ -12,6 +13,7 @@ describe("Base Button", () => {
     })
 
     const button = wrapper.find(".button")
+
     expect(button.text()).toBe(buttonText)
     expect(button.attributes().style).toBe("padding: 2rem;")
   })

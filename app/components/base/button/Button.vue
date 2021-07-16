@@ -13,11 +13,13 @@ export default defineComponent({
       type: String,
       required: true,
     },
+
     padding: {
       type: String,
       required: true,
     },
   },
+
   setup(_, { emit }) {
     const onClick = (e: Event) => emit("click", e)
 

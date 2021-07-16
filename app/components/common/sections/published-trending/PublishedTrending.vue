@@ -18,7 +18,6 @@
 import { defineComponent, ref } from "@nuxt/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
-
 import PublishedPosts from "~/components/common/post/published-posts/PublishedPosts.vue"
 
 export default defineComponent({
@@ -26,6 +25,7 @@ export default defineComponent({
     Button,
     PublishedPosts,
   },
+
   setup() {
     const posts = ref([
       {
@@ -33,10 +33,13 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "What If How We Respond to the Crisis is \n" + "Part of the Crisis?",
+
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
           "AirBnB. For those of you who may not yet be familiar",
+
         image: "/images/mock/blog/published-posts/1.jpg",
+
         author: {
           url: "/images/mock/avatar/2.png",
           name: "Afaty Poprita",
@@ -47,10 +50,13 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
           "AirBnB. For those of you who may not yet be familiar",
+
         image: "/images/mock/blog/published-posts/2.jpg",
+
         author: {
           url: "/images/mock/avatar/2.png",
           name: "Afaty Poprita",
@@ -61,10 +67,13 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
           "AirBnB. For those of you who may not yet be familiar",
+
         image: "/images/mock/blog/published-posts/2.jpg",
+
         author: {
           url: "/images/mock/avatar/2.png",
           name: "Afaty Poprita",
@@ -75,10 +84,13 @@ export default defineComponent({
         category: "Travel",
         createdAt: "January 02, 2020",
         title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
           "AirBnB. For those of you who may not yet be familiar",
+
         image: "/images/mock/blog/published-posts/2.jpg",
+
         author: {
           url: "/images/mock/avatar/2.png",
           name: "Afaty Poprita",
