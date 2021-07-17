@@ -8,7 +8,8 @@
       .cards-grid__item(v-for="(post, index) in posts", :key=`post.id`)
         img(v-if=`post.image`, :src=`post.image`, alt="").cards-grid__image
         .cards-grid__content(:class=`index === posts.length - 1 ? "cards-grid__content_resettled" : ""`)
-          .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`) {{ post.title }}
+          .cards-grid__element.cards-grid__title(:class=`index === 0 ? "cards-grid__title_underlined" : ""`).
+            {{ post.title }}
           .cards-grid__element.cards-grid__date {{ post.createdAt }}
           .cards-grid__element.cards-grid__short(v-if=`post.short`) {{ post.short }}
 </template>
@@ -99,20 +100,8 @@ export default defineComponent({
     }, @without-screen);
   }
 
-  &__item,
-  &__image {
-    &:not(:last-of-type) {
-      border-radius: 1rem;
-    }
-  }
-
   &__image {
     width: 100%;
-  }
-
-  &__image,
-  &__title {
-    .pointer-on-hover();
   }
 
   &__item {
@@ -198,6 +187,18 @@ export default defineComponent({
         justify-content: center;
       }
     }, @without-screen);
+  }
+
+  &__image,
+  &__title {
+    .pointer-on-hover();
+  }
+
+  &__item,
+  &__image {
+    &:not(:last-of-type) {
+      border-radius: 1rem;
+    }
   }
 
   &__content {

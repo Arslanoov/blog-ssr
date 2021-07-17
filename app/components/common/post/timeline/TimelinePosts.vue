@@ -79,6 +79,8 @@ export default defineComponent({
   }
 
   &__icon {
+    font-size: @timeline-posts-icon-font-size;
+
     &_left {
       margin-right: 2rem;
     }
@@ -92,10 +94,6 @@ export default defineComponent({
     margin-bottom: 2rem;
 
     font-size: @timeline-posts-title-font-size;
-  }
-
-  &__icon {
-    font-size: @timeline-posts-icon-font-size;
   }
 
   &__read-more {

@@ -104,10 +104,6 @@ export default defineComponent({
     }, @without-screen);
   }
 
-  &__image {
-    .pointer-on-hover();
-  }
-
   &__index {
     text-align: right;
 
@@ -115,12 +111,6 @@ export default defineComponent({
 
     font-size: @most-read-post-font-size;
     line-height: @most-read-post-line-height;
-  }
-
-  &__date {
-    font-size: @most-read-post-date-font-size;
-
-    color: @most-read-post-date-color;
   }
 
   &__row {
@@ -131,6 +121,8 @@ export default defineComponent({
 
   &__image {
     width: 100%;
+
+    .pointer-on-hover();
   }
 
   &__content {

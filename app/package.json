@@ -10,7 +10,8 @@
     "lint": "npm run lint:js",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:js:fix": "eslint --ext \".js,.ts,.vue\" --fix --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{vue,less}\" --ignore-path .gitignore",
+    "lint:style:fix": "stylelint \"**/*.{vue,less}\" --fix --ignore-path .gitignore",
     "test:e2e": "nightwatch",
     "test:unit": "jest"
   },
