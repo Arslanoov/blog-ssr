@@ -29,15 +29,17 @@
           .about-container__content
             h4.about-container__paragraph-title Some thoughts on motivation
             p.about-container__paragraph.
-              I supposed I should tell you a bit about myself since you’ve clicked on my ‘About’ page and all. My name is
-              Audrey and That Backpacker is the place where I share my love for travel and where I try to help you travel in
-              a way that suits your budget and your lifestyle. Travel can be done so many different ways! For some, that
+              I supposed I should tell you a bit about myself since you’ve clicked on my ‘About’ page and all. My name
+              is Audrey and That Backpacker is the place where I share my love for travel and where I try to help you
+              travel in a way that suits your budget and your lifestyle. Travel can be done so many
+              different ways! For some, that
               might mean a one week stay at an all inclusive resort, a two week whirlwind tour of Europe, a month long
               language course abroad, a six month internship in a developing community, or a year long RTW backpacking
               adventure.
             p.about-container__paragraph.
-              I supposed I should tell you a bit about myself since you’ve clicked on my ‘About’ page and all. My name is
-              Audrey and That Backpacker is the place where I share my love for travel and where I try to help you travel
+              I supposed I should tell you a bit about myself since you’ve clicked on my ‘About’ page and all.
+              My name isAudrey and That Backpacker is the place where I share my love for
+              travel and where I try to help you travel
               in a way that suits your budget and your lifestyle.
           img(src="/images/about/2.jpg", alt="").about-container__paragraph-image
 
@@ -45,16 +47,19 @@
           .about-container__content
             h4.about-container__paragraph-title Our History
             p.about-container__paragraph.
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolore
-              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+              totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+              architecto beatae vitae dicta sunt explicabo.
+              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+              sed quia consequuntur magni dolore
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+              qui dolorem ipsum quia dolor sit amet,
               consectetur,
           img(src="/images/about/3.jpg", alt="").about-container__paragraph-image
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 import PostsHorizontalSlider from "~/components/common/post/horizontal-slider/PostsHorizontalSlider.vue"
 

@@ -2,8 +2,8 @@ import { NuxtFireInstance } from "@nuxtjs/firebase"
 
 let $fire: NuxtFireInstance
 
-export function initializeFirebase(firebaseInstance: NuxtFireInstance) {
+function initializeFirebase(firebaseInstance: NuxtFireInstance): void {
   $fire = firebaseInstance
 }
 
-export { $fire }
+export { initializeFirebase, $fire }

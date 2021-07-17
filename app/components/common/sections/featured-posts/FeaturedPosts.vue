@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 import FeaturedPost from "~/components/common/post/featured-post/FeaturedPost.vue"
 
@@ -20,25 +20,25 @@ export default defineComponent({
       {
         id: 1,
         createdAt: "January 02, 2020",
-        title: "Cape Breton was the \n" + "second stop of our road",
+        title: "Cape Breton was the \nsecond stop of our road",
         image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 2,
         createdAt: "January 02, 2020",
-        title: "How to Apply \n" + "Maximalist Design ",
+        title: "How to Apply \nMaximalist Design ",
         image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 3,
         createdAt: "January 02, 2020",
-        title: "Augmented Reality vs \n" + "Virtual Reality Games",
+        title: "Augmented Reality vs \nVirtual Reality Games",
         image: "/images/mock/blog/featured-posts/1.jpg",
       },
       {
         id: 4,
         createdAt: "January 02, 2020",
-        title: "Best virtual reality apps\n" + "for 2019",
+        title: "Best virtual reality apps\nfor 2019",
         image: "/images/mock/blog/featured-posts/1.jpg",
       },
     ])

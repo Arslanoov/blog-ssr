@@ -9,18 +9,18 @@
         .comment__reply Reply
 
     template(v-if=`item.repliedTo`)
-      repliedComment(:item=`item.repliedTo`).comment__replied
+      replied-comment(:item=`item.repliedTo`).comment__replied
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 import { CommentInterface } from "~/interfaces/comment"
 
 export default defineComponent({
   components: {
-    /* TODO: Fix */
-    repliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    RepliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any,
   },
 
   props: {

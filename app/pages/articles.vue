@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Article from "~/components/common/post/article/Article.vue"
@@ -67,7 +67,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "3 Things You Should Know about \n" + "Social Media Marketing for Creatives",
+        title: "3 Things You Should Know about \nSocial Media Marketing for Creatives",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +
@@ -85,7 +85,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "How to Apply Maximalist Design \n" + "to a Small Living Space",
+        title: "How to Apply Maximalist Design \nto a Small Living Space",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +
@@ -103,7 +103,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "How to Apply Maximalist Design \n" + "to a Small Living Space",
+        title: "How to Apply Maximalist Design \nto a Small Living Space",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +
@@ -121,7 +121,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "The best Vietnam islands to visit\n" + "Vietnam’s popularity ",
+        title: "The best Vietnam islands to visit\nVietnam’s popularity ",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +
@@ -138,7 +138,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "Kim Kardashian West's Hairstylist Told Us How to Stop \n" + "Breakage Once and for All",
+        title: "Kim Kardashian West's Hairstylist Told Us How to Stop \nBreakage Once and for All",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +
@@ -156,7 +156,7 @@ export default defineComponent({
           name: "Masum Rana",
         },
 
-        title: "10 Beauty Bloggers Who Leveled\n" + "Up in 2019",
+        title: "10 Beauty Bloggers Who Leveled\nUp in 2019",
 
         short:
           "Europe may be famous for its history, monuments and sightseeing," +

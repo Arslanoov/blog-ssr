@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 export default defineComponent({
   setup() {
@@ -31,28 +31,28 @@ export default defineComponent({
         category: "Beauty",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 2,
         category: "Design",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 3,
         category: "Travel",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 4,
         category: "Food",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
     ])
 
@@ -104,10 +104,6 @@ export default defineComponent({
     }, @without-screen);
   }
 
-  &__image {
-    .pointer-on-hover();
-  }
-
   &__index {
     text-align: right;
 
@@ -115,12 +111,6 @@ export default defineComponent({
 
     font-size: @most-read-post-font-size;
     line-height: @most-read-post-line-height;
-  }
-
-  &__date {
-    font-size: @most-read-post-date-font-size;
-
-    color: @most-read-post-date-color;
   }
 
   &__row {
@@ -131,6 +121,8 @@ export default defineComponent({
 
   &__image {
     width: 100%;
+
+    .pointer-on-hover();
   }
 
   &__content {

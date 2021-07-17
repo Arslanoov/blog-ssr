@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 import Deals from "~/components/common/newsletter/Deals.vue"
 import FooterColumns from "~/components/modules/FooterColumns.vue"

@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
 
@@ -35,11 +35,15 @@ export default defineComponent({
   }, @without-screen);
 
   &__content {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 
     padding: 5.7rem;
+
+    z-index: 2;
 
     .respond(@sizes[tablet], {
       padding: 2rem 3rem;
@@ -78,12 +82,6 @@ export default defineComponent({
       right: 0;
       bottom: 0;
     }
-  }
-
-  &__content {
-    position: relative;
-
-    z-index: 2;
   }
 
   &__title {

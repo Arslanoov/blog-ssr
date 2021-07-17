@@ -4,7 +4,8 @@
       h2.contact-container__title Contact us
       .contact-container__line
       .contact-container__info.
-        Feel free to get in touch if you have any questions, comments, want to say hello, or are interested in working with me
+        Feel free to get in touch if you have any questions, comments, want to say hello, or are interested in
+        working with me
       .contact-container__form.form
         img(src="/images/contact/map.png", alt="").contact-container__map
         .form__overlay
@@ -21,7 +22,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 import Button from "~/components/base/button/Button.vue"
 import AddressList from "~/components/common/contact/address-list/AddressList.vue"
@@ -37,13 +38,13 @@ export default defineComponent({
       {
         image: "/images/mock/contact/addresses/1.jpg",
         name: "London",
-        address: "3 Waterhouse Square, 138-142 \n" + "Holborn London, England EC1N 2SW\n" + "UK",
+        address: "3 Waterhouse Square, 138-142 \nHolborn London, England EC1N 2SW\nUK",
         link: "/",
       },
       {
         image: "/images/mock/contact/addresses/1.jpg",
         name: "New York City",
-        address: "627 Broadway, 9th Floor\n" + "New York, NY 10012\n" + "USA",
+        address: "627 Broadway, 9th Floor\nNew York, NY 10012\nUSA",
         link: "/",
       },
     ])

@@ -38,6 +38,7 @@ const authModule = namespace("auth")
 @Component({
   components: {
     Button,
+    BaseInput,
   },
 })
 export default class Register extends Vue {

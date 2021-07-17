@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 import PostRollup from "~/components/common/post/rollup/PostRollup.vue"
 
@@ -42,22 +42,22 @@ export default defineComponent({
         id: 1,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "Travelling around the  holidays \n" + "is always a bit more ",
-        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
+        title: "Travelling around the  holidays \nis always a bit more ",
+        short: "Lorem quis bibendum auctor, \n rmninkis elit ipsum,",
       },
       {
         id: 2,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "The Importance of \n" + "Imagination – an interview",
-        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
+        title: "The Importance of \nImagination – an interview",
+        short: "Lorem quis bibendum auctor, \n rmninkis elit ipsum,",
       },
       {
         id: 3,
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/rollup/1.jpg",
-        title: "How do we collaborate to\n" + "bring about Transition",
-        short: "Lorem quis bibendum auctor, \n" + "rmninkis elit ipsum,",
+        title: "How do we collaborate to\nbring about Transition",
+        short: "Lorem quis bibendum auctor, \n rmninkis elit ipsum,",
       },
     ])
 
