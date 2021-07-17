@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "@nuxt/composition-api"
+import { defineComponent, ref } from "@nuxtjs/composition-api"
 
 import Sidebar from "~/components/common/sections/sidebar/Sidebar.vue"
 import Article from "~/components/common/post/article/Article.vue"

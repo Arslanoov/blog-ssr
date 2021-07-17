@@ -28,6 +28,7 @@ module.exports = {
     "no-shadow": "off",
     "strict-mode/add": "off",
     "putout/putout": "off",
+    "unicorn/no-null": "off",
     "unicorn/prefer-module": "off",
     "import/no-commonjs": "off",
     "import/unambiguous": "off",

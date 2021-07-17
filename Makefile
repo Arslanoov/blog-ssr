@@ -4,8 +4,10 @@ up:
 	cd app && npm run dev
 start:
 	cd app && npm run start
-lint:
+lint-js:
 	cd app && npm run lint:js:fix
+lint-style:
+	cd app && npm run lint:style
 
 test: test-unit test-e2e
 test-unit:

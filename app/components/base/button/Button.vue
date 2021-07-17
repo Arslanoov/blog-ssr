@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 export default defineComponent({
   props: {
@@ -33,6 +33,7 @@ export default defineComponent({
 <style lang="less" scoped>
 .button {
   border: 0;
+
   outline: 0;
 
   font-size: @button-font-size;

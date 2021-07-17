@@ -36,7 +36,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxt/composition-api"
+import { defineComponent } from "@nuxtjs/composition-api"
 
 import PublishedTrending from "~/components/common/sections/published-trending/PublishedTrending.vue"
 import Categories from "~/components/common/sections/categories/Categories.vue"
