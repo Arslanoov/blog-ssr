@@ -33,6 +33,9 @@ module.exports = {
 
     // TODO: Remove new Promise
     "promise/always-return": "off",
+
+    // TODO: Removed eslint ignore
+    "eslint-comments/no-unused-disable": "off",
     "init-declarations": "off",
     "import/max-dependencies": "off",
     "nuxt/no-cjs-in-config": "off",

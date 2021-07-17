@@ -16,11 +16,11 @@
 import { defineComponent } from "@nuxtjs/composition-api"
 
 import { CommentInterface } from "~/interfaces/comment"
-import CommentSingle from "~/components/common/comment/single/CommentSingle.vue"
 
 export default defineComponent({
   components: {
-    RepliedComment: CommentSingle,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    RepliedComment: () => import("~/components/common/comment/single/CommentSingle.vue") as any,
   },
 
   props: {
