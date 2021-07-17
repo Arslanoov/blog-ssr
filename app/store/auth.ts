@@ -1,6 +1,7 @@
 import { Module, VuexModule, Mutation, Action } from "vuex-module-decorators"
 
 import { RegisterFormInterface, CLEAR_REGISTER_FORM } from "~/interfaces/forms/register"
+import { UserCredential } from "~/interfaces/auth/user"
 import { signUp as signUpRequest } from "~/api/v1/auth"
 
 @Module({
@@ -22,11 +23,13 @@ export default class Auth extends VuexModule {
   }
 
   @Action({ rawError: true })
-  signUp(): void {
-    signUpRequest(this.registerForm.email, this.registerForm.password)
-      .then((response) => {
-        console.log("RESPONSE", response)
-      })
-      .catch(() => ({}))
+  async signUp(): Promise<UserCredential | undefined> {
+    try {
+      const response = await signUpRequest(this.registerForm.email, this.registerForm.password)
+      console.log("Received response in action", response)
+      return response
+    } catch (error) {
+      console.log("Received error in action", error)
+    }
   }
 }

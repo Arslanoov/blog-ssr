@@ -1,9 +1,15 @@
+import firebase from "firebase"
 import { NuxtFireInstance } from "@nuxtjs/firebase"
 
 let $fire: NuxtFireInstance
 
-function initializeFirebase(firebaseInstance: NuxtFireInstance): void {
+const initializeFirebase = (firebaseInstance: NuxtFireInstance): void => {
   $fire = firebaseInstance
 }
 
-export { initializeFirebase, $fire }
+// Wrappers
+const auth = (email: string, password: string): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.createUserWithEmailAndPassword(email, password)
+}
+
+export { auth, initializeFirebase, $fire }

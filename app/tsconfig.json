@@ -6,7 +6,11 @@
     "lib": [
       "ESNext",
       "ESNext.AsyncIterable",
-      "DOM"
+      "DOM",
+      "es5",
+      "es6",
+      "dom",
+      "dom.iterable"
     ],
     "esModuleInterop": true,
     "allowJs": true,
