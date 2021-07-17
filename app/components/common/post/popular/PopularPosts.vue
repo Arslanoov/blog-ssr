@@ -27,7 +27,7 @@ export default defineComponent({
         id: 1,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\n is always a bit more",
 
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
@@ -39,7 +39,7 @@ export default defineComponent({
         id: 2,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "5 Things to do in Barcelona\n" + "This Summer That Are\n" + "Not in Your Guide Book",
+        title: "5 Things to do in Barcelona\nThis Summer That Are\nNot in Your Guide Book",
 
         short:
           "Today I’m going to share some of my top tips \n" +
@@ -57,7 +57,7 @@ export default defineComponent({
         id: 3,
         category: "Beauty",
         createdAt: "January 02, 2020",
-        title: "The Islands Of Japan \n" + "Stretch Down The Asian\n" + "Mainland",
+        title: "The Islands Of Japan \nStretch Down The Asian\nMainland",
         image: "/images/mock/blog/popular-posts/2.jpg",
 
         author: {
@@ -69,7 +69,7 @@ export default defineComponent({
         id: 4,
         category: "Beauty",
         createdAt: "January 02, 2020",
-        title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+        title: "Visual Elements — Basic Things\nThat Can Be Seen",
 
         short:
           "The plan in the beginning was always to leave after a year." +

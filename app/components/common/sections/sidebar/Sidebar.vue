@@ -42,7 +42,7 @@ export default defineComponent({
         id: 1,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "The Most And Least Visited\n" + " Countries In The World",
+        title: "The Most And Least Visited\n Countries In The World",
         image: "/images/mock/blog/slider/1.png",
       },
     ])
@@ -52,7 +52,7 @@ export default defineComponent({
         id: 1,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+        title: "Visual Elements — Basic Things\n That Can Be Seen",
         image: "/images/mock/blog/slider/1.png",
       },
     ])

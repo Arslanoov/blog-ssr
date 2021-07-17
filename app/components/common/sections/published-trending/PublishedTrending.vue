@@ -32,7 +32,7 @@ export default defineComponent({
         id: 1,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "What If How We Respond to the Crisis is \n" + "Part of the Crisis?",
+        title: "What If How We Respond to the Crisis is \nPart of the Crisis?",
 
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
@@ -49,7 +49,7 @@ export default defineComponent({
         id: 2,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+        title: "Visual Elements — Basic Things\nThat Can Be Seen",
 
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
@@ -66,7 +66,7 @@ export default defineComponent({
         id: 3,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+        title: "Visual Elements — Basic Things\nThat Can Be Seen",
 
         short:
           "Today I’m going to share some of my top tips for booking with\n" +
@@ -83,7 +83,7 @@ export default defineComponent({
         id: 4,
         category: "Travel",
         createdAt: "January 02, 2020",
-        title: "Visual Elements — Basic Things\n" + "That Can Be Seen",
+        title: "Visual Elements — Basic Things\nThat Can Be Seen",
 
         short:
           "Today I’m going to share some of my top tips for booking with\n" +

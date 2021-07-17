@@ -21,22 +21,35 @@
           .content
             .content__title How Long Will Your Trip Be?
             p.content__text.
-              Although it’s not impossible to backpack across Europe cheaply (You can – that’s why you’re reading this!), the dollar stretches much less there than in Southeast Asia. For those with less money and time, going somewhere a bit cheaper pays.
+              Although it’s not impossible to backpack across Europe cheaply
+              (You can – that’s why you’re reading this!), the dollar stretches much less there than in Southeast Asia
+               For those with less money and time, going somewhere a bit cheaper pays.
             .content__row
               img(src="/images/mock/blog/single/2.jpg", alt="").content__image
               img(src="/images/mock/blog/single/3.jpg", alt="").content__image
             p.content__text.
-              There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go. Where you want to go first is widely dependent on your personal preferences. Once a year, go Some place you’ve Never been before.
+              There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the
+              travel bug, it can be difficult to decide where to go. Where you want to go first is widely dependent
+              on your personal preferences. Once a year, go Some place you’ve Never been before.
             p.content__text.
-              WeChat mini programs are an essential part of the Chinese user experience,” Tencent WeChat team said. “Our partnership with Udacity is offering a great way of teaching engineers around the world how to enter the Chinese market
+              WeChat mini programs are an essential part of the Chinese user experience,” Tencent WeChat team said.
+              “Our partnership with Udacity is offering a great way of teaching engineers around the world how to
+              enter the Chinese market
             img(src="/images/mock/blog/single/4.jpg", alt="").content__image.content__image_full
-            p.content__text You can wander through the rooms of the Ice Hotel, where everything (except for bedding and covers) is made of ice and then sip a cocktail from an ice glass at the Ice Bar. The bookshelves at the Ice Café are, you guessed it,
+            p.content__text You can wander through the rooms of the Ice Hotel, where everything (except for bedding
+            and covers) is made of ice and then sip a cocktail from an ice glass at the Ice Bar. The bookshelves at
+            the Ice Café are, you guessed it,
             .content__group
               .content__line
               .content__quote.
-                “The mystical world of snow invites guests to experience the magic of winter,” the Ice Village staff told Lonely Planet. Winter magic is also tailor-made for kids, with a whole set of activities ranging from playing ice instruments to ice sculpturing classes.
+                “The mystical world of snow invites guests to experience the magic of winter,” the Ice Village staff
+                told Lonely Planet. Winter magic is also tailor-made for kids, with a whole set of activities ranging
+                from playing ice instruments to ice sculpturing classes.
             p.content__text.
-              The Ice Village is connected to the Hoshino Resort Tomamu, and it’s open both for day trips and longer stays for the resort’s guests— starting from the pre-opening in December and the official opening in January, going on until March 2019. The entrance fee is 500 yen, or US$5. The Ice Hotel will be in operation from 19 – 28 January of 2019.
+              The Ice Village is connected to the Hoshino Resort Tomamu, and it’s open both for day trips and longer
+              stays for the resort’s guests— starting from the pre-opening in December and the official opening in
+              January, going on until March 2019. The entrance fee is 500 yen, or US$5. The Ice Hotel will be in
+              operation from 19 – 28 January of 2019.
           .single-container__left-bottom
             .single-container__group
               .single-container__share
@@ -90,7 +103,7 @@ export default defineComponent({
         name: "Afaty Poprita",
       },
 
-      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
+      title: "The Most And Least Visited Countries In The World\nThere are 196 countries in the world",
 
       short:
         "There are 196 countries in the world. Whether you are a seasoned veteran or a newly bitten by the travel bug, it can be difficult to decide where to go.here are 196 \n" +
@@ -157,13 +170,13 @@ export default defineComponent({
     const prevPost = reactive({
       id: 1,
       createdAt: "January 02, 2020",
-      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
+      title: "The Most And Least Visited Countries In The World\nThere are 196 countries in the world",
     })
 
     const nextPost = reactive({
       id: 2,
       createdAt: "January 02, 2020",
-      title: "The Most And Least Visited Countries In The World\n" + "There are 196 countries in the world",
+      title: "The Most And Least Visited Countries In The World\nThere are 196 countries in the world",
     })
 
     const comments = ref([

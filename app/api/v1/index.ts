@@ -2,7 +2,7 @@ import { isDev } from "~/tools/build/env"
 
 // Success
 
-export const apiSuccess = <T>(response: T) => {
+const apiSuccess = <T>(response: T): T => {
   isDev() && console.log("[API Success]:", response)
 
   return response
@@ -10,16 +10,22 @@ export const apiSuccess = <T>(response: T) => {
 
 // Error
 
-export type FirebaseError = {
+type FirebaseError = {
   message: string | undefined
 }
 
-export const formatFirebaseErrorMessage = (error: FirebaseError) => ({
+type FormattedError = {
+  message: string | undefined
+}
+
+const formatFirebaseErrorMessage = (error: FirebaseError): FormattedError => ({
   message: error.message,
 })
 
-export const apiError = (error: FirebaseError) => {
+const apiError = (error: FirebaseError): FormattedError => {
   isDev() && console.error("[API Error]:", error.message)
 
   return formatFirebaseErrorMessage(error)
 }
+
+export { FirebaseError, apiSuccess, apiError, formatFirebaseErrorMessage }

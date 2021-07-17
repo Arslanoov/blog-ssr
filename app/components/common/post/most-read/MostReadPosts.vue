@@ -31,28 +31,28 @@ export default defineComponent({
         category: "Beauty",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 2,
         category: "Design",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 3,
         category: "Travel",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
       {
         id: 4,
         category: "Food",
         createdAt: "January 02, 2020",
         image: "/images/mock/blog/most-read-posts/1.jpg",
-        title: "Travelling around the holidays\n" + " is always a bit more",
+        title: "Travelling around the holidays\nis always a bit more",
       },
     ])
 
