@@ -1,12 +1,7 @@
-import firebase from "firebase"
+import { auth } from "~/utils/firebase"
+import { apiRequest } from "~/api/v1/index"
+import { UserCredential } from "~/interfaces/auth/user"
 
-import { $fire } from "~/utils/firebase"
-import { apiError, apiSuccess } from "~/api/v1/index"
-
-export const signUp = (email: string, password: string): Promise<firebase.auth.UserCredential> =>
-  new Promise((resolve, reject) => {
-    $fire.auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((response) => resolve(apiSuccess(response)))
-      .catch((error) => reject(apiError(error)))
-  })
+export const signUp = async (email: string, password: string): Promise<UserCredential> => {
+  return apiRequest<UserCredential>(auth, [email, password])
+}

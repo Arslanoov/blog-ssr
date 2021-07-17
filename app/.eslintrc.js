@@ -31,11 +31,13 @@ module.exports = {
     "no-alert": process.env.NODE_ENV === "production" ? "error" : "warn",
     "no-warning-comments": process.env.NODE_ENV === "production" ? "error" : "off",
 
-    // TODO: Remove new Promise
-    "promise/always-return": "off",
-
-    // TODO: Removed eslint ignore
+    // TODO: Remove eslint ignore
     "eslint-comments/no-unused-disable": "off",
+    "padding-line-between-statements": "off",
+    "no-invalid-this": "off",
+    "require-await": "off",
+    "arrow-body-style": "off",
+    "unicorn/catch-error-name": "off",
     "init-declarations": "off",
     "import/max-dependencies": "off",
     "nuxt/no-cjs-in-config": "off",
