@@ -162,7 +162,8 @@ export default class Register extends Vue {
 
   padding: 8rem 7.4rem;
 
-  background-color: @auth-form-background-color;
+  background: url("/images/auth/register/overlay.jpg") no-repeat @auth-form-background-color;
+  background-size: cover;
 
   .respond(@sizes[tablet], {
     padding: 4rem 3rem;
