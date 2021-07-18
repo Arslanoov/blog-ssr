@@ -8,7 +8,6 @@
         .form__overlay
           .form__title Login
           input(type="text", placeholder="Username").form__input
-          input(type="text", placeholder="Your Name").form__input
           input(type="email", placeholder="Email").form__input
           .form__info
             .form__group

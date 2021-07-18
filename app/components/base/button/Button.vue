@@ -1,7 +1,7 @@
 <template lang="pug">
   button.button(@click="onClick", :style=`{
     padding
-  }`) {{ content }}
+  }`, type="submit") {{ content }}
 </template>
 
 <script lang="ts">
@@ -40,6 +40,12 @@ export default defineComponent({
 
   background-color: @button-background-color;
   color: @button-color;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: @button-background-color-hover;
+  }
 
   .pointer-on-hover();
 }

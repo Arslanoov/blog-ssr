@@ -1,6 +1,8 @@
 <template lang="pug">
   nav.right-nav
-    nuxt-link(to="/login").right-nav__auth
+    nuxt-link(to="/auth/register").right-nav__auth
+      .right-nav__auth-name Register
+    nuxt-link(to="/auth/login").right-nav__auth
       .right-nav__auth-name Login
       img(src="/images/lock.png", alt="").right-nav__auth-icon
     .right-nav__line
@@ -26,7 +28,7 @@ export default Vue.extend({})
     font-size: 1.6rem;
 
     &-name {
-      margin-right: 0.7rem;
+      margin-right: 1rem;
     }
 
     .link();

@@ -1,3 +1,6 @@
 import firebase from "firebase"
 
-export type UserCredential = firebase.auth.UserCredential
+type UserCredential = firebase.auth.UserCredential
+type User = firebase.User
+
+export { UserCredential, User }

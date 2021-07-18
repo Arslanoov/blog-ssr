@@ -34,7 +34,11 @@ module.exports = {
     // TODO: Remove eslint ignore
     "eslint-comments/no-unused-disable": "off",
     "padding-line-between-statements": "off",
+    "promise/catch-or-return": "off",
+    "max-statements": "off",
+    "promise/always-return": "off",
     "no-invalid-this": "off",
+    "no-magic-numbers": "off",
     "require-await": "off",
     "arrow-body-style": "off",
     "unicorn/catch-error-name": "off",
