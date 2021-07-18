@@ -19,11 +19,17 @@ module.exports = {
     less: ["~/assets/styles/bootstrap.less"],
   },
 
-  plugins: ["~/plugins/accessors/firebase"],
+  plugins: [
+    "~/plugins/accessors/firebase",
+    {
+      src: "~/plugins/validation",
+      ssr: false,
+    },
+  ],
 
   buildModules: ["@nuxt/typescript-build", "@nuxtjs/style-resources", "@nuxtjs/composition-api", "@nuxtjs/fontawesome"],
 
-  modules: ["@nuxtjs/pwa", "@nuxtjs/firebase"],
+  modules: ["@nuxtjs/pwa", "@nuxtjs/firebase", "@nuxtjs/toast"],
 
   build: {},
 
@@ -57,6 +63,11 @@ module.exports = {
     manifest: {
       lang: "en",
     },
+  },
+
+  toast: {
+    position: "top-center",
+    register: [],
   },
 
   server: {

@@ -1,14 +1,12 @@
 <template lang="pug">
   .container.login-container
     .login-container__content
-      // TODO: Replace into layout
       h2.login-container__title Login
       .login-container__line
       .login-container__form.form
         .form__overlay
           .form__title Login
           input(type="text", placeholder="Username").form__input
-          input(type="text", placeholder="Your Name").form__input
           input(type="email", placeholder="Email").form__input
           .form__info
             .form__group
@@ -72,7 +70,8 @@ export default defineComponent({
 
   padding: 8rem 7.4rem;
 
-  background-color: @auth-form-background-color;
+  background: url("/images/auth/login/overlay.jpg") no-repeat @auth-form-background-color;
+  background-size: cover;
 
   .respond(@sizes[tablet], {
     padding: 4rem 3rem;

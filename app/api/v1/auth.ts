@@ -1,7 +1,13 @@
-import { auth } from "~/utils/firebase"
+import { auth, getCurrentUser as currentUser } from "~/utils/firebase"
 import { apiRequest } from "~/api/v1/index"
-import { UserCredential } from "~/interfaces/auth/user"
+import { UserCredential, User } from "~/interfaces/auth/user"
 
-export const signUp = async (email: string, password: string): Promise<UserCredential> => {
+const signUp = async (email: string, password: string): Promise<UserCredential> => {
   return apiRequest<UserCredential>(auth, [email, password])
 }
+
+const getCurrentUser = (): User | null => {
+  return currentUser()
+}
+
+export { signUp, getCurrentUser }

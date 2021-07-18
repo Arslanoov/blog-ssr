@@ -12,4 +12,8 @@ const auth = (email: string, password: string): Promise<firebase.auth.UserCreden
   return $fire.auth.createUserWithEmailAndPassword(email, password)
 }
 
-export { auth, initializeFirebase, $fire }
+const getCurrentUser = (): firebase.User | null => {
+  return $fire.auth.currentUser
+}
+
+export { auth, getCurrentUser, initializeFirebase, $fire }

@@ -1,10 +1,11 @@
 <template lang="pug">
-  input(
-    v-bind="$attrs",
-    v-bind:value="value",
-    v-on:input="$emit('input', $event.target.value)",
-    v-on:change="$emit('change', $event.target.value)"
-    ).input
+  .input
+    input(
+      v-bind="$attrs",
+      v-bind:value="value",
+      v-on:input="$emit('input', $event.target.value)",
+      v-on:change="$emit('change', $event.target.value)"
+    ).input__item
 </template>
 
 <script lang="ts">
@@ -18,22 +19,23 @@ export default class BaseInput extends Vue {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .input {
-  flex-grow: 1;
+  &__item {
+    flex-grow: 1;
 
-  width: 100%;
+    width: 100%;
 
-  margin-bottom: 2rem;
-  padding: 1.8rem 1.5rem;
+    padding: 1.8rem 1.5rem;
 
-  border: @auth-input-border;
-  outline: 0;
+    border: @auth-input-border;
+    outline: 0;
 
-  &::placeholder {
-    font-size: @auth-input-placeholder-font-size;
+    &::placeholder {
+      font-size: @auth-input-placeholder-font-size;
 
-    color: @auth-input-placeholder-color;
+      color: @auth-input-placeholder-color;
+    }
   }
 }
 </style>
