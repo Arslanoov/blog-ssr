@@ -4,28 +4,103 @@
       h2.login-container__title Login
       .login-container__line
       .login-container__form.form
-        .form__overlay
+        form(@submit.prevent="onSubmit").form__overlay
           .form__title Login
-          input(type="text", placeholder="Username").form__input
-          input(type="email", placeholder="Email").form__input
+          base-error(:error="form.error").form__error-base
+          validation-observer(ref="validator", tag="div").form__observer
+            validation-provider(
+              rules="required|min:6|max:32",
+              tag="div",
+              name="email",
+              v-slot="{ errors }"
+            ).form__input
+              base-input(
+                @input="changeEmail",
+                :value="form.email",
+                type="email",
+                autocomplete="email",
+                placeholder="Email"
+              )
+              base-error(:errors="errors").form__error-field
+            validation-provider(
+              rules="required|min:6|max:32",
+              tag="div",
+              name="password",
+              v-slot="{ errors }"
+            ).form__input
+              base-input(
+                @input="changePassword",
+                :value="form.password",
+                tag="div",
+                type="password",
+                autocomplete="password",
+                placeholder="Password"
+              )
+              base-error(:errors="errors").form__error-field
+          Button(
+            :disabled="isProcessing"
+            content="LOG IN",
+            padding="1.6rem 4rem"
+          ).form__auth
           .form__info
             .form__group
               input(type="checkbox").form__checkbox
               .form__remember Remember Me
             nuxt-link(to="/").form__link Lost your password?
-          Button(content="LOG IN", padding="1.6rem 4rem").form__auth
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api"
+import { Component, Vue } from "nuxt-property-decorator"
+import { namespace } from "vuex-class"
+import { ValidationProvider, ValidationObserver } from "vee-validate"
 
+import { AuthFormInterface } from "~/interfaces/forms/register"
+import AuthStoreModule from "~/store/auth"
 import Button from "~/components/base/button/Button.vue"
+import BaseInput from "~/components/base/input/BaseInput.vue"
+import BaseError from "~/components/base/error/BaseError.vue"
 
-export default defineComponent({
+const authModule = namespace("auth")
+
+@Component({
   components: {
+    ValidationProvider,
+    ValidationObserver,
     Button,
+    BaseInput,
+    BaseError,
   },
 })
+export default class Login extends Vue {
+  @authModule.State("authForm") form!: AuthFormInterface
+
+  @authModule.Mutation("changeAuthFormEmail") changeEmail!: typeof AuthStoreModule.prototype.changeAuthFormEmail
+  @authModule.Mutation("changeAuthFormPassword")
+  changePassword!: typeof AuthStoreModule.prototype.changeAuthFormPassword
+
+  @authModule.Action("login") login!: typeof AuthStoreModule.prototype.login
+
+  public $refs!: {
+    validator: any
+  }
+
+  public isFormValid = false
+  public isProcessing = false
+
+  public onSubmit(): void {
+    this.$refs.validator.validate()
+    if (this.$refs.validator.flags.valid) {
+      this.isProcessing = true
+      this.login()
+        .then(() => {
+          this.$router.push("/")
+        })
+        .finally(() => {
+          this.isProcessing = false
+        })
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -97,29 +172,20 @@ export default defineComponent({
     }, @without-screen);
   }
 
+  &__observer,
+  &__input {
+    width: 100%;
+  }
+
+  &__input {
+    margin-bottom: 2rem;
+  }
+
   &__title {
     margin-bottom: 3rem;
 
     font-size: @auth-form-title-font-size;
     font-weight: @auth-form-title-font-weight;
-  }
-
-  &__input {
-    flex-grow: 1;
-
-    width: 100%;
-
-    margin-bottom: 2rem;
-    padding: 1.8rem 1.5rem;
-
-    border: @auth-input-border;
-    outline: 0;
-
-    &::placeholder {
-      font-size: @auth-input-placeholder-font-size;
-
-      color: @auth-input-placeholder-color;
-    }
   }
 
   &__auth {
