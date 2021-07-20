@@ -1,18 +1,26 @@
 <template lang="pug">
   nav.right-nav
-    nuxt-link(to="/auth/register").right-nav__auth
-      .right-nav__auth-name Register
-    nuxt-link(to="/auth/login").right-nav__auth
-      .right-nav__auth-name Login
+    template(v-if="isAuth") Auth
+    template(v-else)
+      nuxt-link(to="/auth/register").right-nav__auth
+        .right-nav__auth-name Register
+      nuxt-link(to="/auth/login").right-nav__auth
+        .right-nav__auth-name Login
       img(src="/images/lock.png", alt="").right-nav__auth-icon
     .right-nav__line
     img(src="/images/search.png", alt="").right-nav__search
 </template>
 
 <script lang="ts">
-import Vue from "vue"
+import { Component, Vue } from "nuxt-property-decorator"
+import { namespace } from "vuex-class"
 
-export default Vue.extend({})
+const authModule = namespace("auth")
+
+@Component({})
+export default class RightNav extends Vue {
+  @authModule.Getter("isAuth") isAuth!: boolean
+}
 </script>
 
 <style lang="less" scoped>

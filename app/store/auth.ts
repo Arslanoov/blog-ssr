@@ -6,7 +6,7 @@ import {
   CLEAR_REGISTER_FORM,
   CLEAR_AUTH_FORM,
 } from "~/interfaces/forms/register"
-import { UserCredential } from "~/interfaces/auth/user"
+import { AuthState, User, UserCredential } from "~/interfaces/auth/user"
 import { getCurrentUser, signUp as signUpRequest, auth as authRequest } from "~/api/v1/auth"
 import ValidationError from "~/errors/validation"
 
@@ -18,6 +18,7 @@ import ValidationError from "~/errors/validation"
 export default class Auth extends VuexModule {
   private authForm: AuthFormInterface = CLEAR_AUTH_FORM()
   private registerForm: RegisterFormInterface = CLEAR_REGISTER_FORM()
+  private user: User | null = null
 
   @Mutation
   public changeRegisterFormEmail(email: string): void {
@@ -74,6 +75,16 @@ export default class Auth extends VuexModule {
     this.authForm = CLEAR_AUTH_FORM()
   }
 
+  @Mutation
+  public setUser(user: User): void {
+    this.user = user
+  }
+
+  @Action({ rawError: true })
+  public onAuthStateChanged(authState: AuthState): void {
+    this.context.commit("setUser", JSON.parse(JSON.stringify(authState.authUser)))
+  }
+
   @Action({ rawError: true })
   public async signUp(): Promise<UserCredential | undefined> {
     try {
@@ -104,5 +115,9 @@ export default class Auth extends VuexModule {
       }
       throw error
     }
+  }
+
+  public get isAuth(): boolean {
+    return Boolean(this.user)
   }
 }

@@ -47,6 +47,11 @@ module.exports = {
     services: {
       auth: {
         ssr: true,
+
+        initialize: {
+          onAuthStateChangedAction: "auth/onAuthStateChanged",
+          subscribeManually: false,
+        },
       },
     },
   },
@@ -62,6 +67,11 @@ module.exports = {
   pwa: {
     manifest: {
       lang: "en",
+    },
+
+    workbox: {
+      importScripts: ["/firebase-auth-sw.js"],
+      dev: process.env.NODE_ENV === "development",
     },
   },
 
