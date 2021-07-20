@@ -8,12 +8,20 @@ const initializeFirebase = (firebaseInstance: NuxtFireInstance): void => {
 }
 
 // Wrappers
-const auth = (email: string, password: string): Promise<firebase.auth.UserCredential> => {
+const signUp = (email: string, password: string): Promise<firebase.auth.UserCredential> => {
   return $fire.auth.createUserWithEmailAndPassword(email, password)
+}
+
+const auth = (email: string, password: string, rememberMe: boolean): Promise<firebase.auth.UserCredential> => {
+  const response = $fire.auth.signInWithEmailAndPassword(email, password)
+  if (rememberMe) {
+    $fire.auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+  }
+  return response
 }
 
 const getCurrentUser = (): firebase.User | null => {
   return $fire.auth.currentUser
 }
 
-export { auth, getCurrentUser, initializeFirebase, $fire }
+export { signUp, auth, getCurrentUser, initializeFirebase, $fire }

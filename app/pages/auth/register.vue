@@ -7,13 +7,13 @@
         form(@submit.prevent="onSubmit").form__overlay
           .form__title Join
           base-error(:error="form.error").form__error-base
-          validation-observer(ref="validator").form__observer
+          validation-observer(ref="validator", tag="div").form__observer
             validation-provider(
               rules="required|email",
               tag="div",
               name="email",
-            v-slot="{ errors }"
-              ).form__input
+              v-slot="{ errors }"
+            ).form__input
               base-input(
                 @input="changeEmail",
                 :value="form.email",

@@ -8,7 +8,12 @@ type ObjectParams = {
 }
 type Params = Array<Primitives | ArrayParams | ObjectParams>
 
-const apiRequest = async <R>(request: (...args: string[]) => Promise<R>, params: Params): Promise<R> => {
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (k: infer I) => void ? I : never
+
+const apiRequest = async <R>(
+  request: (...args: UnionToIntersection<Primitives>) => Promise<R>,
+  params: Params
+): Promise<R> => {
   try {
     const response = await Reflect.apply(request, null, params)
     isDev() && console.log("[API Success]:", response)
