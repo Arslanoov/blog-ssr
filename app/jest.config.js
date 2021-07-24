@@ -1,5 +1,5 @@
 module.exports = {
-  testRegex: "tests/unit",
+  testRegex: "tests/(components|store)",
 
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",

@@ -2,6 +2,8 @@ import { mount } from "@vue/test-utils"
 
 import Button from "~/components/base/button/Button.vue"
 
+console.log("button", Button)
+
 describe("Base Button", () => {
   test("works", () => {
     const buttonText = "I am a button"

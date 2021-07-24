@@ -24,9 +24,9 @@ import ValidationError from "~/errors/validation"
   stateFactory: true,
 })
 export default class Auth extends VuexModule {
-  private authForm: AuthFormInterface = CLEAR_AUTH_FORM()
-  private registerForm: RegisterFormInterface = CLEAR_REGISTER_FORM()
-  private user: User | null = null
+  public authForm: AuthFormInterface = CLEAR_AUTH_FORM()
+  public registerForm: RegisterFormInterface = CLEAR_REGISTER_FORM()
+  public user: User | null = null
 
   @Mutation
   public changeRegisterFormEmail(email: string): void {

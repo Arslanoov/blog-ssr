@@ -5,29 +5,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api"
+import { Component, Prop, Vue, Emit } from "nuxt-property-decorator"
 
-export default defineComponent({
-  props: {
-    content: {
-      type: String,
-      required: true,
-    },
+@Component({})
+export default class Button extends Vue {
+  @Prop([String]) readonly content: string
+  @Prop([String]) readonly padding: string
 
-    padding: {
-      type: String,
-      required: true,
-    },
-  },
-
-  setup(_, { emit }) {
-    const onClick = (e: Event) => emit("click", e)
-
-    return {
-      onClick,
-    }
-  },
-})
+  @Emit("click")
+  onClick(e: Event): Event {
+    return e
+  }
+}
 </script>
 
 <style lang="less" scoped>
