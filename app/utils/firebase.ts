@@ -24,8 +24,12 @@ const authWithGoogle = (): Promise<firebase.auth.UserCredential> => {
   return $fire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
 }
 
+const authWithFacebook = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+}
+
 const getCurrentUser = (): firebase.User | null => {
   return $fire.auth.currentUser
 }
 
-export { signUp, auth, getCurrentUser, initializeFirebase, authWithGoogle, $fire }
+export { signUp, auth, getCurrentUser, initializeFirebase, authWithGoogle, authWithFacebook, $fire }
