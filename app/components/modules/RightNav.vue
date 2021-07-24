@@ -1,6 +1,10 @@
 <template lang="pug">
   nav.right-nav
-    template(v-if="isAuth") Auth
+    template(v-if="isAuth")
+      .right-nav__profile
+        client-only
+          img(v-if="user.photoURL", :src="user.photoURL", alt="").right-nav__profile-img
+        .right-nav__profile-name {{ user.displayName }}
     template(v-else)
       nuxt-link(to="/auth/register").right-nav__auth
         .right-nav__auth-name Register
@@ -15,10 +19,14 @@
 import { Component, Vue } from "nuxt-property-decorator"
 import { namespace } from "vuex-class"
 
+import { User } from "~/interfaces/auth/user"
+
 const authModule = namespace("auth")
 
 @Component({})
 export default class RightNav extends Vue {
+  @authModule.State("user") user!: User | null
+
   @authModule.Getter("isAuth") isAuth!: boolean
 }
 </script>
@@ -40,6 +48,24 @@ export default class RightNav extends Vue {
     }
 
     .link();
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+
+    .pointer-on-hover();
+
+    &-img {
+      width: 3rem;
+      height: 3rem;
+
+      margin-right: 1rem;
+    }
+
+    &-name {
+      font-size: 1.3rem;
+    }
   }
 
   &__line {
