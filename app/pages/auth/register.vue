@@ -76,6 +76,7 @@ import BaseError from "~/components/base/error/BaseError.vue"
 const authModule = namespace("auth")
 
 @Component({
+  middleware: "noAuth",
   components: {
     ValidationProvider,
     ValidationObserver,

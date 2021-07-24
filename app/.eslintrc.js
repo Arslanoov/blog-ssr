@@ -36,6 +36,7 @@ module.exports = {
     "padding-line-between-statements": "off",
     "promise/catch-or-return": "off",
     "max-statements": "off",
+    "func-names": "off",
     "promise/always-return": "off",
     "no-invalid-this": "off",
     "no-magic-numbers": "off",
