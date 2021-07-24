@@ -2,10 +2,8 @@ import { mount } from "@vue/test-utils"
 
 import Button from "~/components/base/button/Button.vue"
 
-console.log("button", Button)
-
-describe("Base Button", () => {
-  test("works", () => {
+describe("Button component", () => {
+  it("correctly render", () => {
     const buttonText = "I am a button"
     const wrapper = mount(Button, {
       propsData: {

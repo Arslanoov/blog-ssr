@@ -9,27 +9,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "@nuxtjs/composition-api"
+import { Component, Prop, Vue } from "nuxt-property-decorator"
 
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
+import { SocialInterface } from "~/interfaces/social"
 
-    withBorder: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-
-    items: {
-      type: Array,
-      required: true,
-    },
-  },
-})
+@Component({})
+export default class BaseError extends Vue {
+  @Prop([String]) readonly title: string
+  @Prop([Array]) readonly items: SocialInterface[]
+  @Prop({ type: Boolean, default: false }) readonly withBorder: boolean
+}
 </script>
 
 <style lang="less" scoped>
