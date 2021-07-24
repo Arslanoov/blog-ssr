@@ -18,41 +18,41 @@ const factory = () => {
   return getModule(Auth, store)
 }
 
-const userStore = factory()
+const authStore = factory()
 
 describe("auth store register form", () => {
   it("changes email", () => {
-    expect(userStore.registerForm.email).toBe("")
+    expect(authStore.registerForm.email).toBe("")
     const email = "somemail@gmail.com"
-    userStore.changeRegisterFormEmail(email)
-    expect(userStore.registerForm.email).toBe(email)
+    authStore.changeRegisterFormEmail(email)
+    expect(authStore.registerForm.email).toBe(email)
   })
 
   it("changes password", () => {
-    expect(userStore.registerForm.password).toBe("")
+    expect(authStore.registerForm.password).toBe("")
     const password = "111111"
-    userStore.changeRegisterFormPassword(password)
-    expect(userStore.registerForm.password).toBe(password)
+    authStore.changeRegisterFormPassword(password)
+    expect(authStore.registerForm.password).toBe(password)
   })
 
   it("changes confirm password", () => {
-    expect(userStore.registerForm.confirmPassword).toBe("")
+    expect(authStore.registerForm.confirmPassword).toBe("")
     const confirmPassword = "111111"
-    userStore.changeRegisterFormConfirmPassword(confirmPassword)
-    expect(userStore.registerForm.confirmPassword).toBe(confirmPassword)
+    authStore.changeRegisterFormConfirmPassword(confirmPassword)
+    expect(authStore.registerForm.confirmPassword).toBe(confirmPassword)
   })
 
   it("clears error", () => {
-    userStore.setRegisterFormError("some error")
-    expect(userStore.registerForm.error).not.toBeNull()
-    userStore.clearRegisterError()
-    expect(userStore.registerForm.error).toBeNull()
+    authStore.setRegisterFormError("some error")
+    expect(authStore.registerForm.error).not.toBeNull()
+    authStore.clearRegisterError()
+    expect(authStore.registerForm.error).toBeNull()
   })
 
   it("sets error", () => {
-    expect(userStore.registerForm.error).toBeNull()
+    expect(authStore.registerForm.error).toBeNull()
     const error = "some error"
-    userStore.setRegisterFormError(error)
-    expect(userStore.registerForm.error).toBe(error)
+    authStore.setRegisterFormError(error)
+    expect(authStore.registerForm.error).toBe(error)
   })
 })

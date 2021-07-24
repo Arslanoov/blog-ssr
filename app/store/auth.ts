@@ -21,7 +21,6 @@ import ValidationError from "~/errors/validation"
 @Module({
   name: process.env.NODE_ENV === "test" ? "auth" : undefined,
   namespaced: true,
-  stateFactory: true,
 })
 export default class Auth extends VuexModule {
   public authForm: AuthFormInterface = CLEAR_AUTH_FORM()
