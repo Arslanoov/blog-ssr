@@ -14,6 +14,7 @@ import {
   authGoogle as authGoogleRequest,
   authFacebook as authFacebookRequest,
   authGithub as authGithubRequest,
+  authMicrosoft as authMicrosoftRequest,
 } from "~/api/v1/auth"
 import ValidationError from "~/errors/validation"
 
@@ -152,6 +153,18 @@ export default class Auth extends VuexModule {
   public async loginGithub(): Promise<UserCredential> {
     try {
       return await authGithubRequest()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginMicrosoft(): Promise<UserCredential> {
+    try {
+      return await authMicrosoftRequest()
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())

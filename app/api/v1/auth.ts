@@ -4,6 +4,7 @@ import {
   authWithGoogle as authWithGoogleRequest,
   authWithFacebook as authWithFacebookRequest,
   authWithGithub as authWithGithubRequest,
+  authWithMicrosoft as authWithMicrosoftRequest,
   getCurrentUser as currentUser,
 } from "~/utils/firebase"
 import { apiRequest } from "~/api/v1/index"
@@ -29,8 +30,12 @@ const authGithub = async (): Promise<UserCredential> => {
   return apiRequest<UserCredential>(authWithGithubRequest, [])
 }
 
+const authMicrosoft = async (): Promise<UserCredential> => {
+  return apiRequest<UserCredential>(authWithMicrosoftRequest, [])
+}
+
 const getCurrentUser = (): User | null => {
   return currentUser()
 }
 
-export { signUp, auth, authGoogle, authFacebook, authGithub, getCurrentUser }
+export { signUp, auth, authGoogle, authFacebook, authGithub, authMicrosoft, getCurrentUser }
