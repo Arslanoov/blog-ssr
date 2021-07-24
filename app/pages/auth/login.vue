@@ -6,6 +6,9 @@
       .login-container__form.form
         form(@submit.prevent="onSubmit").form__overlay
           .form__title Login
+          .form__social(@click="onGoogleAuth")
+            img(src="/images/auth/login/google.svg", alt="")
+
           base-error(:error="form.error").form__error-base
           validation-observer(ref="validator", tag="div").form__observer
             validation-provider(
@@ -79,6 +82,7 @@ export default class Login extends Vue {
   changePassword!: typeof AuthStoreModule.prototype.changeAuthFormPassword
 
   @authModule.Action("login") login!: typeof AuthStoreModule.prototype.login
+  @authModule.Action("loginGoogle") loginGoogle!: typeof AuthStoreModule.prototype.loginGoogle
 
   public $refs!: {
     validator: any
@@ -86,6 +90,12 @@ export default class Login extends Vue {
 
   public isFormValid = false
   public isProcessing = false
+
+  public onGoogleAuth(): void {
+    this.loginGoogle().then(() => {
+      this.$router.push("/")
+    })
+  }
 
   public onSubmit(): void {
     this.$refs.validator.validate()
@@ -188,10 +198,13 @@ export default class Login extends Vue {
     font-weight: @auth-form-title-font-weight;
   }
 
+  &__auth,
+  &__social {
+    .pointer-on-hover();
+  }
+
   &__auth {
     margin-bottom: 2.4rem;
-
-    .pointer-on-hover();
   }
 
   &__info {
