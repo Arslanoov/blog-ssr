@@ -13,6 +13,7 @@ import {
   auth as authRequest,
   authGoogle as authGoogleRequest,
   authFacebook as authFacebookRequest,
+  authGithub as authGithubRequest,
 } from "~/api/v1/auth"
 import ValidationError from "~/errors/validation"
 
@@ -67,7 +68,7 @@ export default class Auth extends VuexModule {
   }
 
   @Mutation
-  public setAuthFormEmailError(error: string): void {
+  public setAuthFormError(error: string): void {
     this.authForm.error = error
   }
 
@@ -139,6 +140,18 @@ export default class Auth extends VuexModule {
   public async loginFacebook(): Promise<UserCredential> {
     try {
       return await authFacebookRequest()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginGithub(): Promise<UserCredential> {
+    try {
+      return await authGithubRequest()
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())

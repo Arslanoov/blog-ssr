@@ -28,8 +28,12 @@ const authWithFacebook = (): Promise<firebase.auth.UserCredential> => {
   return $fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
 }
 
+const authWithGithub = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.GithubAuthProvider())
+}
+
 const getCurrentUser = (): firebase.User | null => {
   return $fire.auth.currentUser
 }
 
-export { signUp, auth, getCurrentUser, initializeFirebase, authWithGoogle, authWithFacebook, $fire }
+export { signUp, auth, getCurrentUser, initializeFirebase, authWithGoogle, authWithFacebook, authWithGithub, $fire }

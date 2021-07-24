@@ -11,6 +11,8 @@
               img(class="form__social-img", src="/images/auth/login/google.svg", alt="")
             .form__social(@click="onFacebookAuth")
               img(class="form__social-img", src="/images/auth/login/facebook.svg", alt="")
+            .form__social(@click="onGithubAuth")
+              img(class="form__social-img", src="/images/auth/login/github.svg", alt="")
           base-error(:error="form.error").form__error-base
           validation-observer(ref="validator", tag="div").form__observer
             validation-provider(
@@ -86,6 +88,7 @@ export default class Login extends Vue {
   @authModule.Action("login") login!: typeof AuthStoreModule.prototype.login
   @authModule.Action("loginGoogle") loginGoogle!: typeof AuthStoreModule.prototype.loginGoogle
   @authModule.Action("loginFacebook") loginFacebook!: typeof AuthStoreModule.prototype.loginFacebook
+  @authModule.Action("loginGithub") loginGithub!: typeof AuthStoreModule.prototype.loginGithub
 
   public $refs!: {
     validator: any
@@ -93,6 +96,12 @@ export default class Login extends Vue {
 
   public isFormValid = false
   public isProcessing = false
+
+  public onGithubAuth(): void {
+    this.loginGithub().then(() => {
+      this.$router.push("/")
+    })
+  }
 
   public onFacebookAuth(): void {
     this.loginFacebook().then(() => {
