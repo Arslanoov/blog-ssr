@@ -22,7 +22,7 @@ export default Vue.extend({
 
 <style lang="less" scoped>
 .header {
-  padding: 3.2rem 4.2rem 1.8rem;
+  padding: 2rem 4.2rem 1.8rem;
 
   border-bottom: @header-border-bottom;
 

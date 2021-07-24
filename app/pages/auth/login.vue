@@ -6,6 +6,15 @@
       .login-container__form.form
         form(@submit.prevent="onSubmit").form__overlay
           .form__title Login
+          .form__socials
+            .form__social(@click="onGoogleAuth")
+              img(class="form__social-img", src="/images/auth/login/google.svg", alt="")
+            .form__social(@click="onFacebookAuth")
+              img(class="form__social-img", src="/images/auth/login/facebook.svg", alt="")
+            .form__social(@click="onGithubAuth")
+              img(class="form__social-img", src="/images/auth/login/github.svg", alt="")
+            .form__social(@click="onMicrosoftAuth")
+              img(class="form__social-img", src="/images/auth/login/microsoft.svg", alt="")
           base-error(:error="form.error").form__error-base
           validation-observer(ref="validator", tag="div").form__observer
             validation-provider(
@@ -63,6 +72,7 @@ import BaseError from "~/components/base/error/BaseError.vue"
 const authModule = namespace("auth")
 
 @Component({
+  middleware: "noAuth",
   components: {
     ValidationProvider,
     ValidationObserver,
@@ -79,6 +89,10 @@ export default class Login extends Vue {
   changePassword!: typeof AuthStoreModule.prototype.changeAuthFormPassword
 
   @authModule.Action("login") login!: typeof AuthStoreModule.prototype.login
+  @authModule.Action("loginGoogle") loginGoogle!: typeof AuthStoreModule.prototype.loginGoogle
+  @authModule.Action("loginFacebook") loginFacebook!: typeof AuthStoreModule.prototype.loginFacebook
+  @authModule.Action("loginGithub") loginGithub!: typeof AuthStoreModule.prototype.loginGithub
+  @authModule.Action("loginMicrosoft") loginMicrosoft!: typeof AuthStoreModule.prototype.loginMicrosoft
 
   public $refs!: {
     validator: any
@@ -86,6 +100,30 @@ export default class Login extends Vue {
 
   public isFormValid = false
   public isProcessing = false
+
+  public onGoogleAuth(): void {
+    this.loginGoogle().then(() => {
+      this.$router.push("/")
+    })
+  }
+
+  public onFacebookAuth(): void {
+    this.loginFacebook().then(() => {
+      this.$router.push("/")
+    })
+  }
+
+  public onGithubAuth(): void {
+    this.loginGithub().then(() => {
+      this.$router.push("/")
+    })
+  }
+
+  public onMicrosoftAuth(): void {
+    this.loginMicrosoft().then(() => {
+      this.$router.push("/")
+    })
+  }
 
   public onSubmit(): void {
     this.$refs.validator.validate()
@@ -182,16 +220,37 @@ export default class Login extends Vue {
   }
 
   &__title {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 
     font-size: @auth-form-title-font-size;
     font-weight: @auth-form-title-font-weight;
   }
 
+  &__socials {
+    display: flex;
+    align-items: center;
+
+    margin: 1.5rem 0;
+  }
+
+  &__social {
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+
+    &-img {
+      width: 2.7rem;
+      height: 2.7rem;
+    }
+  }
+
+  &__auth,
+  &__social {
+    .pointer-on-hover();
+  }
+
   &__auth {
     margin-bottom: 2.4rem;
-
-    .pointer-on-hover();
   }
 
   &__info {

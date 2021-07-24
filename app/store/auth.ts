@@ -7,7 +7,15 @@ import {
   CLEAR_AUTH_FORM,
 } from "~/interfaces/forms/register"
 import { AuthState, User, UserCredential } from "~/interfaces/auth/user"
-import { getCurrentUser, signUp as signUpRequest, auth as authRequest } from "~/api/v1/auth"
+import {
+  getCurrentUser,
+  signUp as signUpRequest,
+  auth as authRequest,
+  authGoogle as authGoogleRequest,
+  authFacebook as authFacebookRequest,
+  authGithub as authGithubRequest,
+  authMicrosoft as authMicrosoftRequest,
+} from "~/api/v1/auth"
 import ValidationError from "~/errors/validation"
 
 @Module({
@@ -61,7 +69,7 @@ export default class Auth extends VuexModule {
   }
 
   @Mutation
-  public setAuthFormEmailError(error: string): void {
+  public setAuthFormError(error: string): void {
     this.authForm.error = error
   }
 
@@ -103,12 +111,60 @@ export default class Auth extends VuexModule {
   }
 
   @Action({ rawError: true })
-  public async login(): Promise<UserCredential | undefined> {
+  public async login(): Promise<UserCredential> {
     try {
       this.context.commit("clearAuthFormError")
 
       // const user = getCurrentUser()
       return await authRequest(this.authForm.email, this.authForm.password)
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginGoogle(): Promise<UserCredential> {
+    try {
+      return await authGoogleRequest()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginFacebook(): Promise<UserCredential> {
+    try {
+      return await authFacebookRequest()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginGithub(): Promise<UserCredential> {
+    try {
+      return await authGithubRequest()
+    } catch (error) {
+      if (error instanceof ValidationError) {
+        this.context.commit("setAuthFormError", error.getMessage())
+      }
+      throw error
+    }
+  }
+
+  @Action({ rawError: true })
+  public async loginMicrosoft(): Promise<UserCredential> {
+    try {
+      return await authMicrosoftRequest()
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())

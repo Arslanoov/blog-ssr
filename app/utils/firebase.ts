@@ -20,8 +20,34 @@ const auth = (email: string, password: string, rememberMe: boolean): Promise<fir
   return response
 }
 
+const authWithGoogle = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+}
+
+const authWithFacebook = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+}
+
+const authWithGithub = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.GithubAuthProvider())
+}
+
+const authWithMicrosoft = (): Promise<firebase.auth.UserCredential> => {
+  return $fire.auth.signInWithPopup(new firebase.auth.OAuthProvider("microsoft.com"))
+}
+
 const getCurrentUser = (): firebase.User | null => {
   return $fire.auth.currentUser
 }
 
-export { signUp, auth, getCurrentUser, initializeFirebase, $fire }
+export {
+  signUp,
+  auth,
+  getCurrentUser,
+  initializeFirebase,
+  authWithGoogle,
+  authWithFacebook,
+  authWithGithub,
+  authWithMicrosoft,
+  $fire,
+}
