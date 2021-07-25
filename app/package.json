@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "dev:debug": "nodemon --inspect node_modules/.bin/nuxt",
+    "dev:debug": "nodemon --inspect node_modules/.bin/nuxt --ignore tsconfig.json ./static/sw.js",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",
