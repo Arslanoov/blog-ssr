@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "dev:debug": "nodemon --inspect node_modules/.bin/nuxt",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "start": "nuxt start",
@@ -52,6 +53,7 @@
     "eslint": "^7.22.0",
     "eslint-config-hardcore": "git://github.com/Arslanoov/eslint-config-hardcore.git#19.15.7",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",

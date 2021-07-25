@@ -16,7 +16,7 @@ module.exports = {
 
   plugins: [],
 
-  ignorePatterns: ["server/*", "static/*", "tests/*"],
+  ignorePatterns: [".nuxt/*", "server/*", "static/*", "tests/*"],
 
   rules: {
     quotes: ["error", "double"],
@@ -64,6 +64,10 @@ module.exports = {
     "func-style": "off",
     "promise/avoid-new": "off",
     "promise/prefer-await-to-then": "off",
+
+    "prefer-named-capture-group": "off",
+    "no-param-reassign": "off",
+
     "@typescript-eslint/no-shadow": ["error"],
   },
 }

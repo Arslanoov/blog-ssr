@@ -31,7 +31,22 @@ module.exports = {
 
   modules: ["@nuxtjs/pwa", "@nuxtjs/firebase", "@nuxtjs/toast"],
 
-  build: {},
+  build: {
+    extend(config, ctx) {
+      // Added Line
+      config.devtool = ctx.isClient ? "eval-source-map" : "inline-source-map"
+
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/u,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/u,
+        })
+      }
+    },
+  },
 
   firebase: {
     config: {
