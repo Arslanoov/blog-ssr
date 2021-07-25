@@ -30,7 +30,7 @@ describe("Error component", () => {
 
     const itemsWrapper = wrapper.find(".errors__items")
     const items = wrapper.findAll(".errors__item") as unknown as WrapperArray<Vue>
-    console.log("Items", items)
+
     expect(itemsWrapper.exists()).toBe(true)
     expect(items).toHaveLength(errors.length)
     errors.forEach((error, index) => expect(items.at(index).text()).toBe(error))
