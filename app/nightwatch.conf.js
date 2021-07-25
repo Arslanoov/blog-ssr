@@ -5,19 +5,17 @@ loadServices()
 module.exports = {
   src_folders: ["tests/e2e"],
 
-  page_objects_path: "",
-
-  custom_commands_path: "",
-
-  custom_assertions_path: "",
-
-  globals_path: "",
+  page_objects_path: "tests/e2e/page-objects/",
+  custom_commands_path: "tests/e2e/custom-commands/",
+  custom_assertions_path: "tests/e2e/custom-assertions/",
+  globals_path: "tests/e2e/globals.js",
 
   webdriver: {},
 
   test_settings: {
     default: {
       disable_error_log: false,
+      launch_url: "http://localhost:8086",
 
       screenshots: {
         enabled: true,
