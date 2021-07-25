@@ -53,7 +53,7 @@ export default class Auth extends VuexModule {
   }
 
   @Mutation
-  public clearRegisterError(): void {
+  public clearRegisterFormError(): void {
     this.registerForm.error = null
   }
 
@@ -93,7 +93,7 @@ export default class Auth extends VuexModule {
   }
 
   @Action({ rawError: true })
-  public async signUp(): Promise<UserCredential | undefined> {
+  public async signUp(): Promise<UserCredential> {
     try {
       this.context.commit("clearRegisterFormError")
       const response = await signUpRequest(this.registerForm.email, this.registerForm.password)
@@ -113,9 +113,10 @@ export default class Auth extends VuexModule {
   public async login(): Promise<UserCredential> {
     try {
       this.context.commit("clearAuthFormError")
+      const user = await authRequest(this.authForm.email, this.authForm.password)
+      this.context.commit("clearAuthForm")
 
-      // const user = getCurrentUser()
-      return await authRequest(this.authForm.email, this.authForm.password)
+      return user
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())
@@ -127,7 +128,11 @@ export default class Auth extends VuexModule {
   @Action({ rawError: true })
   public async loginGoogle(): Promise<UserCredential> {
     try {
-      return await authGoogleRequest()
+      this.context.commit("clearAuthFormError")
+      const user = await authGoogleRequest()
+      this.context.commit("clearAuthForm")
+
+      return user
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())
@@ -139,7 +144,11 @@ export default class Auth extends VuexModule {
   @Action({ rawError: true })
   public async loginFacebook(): Promise<UserCredential> {
     try {
-      return await authFacebookRequest()
+      this.context.commit("clearAuthFormError")
+      const user = await authFacebookRequest()
+      this.context.commit("clearAuthForm")
+
+      return user
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())
@@ -151,7 +160,11 @@ export default class Auth extends VuexModule {
   @Action({ rawError: true })
   public async loginGithub(): Promise<UserCredential> {
     try {
-      return await authGithubRequest()
+      this.context.commit("clearAuthFormError")
+      const user = await authGithubRequest()
+      this.context.commit("clearAuthForm")
+
+      return user
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())
@@ -163,7 +176,11 @@ export default class Auth extends VuexModule {
   @Action({ rawError: true })
   public async loginMicrosoft(): Promise<UserCredential> {
     try {
-      return await authMicrosoftRequest()
+      this.context.commit("clearAuthFormError")
+      const user = await authMicrosoftRequest()
+      this.context.commit("clearAuthForm")
+
+      return user
     } catch (error) {
       if (error instanceof ValidationError) {
         this.context.commit("setAuthFormError", error.getMessage())

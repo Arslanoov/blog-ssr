@@ -1,12 +1,3 @@
-// / ////////////////////////////////////////////////////////////////////////////////
-// Refer to the entire list of global config settings here:
-// https://github.com/nightwatchjs/nightwatch/blob/master/lib/settings/defaults.js#L16
-//
-// More info on test globals:
-//   https://nightwatchjs.org/gettingstarted/configuration/#test-globals
-//
-// / ////////////////////////////////////////////////////////////////////////////////
-
 module.exports = {
   abortOnAssertionFailure: true,
 
@@ -23,16 +14,6 @@ module.exports = {
     // return 'I\'m a method';
     // }
     //
-  },
-
-  firefox: {
-    //
-    // The globals defined here are available only when the chrome testing env is being used
-    // i.e. when running with --env firefox
-    //
-    // myGlobal: function() {
-    //   return 'Firefox specific global';
-    // }
   },
 
   // / //////////////////////////////////////////////////////////////

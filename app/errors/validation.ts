@@ -5,6 +5,6 @@ export default class ValidationError extends Error {
   }
 
   public getMessage(): string {
-    return this.message.split(":")[1]
+    return this.message.split(":")[1].trim()
   }
 }

@@ -13,7 +13,10 @@
     "lint:style": "stylelint \"**/*.{vue,less}\" --ignore-path .gitignore",
     "lint:style:fix": "stylelint \"**/*.{vue,less}\" --fix --ignore-path .gitignore",
     "test:e2e": "nightwatch",
-    "test:unit": "jest"
+    "test:unit": "jest --watchAll",
+    "test:unit:components": "jest --watchAll --testPathPattern=tests/components",
+    "test:unit:store:mutations": "jest --watchAll --testPathPattern=tests/store/mutations",
+    "test:unit:store:actions": "jest --watchAll --testPathPattern=tests/store/actions"
   },
   "dependencies": {
     "@nuxtjs/firebase": "^7.6.1",

@@ -16,5 +16,11 @@ fix-style:
 test: test-unit test-e2e
 test-unit:
 	cd app && npm run test:unit
+test-components:
+	cd app && npm run test:unit:components
+test-mutations:
+	cd app && npm run test:unit:store:mutations
+test-actions:
+	cd app && npm run test:unit:store:actions
 test-e2e:
 	cd app && npm run test:e2e

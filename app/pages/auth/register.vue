@@ -33,6 +33,7 @@
                 :value="form.password",
                 tag="div",
                 type="password",
+                name="password",
                 autocomplete="password",
                 placeholder="Password"
               )
@@ -48,6 +49,7 @@
                 :value="form.confirmPassword",
                 tag="div",
                 type="password",
+                name="confirm_password",
                 autocomplete="confirm_password",
                 placeholder="Confirm Password"
               )
@@ -77,6 +79,7 @@ const authModule = namespace("auth")
 
 @Component({
   middleware: "noAuth",
+
   components: {
     ValidationProvider,
     ValidationObserver,

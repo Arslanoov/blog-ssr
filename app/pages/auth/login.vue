@@ -55,7 +55,6 @@
             .form__group
               input(type="checkbox").form__checkbox
               .form__remember Remember Me
-            nuxt-link(to="/").form__link Lost your password?
 </template>
 
 <script lang="ts">
@@ -282,10 +281,6 @@ export default class Login extends Vue {
 
   &__checkbox {
     margin-right: 1rem;
-  }
-
-  &__link {
-    color: @auth-link-color;
   }
 }
 </style>
