@@ -10,7 +10,7 @@ import { Component, Prop, Vue } from "nuxt-property-decorator"
 
 @Component({})
 export default class BaseError extends Vue {
-  @Prop([String]) readonly error: string | undefined
+  @Prop([String]) readonly error!: string | undefined
   @Prop({ type: Array, default: () => [] }) readonly errors!: string[]
 }
 </script>

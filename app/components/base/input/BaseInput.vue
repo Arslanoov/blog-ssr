@@ -15,7 +15,7 @@ import { Component, Vue, Prop } from "nuxt-property-decorator"
   inheritAttrs: false,
 })
 export default class BaseInput extends Vue {
-  @Prop([String, Number]) readonly value: string | number | undefined
+  @Prop([String, Number]) readonly value!: string | number | undefined
 }
 </script>
 

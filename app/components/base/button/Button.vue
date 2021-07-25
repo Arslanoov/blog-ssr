@@ -9,8 +9,8 @@ import { Component, Prop, Vue, Emit } from "nuxt-property-decorator"
 
 @Component({})
 export default class Button extends Vue {
-  @Prop([String]) readonly content: string
-  @Prop([String]) readonly padding: string
+  @Prop([String]) readonly content!: string
+  @Prop([String]) readonly padding!: string
 
   @Emit("click")
   onClick(e: Event): Event {

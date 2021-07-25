@@ -15,9 +15,9 @@ import { SocialInterface } from "~/interfaces/social"
 
 @Component({})
 export default class BaseError extends Vue {
-  @Prop([String]) readonly title: string
-  @Prop([Array]) readonly items: SocialInterface[]
-  @Prop({ type: Boolean, default: false }) readonly withBorder: boolean
+  @Prop([String]) readonly title!: string
+  @Prop([Array]) readonly items!: SocialInterface[]
+  @Prop({ type: Boolean, default: false }) readonly withBorder!: boolean
 }
 </script>
 
