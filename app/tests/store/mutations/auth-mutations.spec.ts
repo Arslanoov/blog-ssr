@@ -36,7 +36,7 @@ describe("auth store register form", () => {
   it("clears error", () => {
     authStore.setRegisterFormError("some error")
     expect(authStore.registerForm.error).not.toBeNull()
-    authStore.clearRegisterError()
+    authStore.clearRegisterFormError()
     expect(authStore.registerForm.error).toBeNull()
   })
 
