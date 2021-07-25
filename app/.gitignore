@@ -91,3 +91,4 @@ sw.*
 
 # e2e tests
 tests_output
+tests/e2e/screens

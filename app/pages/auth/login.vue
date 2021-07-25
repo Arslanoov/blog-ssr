@@ -73,6 +73,7 @@ const authModule = namespace("auth")
 
 @Component({
   middleware: "noAuth",
+
   components: {
     ValidationProvider,
     ValidationObserver,
